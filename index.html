@@ -1,354 +1,252 @@
- <!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#111111">
-	<title>New site</title>
-	<link rel="stylesheet" href="css/main.min.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>лига 18</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-	<div class="site-container">
-		<header class="header">
-  <div class="container header__container">
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#about" class="nav__link">О проекте</a></li>
-        <li class="nav__item"><a href="#apartments" class="nav__link">Апартаменты</a></li>
-      </ul>
-    </nav>
-      <div class="nav__action">
-        <span class="phone">+7(495) 432 50 66</span>
-        <button class="button button--bd">Записаться</button>  
-      </div>
-  </div>
-</header>
-
-		<main class="main">
-      <section class="hero">
-  <div class="container hero__container">
-    <div class="hero__content">
-      <h1 class="hero__title">HELIUS</h1>
-      <p class="hero__descr">В самом центре в самой тишине</p>
-    </div>
-  </div>
-</section>
-      <section class="about">
-  <div class="container grid">
-    <article class="about__article" id="about">
-      <h2 class="title title--max" >О проекте</h2>
-      <p class="descr descr--indent">Геометричные элементы парадного фасада,  мгновенно приковывающие к себе внимание, светлые и просторные помещения с пятиметровыми потолками, сразу отсылают к эстетике американского классического ар-деко.</p>
-      <p class="descr">Его влияние быстро охватило Америку начала 19 века, формировало образ жизни того периода, который характеризуется бурным экономическим ростом, развитием технологий и строительством культовых архитектурных сооружений.</p>
-      <div class="features">
-        <div class="features__item">
-          <p class="features__number">5км</p>
-          <p class="features__descr">От Кремля</p>
-        </div>
-        <div class="features__item">
-          <p class="features__number">90</p>
-          <p class="features__descr">Апартаментов</p>
-        </div>
-        <div class="features__item">
-          <p class="features__number">7</p>
-          <p class="features__descr">Этажей</p>
-        </div>
-      </div>
-    </article>
-<img class="img--max" src="img/about__img.png" alt="*">
-    </div>
-  </div>
-</section>
-      <section class="location" id="location">
-  <article class="container location__article">
-    <h2 class="title title--max">Расположение</h2>
-    <div class="grid">
-      <div class="location__item">
-        <h3 class="location__title">Пресненский район</h3>
-        <p class="location__subtitle">ул. Климашкина, 16</p>
-      </div>
-      <p class="descr location__descr">Москва-Сити, Центр международной торговли, известные театры, музеи, лучшие рестораны — центр Москвы — центр притяжения успеха, вдохновения и силы.</p>
-    </div>
-  </article>
-  <div class="map">
-  <div class="map__img"></div>
   <div class="container">
-    <ul class="infrastructure">
-      <li class="infrastructure__item">Все объекты</li>
-      <li class="infrastructure__item">Рестораны</li>
-      <li class="infrastructure__item">Парки</li>
-      <li class="infrastructure__item">Магазины</li>
-      <li class="infrastructure__item">Образование</li>
-      <li class="infrastructure__item">Спорт</li>
-    </ul>
-  </div>
-</div>
-</section>
-      <section class="advantage" id="advantage">
-  <div class="container">
-    <h2 class="title title--max">Преимущества</h2>
-    <div class="advantage__slider">
-      <div class="advantage__slide">
-        <div class="advantage__img">
-          <img src="img/advantage-1.png" alt="">
+    <input type="checkbox" class="checkbox" id="chat__btn-toggle">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__btn-mobile">
+          <div class="header__btn-fight">Бой</div>
+          <label for="chat__btn-toggle" class="header__btn-chat">Чат</label>
         </div>
-        <p class="advantage__descr">Фитнес зона</p>
-      </div>
-      <div class="advantage__slide">
-        <div class="advantage__img">
-          <img src="img/advantage-2.png" alt="">
+        <div class="header__profile-box">
+          <div class="header__avatar"></div>
+          <div class="header__profile-text">
+            <span class="header__profile-name">Lepistok</span>
+          </div>
         </div>
-        <p class="advantage__descr">Собственный ритейл</p>
-      </div>
-      <div class="advantage__slide">
-        <div class="advantage__img">
-          <img src="img/advantage-1.png" alt="">
+        <input type="checkbox" id="header__burger-toggle" class="checkbox">
+        <label for="header__burger-toggle" class="header__burger">
+          <span></span>
+        </label>
+        <nav class="main-nav">
+          <div class="main-nav__btn">
+            <img src="img/Команда.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Инвентарь.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Бой.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Покебук.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Рейтинг.svg" alt="-">
+          </div>
+        </nav>
+        <div class="header__setting-box">
+          <img src="img/погода.png" alt="*">
+          <div class="header__time">17:17</div>
+          <img src="img/setting.svg" alt="-">
         </div>
-        <p class="advantage__descr">Пентхаусы: 5м высота потолка</p>
       </div>
-    </div>
-    </div>
-</section>
-      <section class="style" id="style">
-  <div class="container grid">
-    <div class="style__img">
-      <img src="img/style__img.png" alt="*">
-    </div>
-    <article class="style__article">
-      <h2 class="title title--max">Стиль</h2>
-      <p class="descr descr--indent">Главный фасад здания исполнен в неоклассическом стиле с выступающими деталями и большим количеством оконо. <br> Это четко очерченная композиция из полированного гранита с элементами рустики, крупноформатного керамогранита и декоративными элементами, выполненными на заказ.</p>
-      <p class="descr">В основе интерьеров Дома Helius приоритетными являются эстетика, где видимая роскошь сочетается с комфортом, в неё идеально вписываются любые технические приборы и устройства. Это позволяет создавать действительно актуальные и модные решения  в рамках устоявшейся классики.</p>
-    </article>
-  </div>
-</section>
-<!-- Slider main container -->
-<div class="swiper-container">
-	<!-- Additional required wrapper -->
-	<div class="swiper-wrapper">
-		<!-- Slides -->
-		<div class="swiper-slide">
-			<img class="comfort-zone__slide" src="img/style__slider.png" alt="">
-		</div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-	</div>
-	<div class="pag-wrap container style__container">
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
-		<!-- If we need navigation buttons -->
-		<div class="style__btn">
-			<div class="swiper-button-prev">
-				<svg>
-					<use xlink:href="img/sprite.svg#arrow-left"></use>
-				</svg>
-			</div>
-			<div class="swiper-button-next">
-				<svg>
-					<use xlink:href="img/sprite.svg#arrow-right"></use>
-				</svg>
-			</div>
-		</div>
-	</div>
-</div>
-
-      <section class="apartments" >
-  <div class="container grid">
-    <img src="img/apartments.png" alt="0" class="img--min">
-    <article id="apartments" class="apartments__article">
-      <h2 class="title title--min">Апартаменты</h2>
-      <p class="descr apartments__descr">Со второго по шестой этаж гармонично спланированы апартаменты различной площади от 35 до 80 м2, жителям каждого из которых гарантирована максимальная приватность и комфорт.</p>
-      <button class="button button--bd2">Оставить заявку</button>
-    </article>
-  </div>
-</section>
-
-<section class="apartments">
-  <div class="container grid">
-    <article class="apartments__article">
-      <h2 class="title title--min">Пентхаусы</h2>
-      <p class="descr apartments__descr">На седьмом этаже Дома предусмотрено несколько пентхаусов. В распоряжении их жителей: высокие потолки 5,5 метров, свободная планировка для создания стильного, торжественного интерьера.</p>
-      <button class="button button--bd2">Оставить заявку</button>
-    </article>
-    <img src="img/Penthouses.png" alt="0" class="img--min">
-  </div>
-</section>
-      <section class="comfort-zone">
-  <article class="comfort-zone__article">
-    <div class="container grid">
-      <h2 class="title title--max">Зона комфорта</h2>
-      <p class="descr comfort-zone__descr">Путешествие в мир безупречного вкуса, начинается с лобби: стены украшает покрытие из натурального
-        камня, зеркальные декоративные панно, выполненные по авторскому дизайну.</p>
-    </div>
-  </article>
-<!-- Slider main container -->
-<div class="swiper-container">
-	<!-- Additional required wrapper -->
-	<div class="swiper-wrapper">
-		<!-- Slides -->
-		<div class="swiper-slide">
-			<img class="comfort-zone__slide" src="img/Comfort-zone.png" alt="">
-		</div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-		<div class="swiper-slide"><img class="comfort-zone__slide" src="img/Comfort-zone.png" alt=""></div>
-    
-	</div>
-	<div class="pag-wrap container style__container">
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
-		<!-- If we need navigation buttons -->
-		<div class="style__btn">
-			<div class="swiper-button-prev">
-				<svg>
-					<use xlink:href="img/sprite.svg#arrow-left"></use>
-				</svg>
-			</div>
-			<div class="swiper-button-next">
-				<svg>
-					<use xlink:href="img/sprite.svg#arrow-right"></use>
-				</svg>
-			</div>
-		</div>
-	</div>
-</div>
-</section>
-      <section class="specifications" id="specifications">
-  <div class="container">
-    <h2 class="title specifications__headline">Технические характеристики</h2>
-  </div>
-  <div class="container specifications__container">
-    <div class="specifications__item">
-    <h3 class="specifications__title">Сервис</h3>
-    <p class="descr">Две зоны ресепшн 24/7</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Паркинг</h3>
-    <p class="descr">Наземный, охраняемый паркинг</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Кондиционирование</h3>
-    <p class="descr">Центральная Система кондиционирования</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Лифты</h3>
-    <p class="descr">Бесшумные премиальные лифты OTIS</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Территория</h3>
-    <p class="descr">Огороженная и охраняемая территория</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Остекление</h3>
-    <p class="descr specifications__brr">Высококачественные стеклопакеты с повышенной шумоизоляцией</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Пожарная сигнализация</h3>
-    <p class="descr">Автоматическая система пожаротушения</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Вентиляция</h3>
-    <p class="descr specifications__brr">Система принудительной приточно-вытяжной вентиляции</p>
-  </div>
-  <div class="specifications__item">
-    <h3 class="specifications__title">Система безопасности</h3>
-    <p class="descr">Современная система охраны</p>
-  </div>
-  </div>
-</section>
+    </header>
+    <main class="main">
+      <div class="locations game-box">
+        <div class="game__link">Поле для тренеровок</div>
+        <div class="game__link">Поле для тренеровок</div>
+        <div class="game__link">Поле для тренеровок</div>
+        <div class="game__link">Поле для тренеровок</div>
+        <div class="game__link">Поле для тренеровок</div>
+      </div>
+      <div class="view-art"></div>
+      <div class="npc game-box">
+        <div class="game__link">Сестра джой</div>
+        <div class="game__link">Сестра джой</div>
+        <div class="game__link">Сестра джой</div>
+        <div class="game__link">Сестра джой</div>
+        <div class="game__link">Сестра джой</div>
+      </div>
     </main>
-		<footer class="footer">
-	<div class="container grid">
-		<div class="footer__content">
-			<div class="footer__logo">HELIUS</div>
-			<div class="grid">
-				<nav class="footer__nav">
-					<ul>
-						<li class="footer__nav-item"><a href="#about" class="footer__nav-link">О проекте</a></li>
-						<li class="footer__nav-item"><a href="#location" class="footer__nav-link">Окружение</a></li>
-						<li class="footer__nav-item"><a href="#advantage" class="footer__nav-link">Преимущество</a></li>
-						<li class="footer__nav-item"><a href="#style" class="footer__nav-link">Стиль</a></li>
-						<li class="footer__nav-item"><a href="#" class="footer__nav-link">Предложение</a></li>
-						<li class="footer__nav-item"><a href="#specifications" class="footer__nav-link">Характеристики</a></li>
-					</ul>
-				</nav>
-				<div class="footer__contacts">
-					<h3 class="footer__contacts-title">Контакты</h3>
-					<p class="descr footer__descr">Москва, Пресненский район ул.Климашкина 16</p>
-					<p class="footer__phone footer__descr">+7 (495) 432 50 66</p>
-				</div>
-
-			</div>
-		</div>
-		<form class="footer__contacts-form">
-			<h2 class="footer__title">Записаться на консультацию</h2>
-			<div class="footer__form-group">
-				<input type="text" class="footer__form-input" placeholder="Имя">
-			</div>
-			<div class="footer__form-group">
-				<input type="text" class="footer__form-input" placeholder="Телефон">
-			</div>
-			<button class="button footer__button">Записаться</button>
-			<p class="footer__policy">Нажимая кнопку “Записаться” я принимаю условия <a href="#"
-					class="footer__policy-link">Политики приватности</a></p>
-		</form>
-		<p class="footer__yo">©HELIUS 2021. Все права защищены.</p>
-		<p class="footer__yo">Design for UPROCK School</p>
-	</div>
-</footer>
-<!-- ************************************ -->
-
-
-		<section class="section">
-  <div class="container grid">
-    <div class="img">
-      <img src="img/Penthouses.png" alt="" class="img-pik">
+    <!-- /*==============Chat===============*/ -->
+    <div class="bottom-content">
+      <div class="chat-wrap">
+        <div class="main-nav">
+          <div class="main-nav__btn">
+            <img src="img/Мир.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Торг.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Клан.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Диалоги.svg" alt="-">
+          </div>
+        </div>
+        <div class="chat">
+          <div class="main-title">Мировой чат</div>
+          <div class="chat-area">
+            <div class="chat__message-wrap">
+              <div class="chat__message-container">
+                <div class="chat__avatar">
+                  <div class="chat__clan"></div>
+                </div>
+                <div class="chat__message">
+                  <div class="chat__message-top">
+                    <div class="chat__message-nickname">Lepistok</div>
+                    <div class="chat__message-time">17:17</div>
+                  </div>
+                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
+                    текст
+                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
+                    сообщени
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat__message-wrap">
+              <div class="chat__message-container">
+                <div class="chat__avatar">
+                  <div class="chat__clan"></div>
+                </div>
+                <div class="chat__message">
+                  <div class="chat__message-top">
+                    <div class="chat__message-nickname">Lepistok</div>
+                    <div class="chat__message-time">17:17</div>
+                  </div>
+                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
+                    текст
+                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
+                    сообщени
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat__message-wrap">
+              <div class="message-answer">
+                <div class="message-answer__wrap">
+                  <img src="img/ответ.svg" alt="-">
+                  <div class="message-answer__avatar"></div>
+                </div>
+                <div class="message-answer__nickname">Anistemi</div>
+              </div>
+              <div class="chat__message-container">
+                <div class="chat__avatar">
+                  <div class="chat__clan"></div>
+                </div>
+                <div class="chat__message">
+                  <div class="chat__message-top">
+                    <div class="chat__message-nickname">Lepistok</div>
+                    <div class="chat__message-time">17:17</div>
+                  </div>
+                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
+                    текст
+                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
+                    сообщени
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-input-wrap">
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Сообщение">
+              <div class="chat__btn-emoji">
+                <img src="img/Смайлик.svg" alt="-">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="player-list__wrap">
+        <div class="player-list">
+          <div class="main-title">Друзья</div>
+          <div class="light-bg">
+            <div class="social-block">
+              <div class="social-block__box-wrap">
+                <div class="player-list__title">В сети - 3</div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+              </div>
+              <div class="social-block__box-wrap">
+                <div class="player-list__title">Не в сети - 34</div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-input-wrap">
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Сообщение">
+              <div class="chat__btn-emoji">
+                <img src="img/Смайлик.svg" alt="-">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-nav">
+          <div class="main-nav__btn">
+            <img src="img/Мир.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Торг.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Клан.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Диалоги.svg" alt="-">
+          </div>
+        </div>
+      </div>
     </div>
-    <article class="article">
-      <h2 class="article-title">Mission</h2>
-      <p class="article-descr">We helped the company determine the intentions around its brand. We helped the company clearly articulate its goal, offer and personality. We identify tools that will help the brand tell a true story.</p>
-      <p class="descr">In collaboration with our strategy team, our award-winning design team translates brand objectives into a seamless and user-centered experience.</p>
-    </article>
+    <!-- Футур тест -->
+    <!-- <div class="footer-test"></div> -->
   </div>
-</section>
-<div class="wrapper">
-<div class="fullscreen">
-  <div class="fullscreen__body">
-    <h2 class="fullscreen__title">Этот блок занимает всю высоту экрана</h2>
-    <div class="fullscreen__text">Некий текст жили были носорог и гарилла, хоп лей ла-ла лей!</div>
-    <a href="#" class="fullscreen__link">Вперёд</a>
-  </div>
-</div>
-<div class="fullscreen fullscreen--bg">
-  
-</div>
-<div class="fullscreen fullscreen--two">
-  <div class="fullscreen__body">
-    <h2 class="fullscreen__title">Этот блок тоже занимает всю высоту экрана</h2>
-    <div class="fullscreen__text">Некий текст жили были носорог и гарилла, хоп лей ла-ла лей!</div>
-    <a href="#" class="fullscreen__link">Вперёд</a>
-  </div>
-</div>
-<div class="content">
-  <div class="content__body">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta, fuga enim nisi repellendus iste?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta, fuga enim nisi repellendus iste?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta, fuga enim nisi repellendus iste?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta, fuga enim nisi repellendus iste?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta, fuga enim nisi repellendus iste?</p>
-  </div>
-</div>
-<div class="test-footer">
-  <div class="test-footer__body">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  </div>
-</div>
-</div> 
-		
-	</div>
-	<script src="js/main.js"></script>
+
+
 </body>
+
 </html>
