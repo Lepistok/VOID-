@@ -60,7 +60,7 @@ html {
 
 
 .--burger {
-  background-image: url(/img/бургер.svg);
+  background-image: url(img/бургер.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -104,7 +104,7 @@ html {
 }
 
 .--burger:hover {
-  background-image: url(/img/бургер.svg);
+  background-image: url(img/бургер.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -558,7 +558,7 @@ input::placeholder {
 /* меняет бургер на крестик и красит эктив*/
 #toggle--burger-btn:checked ~ .root-menu--mobile .--burger {
   background: #2D3246;
-  background-image: url(/img/крестик.svg);
+  background-image: url(img/крестик.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
