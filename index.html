@@ -15,25 +15,41 @@
 
 <body>
   <div class="container">
-<!-- Инпуты для иметации функционала -->
+    <!-- Инпуты для иметации функционала -->
+
+    <!-- бой -->
     <input type="checkbox" class="checkbox" id="toggle--fight-btn">
+
+    <!-- бургер -->
     <input type="checkbox" class="checkbox" id="toggle--burger-btn">
-<!-- ================================== -->
+
+    <!-- чат -->
+    <input type="checkbox" class="checkbox" id="toggle--chat-btn">
+
+    <!-- социум -->
+    <input type="checkbox" class="checkbox" id="toggle--social-btn">
+    <!-- ================================== -->
     <div class="root-menu--mobile">
       <nav class="main-nav">
-        <div class="main-nav__btn">
-          <img src="img/ЛС.svg" alt="-">
-        </div>
+        <!-- Кнопка чата -->
+        <label for="toggle--chat-btn" class="label-btn">
+          <div class="main-nav__btn">
+            <img src="img/ЛС.svg" alt="-">
+          </div>
+        </label>
+        <!-- Кнопка боя -->
         <label for="toggle--fight-btn" class="label-btn">
           <div class="main-nav__btn --fight">
             <img src="img/Бой.svg" alt="-">
           </div>
         </label>
+        <!-- Кнопка бургер -->
         <label for="toggle--burger-btn" class="label-btn">
           <div class="main-nav__btn --burger"></div>
         </label>
       </nav>
     </div>
+    <!-- Основное меню -->
     <div class="root-menu">
       <div class="root-menu__butt-end">
         <div class="root-menu__profile-box">
@@ -98,9 +114,16 @@
           <div class="main-nav__btn">
             <img src="img/Клан.svg" alt="-">
           </div>
+          <!-- Кнопка дифлогов -->
           <div class="main-nav__btn">
             <img src="img/Диалоги.svg" alt="-">
           </div>
+          <!-- кнопка закрытия чата -->
+          <label for="toggle--chat-btn" class="label-btn --hide-pc">
+            <div class="main-nav__btn --close-btn">
+              <img src="img/крестик.svg" alt="-">
+            </div>
+          </label>
         </div>
         <div class="chat">
           <div class="main-title">Мировой чат</div>
@@ -166,17 +189,45 @@
                 </div>
               </div>
             </div>
+            <div class="chat__message-wrap">
+              <div class="chat__message-container">
+                <div class="chat__avatar">
+                  <div class="chat__clan"></div>
+                </div>
+                <div class="chat__message">
+                  <div class="chat__message-top">
+                    <div class="chat__message-nickname">Lepistok</div>
+                    <div class="chat__message-time">17:17</div>
+                  </div>
+                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
+                    текст
+                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
+                    сообщени
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="bottom-input-wrap">
+            <!-- кнопка социума -->
+            <label for="toggle--social-btn" class="label-btn">
+              <div class="social-btn">
+                <img src="img/Социум.svg" alt="-">
+              </div>
+            </label>
             <div class="main-input">
               <input type="text" class="input-text" placeholder="Сообщение">
               <div class="chat__btn-emoji">
                 <img src="img/Смайлик.svg" alt="-">
               </div>
             </div>
+            <div class="addmsg-btn">
+              <img src="img/отправить.svg" alt="-">
+            </div>
           </div>
         </div>
       </div>
+      <!-- Окно социума -->
       <div class="player-list__wrap">
         <div class="player-list">
           <div class="main-title">Друзья</div>
@@ -226,14 +277,84 @@
                     <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
                   </div>
                 </div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
+                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="bottom-input-wrap">
             <div class="main-input">
-              <input type="text" class="input-text" placeholder="Сообщение">
+              <input type="text" class="input-text" placeholder="Поиск">
               <div class="chat__btn-emoji">
-                <img src="img/Смайлик.svg" alt="-">
+                <img src="img/Поиск.svg" alt="-">
               </div>
             </div>
           </div>
@@ -251,11 +372,15 @@
           <div class="main-nav__btn">
             <img src="img/Диалоги.svg" alt="-">
           </div>
+          <label for="toggle--social-btn" class="label-btn --hide-pc">
+            <div class="main-nav__btn --close-btn">
+              <img src="img/крестик.svg" alt="-">
+            </div>
+          </label>
         </div>
       </div>
     </div>
   </div>
-
 </body>
 
 </html>
