@@ -48,24 +48,40 @@ html {
 
 /*==============Header===============*/
 
-.header {
-  background-color: #2B3656;
-  z-index: 2;
+.root-menu--mobile {
+  display: none;
+  height: 40px;
 }
 
-.header__container {
-  /* align-items: center; */
-  justify-content: space-between;
+.label-btn {
+  display: grid;
+}
+
+
+
+.--burger {
+  background-image: url(/img/бургер.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.root-menu {
+  /* justify-content: space-between; */
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   height: 45px;
 }
 
-.header__test {
-  border: 3px solid #fff;
-  height: 100%;
-  width: 100px;
+.root-menu__butt-end {
+  display: grid;
+  align-items: center;
+  background-color: #2D3246;
+  padding: 10px 20px;
 }
+
+
 
 .main-nav {
   display: grid;
@@ -87,17 +103,25 @@ html {
   background: #4E85E5;
 }
 
-
-.header__profile-box {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(2,auto);
-  grid-column-gap: 10px;
-  background-color: #2D3246;
+.--burger:hover {
+  background-image: url(/img/бургер.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.header__avatar {
+.--fight:active {
+  background: #2D3246;
+  transition:.2s
+}
+
+.root-menu__profile-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: center;
+}
+
+.root-menu__avatar {
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -111,13 +135,13 @@ html {
   margin: 0px 0px 0px 20px;
 }
 
-.header__setting-box {
-  display: grid;
+.root-menu__setting-box {
+  display: flex;
+  /* display: grid; */
   align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(3,auto);
-  grid-column-gap: 45px;
-  background-color: #2D3246;
+  justify-content: space-between;
+  /* grid-template-columns: repeat(3,auto); */
+  /* grid-column-gap: 45px; */
 }
 
 
@@ -197,8 +221,6 @@ html {
 .chat-wrap {
   display: grid;
   grid-template-columns: 60px 1fr;
-  /* border: 2px solid yellow; */
-  /* max-height: 100px; */
   overflow: auto;
 }
 
@@ -210,14 +232,6 @@ html {
 }
 
 
-
-
-.footer-test {
-  height: 320px;
-  /* background-color: green; */
-  border-right: 5px solid #000;
-  width: 100%;
-}
 
 .chat-area {
   overflow: auto;
@@ -432,6 +446,9 @@ input::placeholder {
   font-weight: 300;
 }
 
+
+
+
 /*-------------------------------------*/
 
 /* .header__menu , .main {
@@ -472,7 +489,12 @@ input::placeholder {
     grid-column-gap: 45px;
     padding: 0 30px 0 30px;
   }
-  .header__profile-menu {
+
+  .root-menu--mobile {
+    display: grid;
+  }
+
+  .root-menu {
     display: none;
   }
   .header__menu {
@@ -481,33 +503,78 @@ input::placeholder {
   .header__info {
     display: none;
   }
-  .chat {
+/* Удаляет кнопку боя */
+  .root-menu > .main-nav > label {
     display: none;
   }
-  .chat_container {
-    grid-template-columns: 1fr;
+/* делает менюху плиткой */
+  .root-menu > .main-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+/* увеличивает размер кортинок у конпок */
+  .root-menu > .main-nav img {
+    height: 50px;
   }
 
-  .chat__main {
+  .bottom-content {
+    display: none;
+  }
+  /* .chat_container {
+    grid-template-columns: 1fr;
+  } */
+
+  /* .chat__main {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-  }
+  } */
 
-  .chat__tabs {
+  /* .chat__tabs {
     flex-direction: row;
-  }
+  } */
 
-  .chat__online {
+  /* .chat__online {
     display: none;
-  }
+  } */
 
-  #chat__btn-toggle:checked , .container {
+  /* #chat__btn-toggle:checked , .container {
     grid-auto-rows:  min-content 1fr ;
-  }
+  } */
 
 }
 
+/*=----- Инпуты для иметации функционала -----=*/
 
+/* красит активную кнопку боя в пк и моб версии*/
+
+#toggle--fight-btn:checked ~ .root-menu--mobile .--fight {
+  background: #2D3246;
+}
+
+#toggle--fight-btn:checked ~ .root-menu .--fight {
+  background: #2D3246;
+}
+
+/* меняет бургер на крестик и красит эктив*/
+#toggle--burger-btn:checked ~ .root-menu--mobile .--burger {
+  background: #2D3246;
+  background-image: url(/img/крестик.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* удаляет игровой экран при клике на бургер */
+#toggle--burger-btn:checked ~ main {
+  display: none;
+}
+/* в место него добавляет меню */
+#toggle--burger-btn:checked ~ .root-menu {
+  display: grid;
+  height: 100%;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: 1fr;
+}
+
+/* ------------------------------------------- */
 
 #header__burger-toggle:checked ~ .header__menu {
   display: flex;
@@ -519,9 +586,6 @@ input::placeholder {
   display: none;
 }
 
-/* #chat__btn-toggle:checked ~ .header {
-  display: none;
-} */
 
 #chat__btn-toggle:checked ~ .chat {
   display: block;
@@ -561,5 +625,3 @@ input::placeholder {
   bottom: 0;
 }
 /*=============================*/
-
-
