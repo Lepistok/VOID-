@@ -40,7 +40,7 @@ html {
   max-width: 1200px;
   /* border: 5px solid red; */
   display: grid;
-  /* grid-template-rows: 1fr 1fr 1fr; */
+  overflow: auto;
   grid-auto-rows: min-content  1.5fr  1.4fr;
   height: 100vh;
   grid-template-columns: none;
@@ -57,6 +57,13 @@ html {
   display: grid;
 }
 
+.--hide-pc {
+  display: none;
+}
+
+.--hide-pc:hover {
+  background: #D65068;
+}
 
 
 .--burger {
@@ -99,8 +106,16 @@ html {
   cursor: pointer;
 }
 
+.--close-btn {
+  background: #CA4C57;
+}
+
 .main-nav__btn:hover {
   background: #4E85E5;
+}
+
+.main-nav__btn:active {
+  background: #2D3246;
 }
 
 .--burger:hover {
@@ -244,7 +259,8 @@ html {
 }
 
 .bottom-input-wrap {
-  display: grid;
+  display: flex;
+  gap: 10px;
   background: #2D3246;
   box-shadow: 3px -4px 4px rgba(0, 0, 0, 0.25);
   height: 60px;
@@ -256,7 +272,7 @@ html {
   grid-template-columns: 1fr min-content;
   background: #31334A;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 4px rgba(0, 0, 0, 0.25);
-  
+  flex-grow: 1;
 }
 
 input {
@@ -360,6 +376,29 @@ input::placeholder {
   font-size: 15px;
 }
 
+
+.addmsg-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: #3E75D7;
+  border-radius: 100px;
+  padding: 12px 10px 10px 15px;
+}
+
+.social-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* justify-self: start; */
+}
+
+
+
 /*==============player-list===============*/
 
 .player-list__wrap {
@@ -451,14 +490,18 @@ input::placeholder {
 
 /*-------------------------------------*/
 
-/* .header__menu , .main {
-  display: none;
-} */
-
 
 /*==============@Media===============*/
 
 @media (max-width: 1000px) {
+
+  .--hide-pc {
+    display: grid;
+  }
+
+  .social-btn {
+    display: flex;
+  }
   .chat__container {
     grid-template-columns: 1fr 1fr ;
     grid-template-areas: 
@@ -520,30 +563,12 @@ input::placeholder {
   .bottom-content {
     display: none;
   }
-  /* .chat_container {
-    grid-template-columns: 1fr;
-  } */
-
-  /* .chat__main {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  } */
-
-  /* .chat__tabs {
-    flex-direction: row;
-  } */
-
-  /* .chat__online {
-    display: none;
-  } */
-
-  /* #chat__btn-toggle:checked , .container {
-    grid-auto-rows:  min-content 1fr ;
-  } */
 
 }
 
 /*=----- Инпуты для иметации функционала -----=*/
+
+/* Для кнопки боя */
 
 /* красит активную кнопку боя в пк и моб версии*/
 
@@ -554,6 +579,8 @@ input::placeholder {
 #toggle--fight-btn:checked ~ .root-menu .--fight {
   background: #2D3246;
 }
+
+/* для бургера */
 
 /* меняет бургер на крестик и красит эктив*/
 #toggle--burger-btn:checked ~ .root-menu--mobile .--burger {
@@ -573,6 +600,51 @@ input::placeholder {
   grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
 }
+
+/* для чата */
+
+/* удаляет основное меню */
+#toggle--chat-btn:checked ~ .root-menu--mobile {
+  display: none;
+}
+/* удаляет игровой экран при клике на чат */
+#toggle--chat-btn:checked ~ main {
+  display: none;
+}
+/* в место него добавляет окно чата + социум*/
+#toggle--chat-btn:checked ~ .bottom-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+}
+/* выстраивает чат в 1 колонку */
+#toggle--chat-btn:checked ~ .bottom-content > .chat-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px auto;
+}
+/* Удаляет окно социума */
+#toggle--chat-btn:checked ~ .bottom-content > .player-list__wrap {
+  display: none;
+}
+
+/* для социума */
+
+/* удаляет чат */
+#toggle--social-btn:checked ~ .bottom-content > .chat-wrap {
+  display: none;
+}
+/* добавляет окно социума */
+#toggle--social-btn:checked ~ .bottom-content > .player-list__wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px auto;
+}
+/* меняет порядок расположения блоков */
+#toggle--social-btn:checked ~ .bottom-content > .player-list__wrap > .player-list {
+  order: 1;
+}
+
 
 /* ------------------------------------------- */
 
