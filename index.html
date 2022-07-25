@@ -15,47 +15,59 @@
 
 <body>
   <div class="container">
-    <input type="checkbox" class="checkbox" id="chat__btn-toggle">
-    <header class="header">
-      <div class="header__container">
-        <div class="header__btn-mobile">
-          <div class="header__btn-fight">Бой</div>
-          <label for="chat__btn-toggle" class="header__btn-chat">Чат</label>
+<!-- Инпуты для иметации функционала -->
+    <input type="checkbox" class="checkbox" id="toggle--fight-btn">
+    <input type="checkbox" class="checkbox" id="toggle--burger-btn">
+<!-- ================================== -->
+    <div class="root-menu--mobile">
+      <nav class="main-nav">
+        <div class="main-nav__btn">
+          <img src="img/ЛС.svg" alt="-">
         </div>
-        <div class="header__profile-box">
-          <div class="header__avatar"></div>
-          <div class="header__profile-text">
-            <span class="header__profile-name">Lepistok</span>
-          </div>
-        </div>
-        <input type="checkbox" id="header__burger-toggle" class="checkbox">
-        <label for="header__burger-toggle" class="header__burger">
-          <span></span>
-        </label>
-        <nav class="main-nav">
-          <div class="main-nav__btn">
-            <img src="img/Команда.svg" alt="-">
-          </div>
-          <div class="main-nav__btn">
-            <img src="img/Инвентарь.svg" alt="-">
-          </div>
-          <div class="main-nav__btn">
+        <label for="toggle--fight-btn" class="label-btn">
+          <div class="main-nav__btn --fight">
             <img src="img/Бой.svg" alt="-">
           </div>
-          <div class="main-nav__btn">
-            <img src="img/Покебук.svg" alt="-">
+        </label>
+        <label for="toggle--burger-btn" class="label-btn">
+          <div class="main-nav__btn --burger"></div>
+        </label>
+      </nav>
+    </div>
+    <div class="root-menu">
+      <div class="root-menu__butt-end">
+        <div class="root-menu__profile-box">
+          <div class="root-menu__avatar"></div>
+          <span class="header__profile-name">Lepistok</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <div class="main-nav__btn">
+          <img src="img/Команда.svg" alt="-">
+        </div>
+        <div class="main-nav__btn">
+          <img src="img/Инвентарь.svg" alt="-">
+        </div>
+        <label for="toggle--fight-btn" class="label-btn">
+          <div class="main-nav__btn --fight">
+            <img src="img/Бой.svg" alt="-">
           </div>
-          <div class="main-nav__btn">
-            <img src="img/Рейтинг.svg" alt="-">
-          </div>
-        </nav>
-        <div class="header__setting-box">
+        </label>
+        <div class="main-nav__btn">
+          <img src="img/Покебук.svg" alt="-">
+        </div>
+        <div class="main-nav__btn">
+          <img src="img/Рейтинг.svg" alt="-">
+        </div>
+      </nav>
+      <div class="root-menu__butt-end">
+        <div class="root-menu__setting-box">
           <img src="img/погода.png" alt="*">
           <div class="header__time">17:17</div>
           <img src="img/setting.svg" alt="-">
         </div>
       </div>
-    </header>
+    </div>
     <main class="main">
       <div class="locations game-box">
         <div class="game__link">Поле для тренеровок</div>
@@ -242,10 +254,7 @@
         </div>
       </div>
     </div>
-    <!-- Футур тест -->
-    <!-- <div class="footer-test"></div> -->
   </div>
-
 
 </body>
 
