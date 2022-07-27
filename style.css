@@ -40,7 +40,7 @@ html {
   max-width: 1200px;
   /* border: 5px solid red; */
   display: grid;
-  overflow: auto;
+  overflow: hidden;
   grid-auto-rows: min-content  1.5fr  1.4fr;
   height: 100vh;
   grid-template-columns: none;
@@ -213,13 +213,21 @@ html {
 }
 
 /* Компонет оконных заголовков  */
-
 .main-title {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #2D3246;
   height: 40px;
+  padding: 5px 10px;
+}
+/* мод тайтла для распихивания по краям */
+.--sb {
+  justify-content: space-between;
+}
+
+.title__btn-close {
+  display: none;
 }
 
 /*==============Chat===============*/
@@ -227,7 +235,7 @@ html {
 .bottom-content {
   display: grid;
   grid-template-columns: 2.5fr 1fr;
-  overflow: auto;
+  overflow: hidden;
   background: #1D1E2C;
   gap: 2px;
 }
@@ -236,25 +244,26 @@ html {
 .chat-wrap {
   display: grid;
   grid-template-columns: 60px 1fr;
-  overflow: auto;
+  overflow: hidden;
 }
 
 
 .chat {
   display: grid;
   grid-auto-rows: min-content 1fr;
-  overflow: auto;
+  overflow: hidden;
 }
 
 
-
+/* компонент фона---тут смесь логики ??? */
 .chat-area {
   overflow: auto;
   display: grid;
   grid-auto-rows: min-content;
   gap: 20px;
   background: #252638;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 10px ;
 }
 
@@ -262,7 +271,7 @@ html {
   display: flex;
   gap: 10px;
   background: #2D3246;
-  box-shadow: 3px -4px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 3px -4px 4px rgba(0, 0, 0, 0.25); */
   height: 60px;
   padding: 10px;
 }
@@ -276,6 +285,7 @@ html {
 }
 
 input {
+  display: flex;
   padding: 0 10px 0 10px;
   outline: none;
   border: none;
@@ -283,6 +293,7 @@ input {
   background: none;
   font-size: 16px;
   font-family: 'Exo 2', sans-serif;
+  width: 100%;
 }
 
 input::placeholder {
@@ -389,7 +400,7 @@ input::placeholder {
   padding: 12px 10px 10px 15px;
 }
 
-.social-btn {
+.social-btn, .chat-btn, .dialogs-btn {
   display: none;
   align-items: center;
   justify-content: center;
@@ -397,27 +408,26 @@ input::placeholder {
   /* justify-self: start; */
 }
 
-
-
 /*==============player-list===============*/
 
 .player-list__wrap {
   display: grid;
   grid-template-columns: 1fr 60px ;
   /* border: 5px solid green; */
-  overflow: auto;
+  overflow: hidden;
 }
 
 .player-list {
   display: grid;
   grid-auto-rows: min-content 1fr;
-  overflow: auto;
+  overflow: hidden;
   background-color: #2D3246;
 }
 
 .light-bg {
   background: #2D3246;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 10px;
   overflow: auto;
 }
@@ -485,8 +495,43 @@ input::placeholder {
   font-weight: 300;
 }
 
+/*==============Диалоги===============*/
 
+.dialogs-list {
+  /* display: grid; */
+  grid-auto-rows: min-content 1fr;
+  overflow: hidden;
+  background-color: #2D3246;
+  display: none;
+}
 
+.dialogs-list__item {
+  /* height: 45px; */
+  padding: 5px 8px;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  align-items: center;
+  background: #3A3F61;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #3A3F61;
+}
+
+.dialogs-list__player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dialogs-list__item:hover {
+  border: 2px solid #0E9BBB;
+  transition: all .1s ease-out;
+}
+
+.--check-dialogs {
+  background: #333853;
+}
 
 /*-------------------------------------*/
 
@@ -499,7 +544,15 @@ input::placeholder {
     display: grid;
   }
 
-  .social-btn {
+  .title__btn-close {
+    display: block;
+  }
+
+  /* .chat-wrap {
+    display: none;
+  } */
+
+  .social-btn, .dialogs-btn, .chat-btn {
     display: flex;
   }
   .chat__container {
@@ -538,8 +591,16 @@ input::placeholder {
   }
 
   .root-menu {
-    display: none;
+    right: 100%;
+    /* position: relative; */
+    transition: all .3s ease-out;
+    position: absolute;
+    /* right: -1000px; */
+    /* display: none; */
+    /* transition:.5s ease */
+    /* width: 0%; */
   }
+
   .header__menu {
     display: none;
   }
@@ -564,6 +625,25 @@ input::placeholder {
     display: none;
   }
 
+  /* для диалогов */
+  .dialogs-list > .main-title {
+    justify-content: space-between;
+  }
+  /* через медиа , для того чтоб в пк версии не ломалась верстка */
+
+  /* Удаляет блок чата */
+#toggle--dialogs-btn:checked ~ .bottom-content > .chat-wrap {
+  display: none !important;
+}
+/* Удаляет панель навигации у социального блока */
+#toggle--dialogs-btn:checked ~ .bottom-content > .player-list__wrap > .main-nav {
+  display: none;
+}
+/* выстраивает социальный блок в 1 колонку */
+#toggle--dialogs-btn:checked ~ .bottom-content > .player-list__wrap  {
+  grid-template-columns: 1fr;
+}
+
 }
 
 /*=----- Инпуты для иметации функционала -----=*/
@@ -571,7 +651,6 @@ input::placeholder {
 /* Для кнопки боя */
 
 /* красит активную кнопку боя в пк и моб версии*/
-
 #toggle--fight-btn:checked ~ .root-menu--mobile .--fight {
   background: #2D3246;
 }
@@ -599,6 +678,16 @@ input::placeholder {
   height: 100%;
   grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
+  position: static;
+  /* right: 0; */
+  /* width: 100%; */
+  /* position: relative; */
+  
+}
+/* отсупы для плитки меню */
+#toggle--burger-btn:checked ~ .root-menu > .main-nav {
+  gap: 10px;
+  padding: 10px;
 }
 
 /* для чата */
@@ -644,6 +733,31 @@ input::placeholder {
 #toggle--social-btn:checked ~ .bottom-content > .player-list__wrap > .player-list {
   order: 1;
 }
+
+/* для диалогов */
+
+/* красит активную кнопку боя в пк и моб версии*/
+#toggle--dialogs-btn:checked ~ .bottom-content  .--dialogs {
+  background: #2D3246;
+}
+
+/* добавляет окно социума */
+#toggle--dialogs-btn:checked ~ .bottom-content > .player-list__wrap {
+  display: grid;
+}
+
+/* Удаляет блок списка игроков */
+#toggle--dialogs-btn:checked ~ .bottom-content  .player-list {
+  display: none;
+}
+
+
+
+/* добавляет блок списка диалогов */
+#toggle--dialogs-btn:checked ~ .bottom-content  .dialogs-list {
+  display: grid;
+}
+/* остальная логика для диалогов в медиазапросах */
 
 
 /* ------------------------------------------- */
@@ -697,3 +811,5 @@ input::placeholder {
   bottom: 0;
 }
 /*=============================*/
+
+
