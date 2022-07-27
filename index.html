@@ -28,6 +28,9 @@
 
     <!-- социум -->
     <input type="checkbox" class="checkbox" id="toggle--social-btn">
+
+    <!-- диалоги -->
+    <input type="checkbox" class="checkbox" id="toggle--dialogs-btn">
     <!-- ================================== -->
     <div class="root-menu--mobile">
       <nav class="main-nav">
@@ -101,8 +104,9 @@
         <div class="game__link">Сестра джой</div>
       </div>
     </main>
-    <!-- /*==============Chat===============*/ -->
+    <!-- /*===Нижний блок для чата и социума====*/ -->
     <div class="bottom-content">
+      <!-- =========== Чат =========== -->
       <div class="chat-wrap">
         <div class="main-nav">
           <div class="main-nav__btn">
@@ -114,10 +118,12 @@
           <div class="main-nav__btn">
             <img src="img/Клан.svg" alt="-">
           </div>
-          <!-- Кнопка дифлогов -->
-          <div class="main-nav__btn">
-            <img src="img/Диалоги.svg" alt="-">
-          </div>
+          <!-- Кнопка диалогов -->
+          <label for="toggle--dialogs-btn" class="label-btn">
+            <div class="main-nav__btn --dialogs">
+              <img src="img/Диалоги.svg" alt="-">
+            </div>
+          </label>
           <!-- кнопка закрытия чата -->
           <label for="toggle--chat-btn" class="label-btn --hide-pc">
             <div class="main-nav__btn --close-btn">
@@ -126,7 +132,9 @@
           </label>
         </div>
         <div class="chat">
-          <div class="main-title">Мировой чат</div>
+          <div class="main-title">
+            <div class="main-title-txt">Мировой чат</div>
+          </div>
           <div class="chat-area">
             <div class="chat__message-wrap">
               <div class="chat__message-container">
@@ -228,9 +236,187 @@
         </div>
       </div>
       <!-- Окно социума -->
+      <!-- придумать норм общее название класса -->
       <div class="player-list__wrap">
+        <!-- блок списка диалогов -->
+        <div class="dialogs-list">
+          <div class="main-title">
+            <div class="main-title-txt">Диалоги</div>
+            <label for="toggle--dialogs-btn" class="label-btn">
+              <div class="title__btn-close">
+                <img src="img/крестик.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="light-bg">
+            <div class="social-block">
+              <div class="dialogs-list__item">
+                <img src="img/Увидомления.png" alt="-">
+                <span class="notification-title">Системные увидомления</span>
+                <div class="notification-value">3</div>
+              </div>
+              <div class="social-block__box-wrap">
+                <div class="player-list__title">Новые - 4</div>
+                <div class="social-block__box">
+                  <div class="dialogs-list__item">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                  <div class="dialogs-list__item">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                  <div class="dialogs-list__item">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                  <div class="dialogs-list__item">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                </div>
+              </div>
+              <div class="social-block__box-wrap">
+                <div class="player-list__title">Прочитанные - 354</div>
+                <div class="social-block__box">
+                  <div class="dialogs-list__item --check-dialogs">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                  <div class="dialogs-list__item --check-dialogs">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                  <div class="dialogs-list__item --check-dialogs">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                  <div class="dialogs-list__item --check-dialogs">
+                    <div class="dialogs-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="chat__message">
+                        <div class="chat__message-top">
+                          <div class="chat__message-nickname">Lepistok</div>
+                          <div class="chat__message-time">17:17</div>
+                        </div>
+                        <div class="chat__message-text">Текст сообщения текст...
+                        </div>
+                      </div>
+                    </div>
+                    <img src="img/Удалить.svg" alt="*">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-input-wrap">
+            <!-- кнопка социум -->
+            <div class="chat-btn">
+              <img src="img/Социум.svg" alt="-">
+            </div>
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Поиск">
+              <div class="chat__btn-emoji">
+                <img src="img/Поиск.svg" alt="-">
+              </div>
+            </div>
+            <!-- кнопка чата -->
+            <div class="dialogs-btn">
+              <img src="img/ЛС.svg" alt="-">
+            </div>
+          </div>
+        </div>
+        <!-- блок списка игроков -->
         <div class="player-list">
-          <div class="main-title">Друзья</div>
+          <div class="main-title">
+            <div class="main-title-txt">Друзья</div>
+          </div>
           <div class="light-bg">
             <div class="social-block">
               <div class="social-block__box-wrap">
@@ -351,11 +537,19 @@
             </div>
           </div>
           <div class="bottom-input-wrap">
+            <!-- кнопка чата -->
+            <div class="chat-btn">
+              <img src="img/ЛС.svg" alt="-">
+            </div>
             <div class="main-input">
               <input type="text" class="input-text" placeholder="Поиск">
               <div class="chat__btn-emoji">
                 <img src="img/Поиск.svg" alt="-">
               </div>
+            </div>
+            <!-- кнопка диалоги -->
+            <div class="dialogs-btn">
+              <img src="img/Диалоги.svg" alt="-">
             </div>
           </div>
         </div>
@@ -364,13 +558,13 @@
             <img src="img/Мир.svg" alt="-">
           </div>
           <div class="main-nav__btn">
-            <img src="img/Торг.svg" alt="-">
+            <img src="img/Друзья.svg" alt="-">
           </div>
           <div class="main-nav__btn">
             <img src="img/Клан.svg" alt="-">
           </div>
           <div class="main-nav__btn">
-            <img src="img/Диалоги.svg" alt="-">
+            <img src="img/Администрация.svg" alt="-">
           </div>
           <label for="toggle--social-btn" class="label-btn --hide-pc">
             <div class="main-nav__btn --close-btn">
@@ -381,6 +575,8 @@
       </div>
     </div>
   </div>
+
+
 </body>
 
 </html>
