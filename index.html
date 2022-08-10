@@ -7,10 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>лига 18</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -22,116 +18,262 @@
 
     <!-- бургер -->
     <input type="checkbox" class="checkbox" id="toggle--burger-btn">
+    <!-- крестик -->
+    <input type="button" class="checkbox" id="toggle--close-btn" onclick="uncheckAll()">
 
-    <!-- чат -->
-    <input type="checkbox" class="checkbox" id="toggle--chat-btn">
+    <!-- чат  -->
+    <input type="radio" class="checkbox" id="toggle--chat-btn" name="toggle-btn" onclick="checkСhatWorld()">
 
-    <!-- социум -->
-    <input type="checkbox" class="checkbox" id="toggle--social-btn">
+    <!-- социум  -->
+    <input type="radio" class="checkbox" id="toggle--social-btn" name="toggle-btn" onclick="checkSocialWorld()">
 
     <!-- диалоги -->
-    <input type="checkbox" class="checkbox" id="toggle--dialogs-btn">
+    <input type="radio" class="checkbox" id="toggle--dialogs-btn" name="toggle-btn" onclick="uncheckSocial()">
+
+    <input type="checkbox" class="checkbox" id="toggle--dialogs-chat-btn">
+
+    <!-- ==== Кнопки переключения чатов ==== -->
+
+    <!-- --- Мир --- -->
+    <input type="radio" class="checkbox  --check-default --check-chat-world" id="toggle-сhat-world-btn" name="chat"
+      checked>
+
+    <!-- --- Торговый --- -->
+    <input type="radio" class="checkbox " id="toggle-сhat-trading-btn" name="chat">
+
+    <!-- --- Клан --- -->
+    <input type="radio" class="checkbox " id="toggle-сhat-clan-btn" name="chat">
+
+    <!-- ==== Кнопки переключения социума ==== -->
+
+    <!-- --- Мир --- -->
+    <input type="radio" class="checkbox --check-social-world --check-default " id="toggle-social-world-btn"
+      name="social" checked>
+
+    <!-- --- Друзья --- -->
+    <input type="radio" class="checkbox " id="toggle-social-friends-btn" name="social">
+
+    <!-- --- Клан --- -->
+    <input type="radio" class="checkbox " id="toggle-social-clan-btn" name="social">
+
+    <!-- --- Администрация --- -->
+    <input type="radio" class="checkbox " id="toggle-social-administration-btn" name="social">
+
     <!-- ================================== -->
-    <div class="root-menu--mobile">
-      <nav class="main-nav">
-        <!-- Кнопка чата -->
-        <label for="toggle--chat-btn" class="label-btn">
+    <div class="action-container">
+      <!-- Чат диалогов -->
+      <div class="dialogs-chat-wrap">
+        <div class="dialogs-chat">
+          <div class="dialogs-chat__title">
+            <div class="player-list__avatar">
+              <div class="player-list__label"></div>
+            </div>
+            <span class="profile-name">Lepistok</span>
+            <label for="toggle--dialogs-chat-btn" class="label-btn">
+              <div class="dialogs-chat__btn-close">
+                <img src="img/крестик.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="dialogs-chat__area">
+            <div class="dialogs-chat__message">
+              <div class="dialogs-chat__message-wrap">
+                <div class="message-nickname">Lepistok</div>
+                <div class="chat__message-text">
+                  Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                  ширина и высота))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+            <div class="new-message-label">Новые сообщения</div>
+            <div class="dialogs-chat__message">
+              <div class="dialogs-chat__message-wrap">
+                <div class="chat__message-text">
+                  Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                  ширина и высота))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+            <div class="dialogs-chat__message --my-message-bg">
+              <div class="dialogs-chat__message-wrap">
+                <div class="message-nickname --my-message-name">Anistemi</div>
+                <div class="chat__message-text">
+                  Йоу йоу))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+            <div class="dialogs-chat__message">
+              <div class="dialogs-chat__message-wrap">
+                <div class="message-nickname">Lepistok</div>
+                <div class="chat__message-text">
+                  Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                  ширина и высота))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+            <div class="dialogs-chat__message">
+              <div class="dialogs-chat__message-wrap">
+                <div class="chat__message-text">
+                  Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                  ширина и высота))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+            <div class="dialogs-chat__message">
+              <div class="dialogs-chat__message-wrap">
+                <div class="chat__message-text">
+                  Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                  ширина и высота))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+            <div class="dialogs-chat__message --my-message-bg">
+              <div class="dialogs-chat__message-wrap">
+                <div class="message-nickname --my-message-name">Anistemi</div>
+                <div class="chat__message-text">
+                  Йоу йоу))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+            <div class="dialogs-chat__message --my-message-bg">
+              <div class="dialogs-chat__message-wrap">
+                <div class="chat__message-text">
+                  Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                  ширина и высота))
+                </div>
+              </div>
+              <span class="dialogs-chat__message-time">17:17</span>
+            </div>
+          </div>
+          <div class="bottom-input-wrap">
+            <!-- кнопка социума -->
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Сообщение">
+              <div class="main-input__box-icon">
+                <img src="img/Смайлик.svg" alt="-">
+              </div>
+            </div>
+            <div class="addmsg-btn">
+              <img src="img/отправить.svg" alt="-">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Основное меню Мобила-->
+      <div class="root-menu--mobile">
+        <nav class="main-nav">
+          <!-- Кнопка чата -->
+          <label for="toggle--chat-btn" class="label-btn">
+            <div class="main-nav__btn">
+              <img src="img/ЛС.svg" alt="-">
+            </div>
+          </label>
+          <!-- Кнопка боя -->
+          <label for="toggle--fight-btn" class="label-btn">
+            <div class="main-nav__btn --fight">
+              <img src="img/Бой.svg" alt="-">
+            </div>
+          </label>
+          <!-- Кнопка бургер -->
+          <label for="toggle--burger-btn" class="label-btn">
+            <div class="main-nav__btn --burger"></div>
+          </label>
+        </nav>
+      </div>
+      <!-- Основное меню ПК-->
+      <div class="root-menu">
+        <div class="root-menu__butt-end">
+          <div class="root-menu__profile-box">
+            <div class="root-menu__avatar"></div>
+            <span class="profile-name">Lepistok</span>
+          </div>
+        </div>
+        <nav class="main-nav">
           <div class="main-nav__btn">
-            <img src="img/ЛС.svg" alt="-">
+            <img src="img/Команда.svg" alt="-">
           </div>
-        </label>
-        <!-- Кнопка боя -->
-        <label for="toggle--fight-btn" class="label-btn">
-          <div class="main-nav__btn --fight">
-            <img src="img/Бой.svg" alt="-">
+          <div class="main-nav__btn">
+            <img src="img/Инвентарь.svg" alt="-">
           </div>
-        </label>
-        <!-- Кнопка бургер -->
-        <label for="toggle--burger-btn" class="label-btn">
-          <div class="main-nav__btn --burger"></div>
-        </label>
-      </nav>
-    </div>
-    <!-- Основное меню -->
-    <div class="root-menu">
-      <div class="root-menu__butt-end">
-        <div class="root-menu__profile-box">
-          <div class="root-menu__avatar"></div>
-          <span class="header__profile-name">Lepistok</span>
+          <label for="toggle--fight-btn" class="label-btn">
+            <div class="main-nav__btn --fight">
+              <img src="img/Бой.svg" alt="-">
+            </div>
+          </label>
+          <div class="main-nav__btn">
+            <img src="img/Покебук.svg" alt="-">
+          </div>
+          <div class="main-nav__btn">
+            <img src="img/Рейтинг.svg" alt="-">
+          </div>
+        </nav>
+        <div class="root-menu__butt-end">
+          <div class="root-menu__setting-box">
+            <img src="img/погода.png" alt="*">
+            <div class="time-text">17:17</div>
+            <img src="img/setting.svg" alt="-">
+          </div>
         </div>
       </div>
-      <nav class="main-nav">
-        <div class="main-nav__btn">
-          <img src="img/Команда.svg" alt="-">
+      <!-- ==== Игровое окно ==== -->
+      <div class="main">
+        <div class="locations game-box">
+          <div class="game__link">Поле для тренеровок</div>
+          <div class="game__link">Поле для тренеровок</div>
+          <div class="game__link">Поле для тренеровок</div>
+          <div class="game__link">Поле для тренеровок</div>
+          <div class="game__link">Поле для тренеровок</div>
         </div>
-        <div class="main-nav__btn">
-          <img src="img/Инвентарь.svg" alt="-">
-        </div>
-        <label for="toggle--fight-btn" class="label-btn">
-          <div class="main-nav__btn --fight">
-            <img src="img/Бой.svg" alt="-">
-          </div>
-        </label>
-        <div class="main-nav__btn">
-          <img src="img/Покебук.svg" alt="-">
-        </div>
-        <div class="main-nav__btn">
-          <img src="img/Рейтинг.svg" alt="-">
-        </div>
-      </nav>
-      <div class="root-menu__butt-end">
-        <div class="root-menu__setting-box">
-          <img src="img/погода.png" alt="*">
-          <div class="header__time">17:17</div>
-          <img src="img/setting.svg" alt="-">
+        <div class="view-art"></div>
+        <div class="npc game-box">
+          <div class="game__link">Сестра джой</div>
+          <div class="game__link">Сестра джой</div>
+          <div class="game__link">Сестра джой</div>
+          <div class="game__link">Сестра джой</div>
+          <div class="game__link">Сестра джой</div>
         </div>
       </div>
     </div>
-    <main class="main">
-      <div class="locations game-box">
-        <div class="game__link">Поле для тренеровок</div>
-        <div class="game__link">Поле для тренеровок</div>
-        <div class="game__link">Поле для тренеровок</div>
-        <div class="game__link">Поле для тренеровок</div>
-        <div class="game__link">Поле для тренеровок</div>
-      </div>
-      <div class="view-art"></div>
-      <div class="npc game-box">
-        <div class="game__link">Сестра джой</div>
-        <div class="game__link">Сестра джой</div>
-        <div class="game__link">Сестра джой</div>
-        <div class="game__link">Сестра джой</div>
-        <div class="game__link">Сестра джой</div>
-      </div>
-    </main>
     <!-- /*===Нижний блок для чата и социума====*/ -->
     <div class="bottom-content">
       <!-- =========== Чат =========== -->
       <div class="chat-wrap">
         <div class="main-nav">
-          <div class="main-nav__btn">
-            <img src="img/Мир.svg" alt="-">
-          </div>
-          <div class="main-nav__btn">
-            <img src="img/Торг.svg" alt="-">
-          </div>
-          <div class="main-nav__btn">
-            <img src="img/Клан.svg" alt="-">
-          </div>
-          <!-- Кнопка диалогов -->
-          <label for="toggle--dialogs-btn" class="label-btn">
-            <div class="main-nav__btn --dialogs">
-              <img src="img/Диалоги.svg" alt="-">
+          <!-- Кнопка Мир-чат -->
+          <label for="toggle-сhat-world-btn" class="label-btn">
+            <div class="main-nav__btn --сhat-world-btn">
+              <img src="img/Мир.svg" alt="-">
             </div>
           </label>
+          <!-- Кнопка Торг-чат -->
+          <label for="toggle-сhat-trading-btn" class="label-btn">
+            <div class="main-nav__btn --сhat-trading-btn">
+              <img src="img/Торг.svg" alt="-">
+            </div>
+          </label>
+          <!-- Кнопка Клан-чат -->
+          <label for="toggle-сhat-clan-btn" class="label-btn">
+            <div class="main-nav__btn --сhat-clan-btn">
+              <img src="img/Клан.svg" alt="-">
+            </div>
+          </label>
+
           <!-- кнопка закрытия чата -->
-          <label for="toggle--chat-btn" class="label-btn --hide-pc">
+          <label for="toggle--close-btn" class="label-btn --hide-pc">
             <div class="main-nav__btn --close-btn">
               <img src="img/крестик.svg" alt="-">
             </div>
           </label>
         </div>
-        <div class="chat">
+        <!-- ==== Мировой чат ==== -->
+        <div class="chat --chat-world">
           <div class="main-title">
             <div class="main-title-txt">Мировой чат</div>
           </div>
@@ -142,14 +284,15 @@
                   <div class="chat__clan"></div>
                 </div>
                 <div class="chat__message">
-                  <div class="chat__message-top">
-                    <div class="chat__message-nickname">Lepistok</div>
-                    <div class="chat__message-time">17:17</div>
+                  <div class="message__name-time">
+                    <div class="message-nickname">Lepistok</div>
+                    <div class="message-time">
+                      <span>17:17</span>
+                    </div>
                   </div>
-                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
-                    текст
-                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
-                    сообщени
+                  <div class="chat__message-text">Ещё то что ты так меришь там разные масштабы то че на скрине и то че в
+                    нашем макете) типо разная ширина и высота)) я давно тебе об этом говорю что это так не работает)) а
+                    ты не слушаешь и все равно так делаешь))
                   </div>
                 </div>
               </div>
@@ -160,14 +303,14 @@
                   <div class="chat__clan"></div>
                 </div>
                 <div class="chat__message">
-                  <div class="chat__message-top">
-                    <div class="chat__message-nickname">Lepistok</div>
-                    <div class="chat__message-time">17:17</div>
+                  <div class="message__name-time">
+                    <div class="message-nickname">Lepistok</div>
+                    <div class="message-time">
+                      <span>17:17</span>
+                    </div>
                   </div>
-                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
-                    текст
-                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
-                    сообщени
+                  <div class="chat__message-text">Если тя это чист как ритуал который упрощает работу то йоу)) но то че
+                    ты пытаешься точный размер забрать со скрина)) прост знай оно так не работает))
                   </div>
                 </div>
               </div>
@@ -185,14 +328,15 @@
                   <div class="chat__clan"></div>
                 </div>
                 <div class="chat__message">
-                  <div class="chat__message-top">
-                    <div class="chat__message-nickname">Lepistok</div>
-                    <div class="chat__message-time">17:17</div>
+                  <div class="message__name-time">
+                    <div class="message-nickname">Lepistok</div>
+                    <div class="message-time">
+                      <span>17:17</span>
+                    </div>
                   </div>
-                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
-                    текст
-                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
-                    сообщени
+                  <div class="chat__message-text">Ещё то что ты так меришь там разные масштабы то че на скрине и то че в
+                    нашем макете) типо разная ширина и высота)) я давно тебе об этом говорю что это так не работает)) а
+                    ты не слушаешь и все равно так делаешь))
                   </div>
                 </div>
               </div>
@@ -203,14 +347,40 @@
                   <div class="chat__clan"></div>
                 </div>
                 <div class="chat__message">
-                  <div class="chat__message-top">
-                    <div class="chat__message-nickname">Lepistok</div>
-                    <div class="chat__message-time">17:17</div>
+                  <div class="message__name-time">
+                    <div class="message-nickname">Lepistok</div>
+                    <div class="message-time">
+                      <span>17:17</span>
+                    </div>
                   </div>
-                  <div class="chat__message-text">Текст сообщения текст сообщения текст сообщения Текст сообщения
-                    текст
-                    сообщения текст сообщения Текст сообщения текст сообщения текст сообщенияТекст сообщения текст
-                    сообщени
+                  <div class="chat__message-text">Если тя это чист как ритуал который упрощает работу то йоу)) но то че
+                    ты пытаешься точный размер забрать со скрина)) прост знай оно так не работает))
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat__message-wrap">
+              <div class="message-answer">
+                <div class="message-answer__wrap">
+                  <img src="img/ответ.svg" alt="-">
+                  <div class="message-answer__avatar"></div>
+                </div>
+                <div class="message-answer__nickname">Anistemi</div>
+              </div>
+              <div class="chat__message-container">
+                <div class="chat__avatar">
+                  <div class="chat__clan"></div>
+                </div>
+                <div class="chat__message">
+                  <div class="message__name-time">
+                    <div class="message-nickname">Lepistok</div>
+                    <div class="message-time">
+                      <span>17:17</span>
+                    </div>
+                  </div>
+                  <div class="chat__message-text">Ещё то что ты так меришь там разные масштабы то че на скрине и то че в
+                    нашем макете) типо разная ширина и высота)) я давно тебе об этом говорю что это так не работает)) а
+                    ты не слушаешь и все равно так делаешь))
                   </div>
                 </div>
               </div>
@@ -219,13 +389,61 @@
           <div class="bottom-input-wrap">
             <!-- кнопка социума -->
             <label for="toggle--social-btn" class="label-btn">
-              <div class="social-btn">
+              <div class="box-icon --social-btn">
                 <img src="img/Социум.svg" alt="-">
               </div>
             </label>
             <div class="main-input">
               <input type="text" class="input-text" placeholder="Сообщение">
-              <div class="chat__btn-emoji">
+              <div class="main-input__box-icon">
+                <img src="img/Смайлик.svg" alt="-">
+              </div>
+            </div>
+            <div class="addmsg-btn">
+              <img src="img/отправить.svg" alt="-">
+            </div>
+          </div>
+        </div>
+        <!-- ==== Торговый чат ==== -->
+        <div class="chat --сhat-trading">
+          <div class="main-title">
+            <div class="main-title-txt">Торговый чат</div>
+          </div>
+          <div class="chat-area"></div>
+          <div class="bottom-input-wrap">
+            <!-- кнопка социума -->
+            <label for="toggle--social-btn" class="label-btn">
+              <div class="box-icon --social-btn">
+                <img src="img/Социум.svg" alt="-">
+              </div>
+            </label>
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Сообщение">
+              <div class="main-input__box-icon">
+                <img src="img/Смайлик.svg" alt="-">
+              </div>
+            </div>
+            <div class="addmsg-btn">
+              <img src="img/отправить.svg" alt="-">
+            </div>
+          </div>
+        </div>
+        <!-- ==== Чат Клана ==== -->
+        <div class="chat --сhat-clan">
+          <div class="main-title">
+            <div class="main-title-txt">Чат клана</div>
+          </div>
+          <div class="chat-area"></div>
+          <div class="bottom-input-wrap">
+            <!-- кнопка социума -->
+            <label for="toggle--social-btn" class="label-btn">
+              <div class="box-icon --social-btn">
+                <img src="img/Социум.svg" alt="-">
+              </div>
+            </label>
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Сообщение">
+              <div class="main-input__box-icon">
                 <img src="img/Смайлик.svg" alt="-">
               </div>
             </div>
@@ -238,190 +456,516 @@
       <!-- Окно социума -->
       <!-- придумать норм общее название класса -->
       <div class="player-list__wrap">
-        <!-- блок списка диалогов -->
+        <!-- ==== Диалоги ==== -->
         <div class="dialogs-list">
           <div class="main-title">
             <div class="main-title-txt">Диалоги</div>
-            <label for="toggle--dialogs-btn" class="label-btn">
+            <!-- кнопка закрытия диалогов -->
+            <label for="toggle--close-btn" class="label-btn">
               <div class="title__btn-close">
                 <img src="img/крестик.svg" alt="-">
               </div>
             </label>
           </div>
           <div class="light-bg">
-            <div class="social-block">
-              <div class="dialogs-list__item">
-                <img src="img/Увидомления.png" alt="-">
-                <span class="notification-title">Системные увидомления</span>
-                <div class="notification-value">3</div>
-              </div>
-              <div class="social-block__box-wrap">
-                <div class="player-list__title">Новые - 4</div>
-                <div class="social-block__box">
-                  <div class="dialogs-list__item">
-                    <div class="dialogs-list__player">
-                      <div class="player-list__avatar">
-                        <div class="player-list__label"></div>
-                      </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
-                    </div>
-                    <img src="img/Удалить.svg" alt="*">
-                  </div>
-                  <div class="dialogs-list__item">
-                    <div class="dialogs-list__player">
-                      <div class="player-list__avatar">
-                        <div class="player-list__label"></div>
-                      </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
-                    </div>
-                    <img src="img/Удалить.svg" alt="*">
-                  </div>
-                  <div class="dialogs-list__item">
-                    <div class="dialogs-list__player">
-                      <div class="player-list__avatar">
-                        <div class="player-list__label"></div>
-                      </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
-                    </div>
-                    <img src="img/Удалить.svg" alt="*">
-                  </div>
-                  <div class="dialogs-list__item">
-                    <div class="dialogs-list__player">
-                      <div class="player-list__avatar">
-                        <div class="player-list__label"></div>
-                      </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
-                    </div>
-                    <img src="img/Удалить.svg" alt="*">
+            <div class="dialogs-block">
+              <label for="toggle--dialogs-chat-btn" class="label-btn">
+                <div class="dialogs-list__item --notification">
+                  <div class="notification-box">
+                    <div class="notification-label">!</div>
+                    <span class="notification-title">Системные уведомления - 3</span>
                   </div>
                 </div>
+              </label>
+              <div class="list-box-wrap">
+                <div class="list-box__title">Новые - 4</div>
+                <div class="list-box">
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item --new-dialogs">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item --new-dialogs">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item --new-dialogs">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item --new-dialogs">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                </div>
               </div>
-              <div class="social-block__box-wrap">
-                <div class="player-list__title">Прочитанные - 354</div>
-                <div class="social-block__box">
-                  <div class="dialogs-list__item --check-dialogs">
-                    <div class="dialogs-list__player">
+              <div class="list-box-wrap">
+                <div class="list-box__title">Прочитанные - 354</div>
+                <div class="list-box">
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                    <div class="dialogs-list__item">
+                      <div class="dialogs-list__player">
+                        <div class="player-list__avatar">
+                          <div class="player-list__label"></div>
+                        </div>
+                        <div class="chat__message">
+                          <div class="message__name-time">
+                            <div class="message-nickname">Lepistok</div>
+                            <div class="message-time">17:17</div>
+                          </div>
+                          <div class="dialogs__message-text">Текст сообщения текст...
+                          </div>
+                        </div>
+                      </div>
+                      <svg class="--icon-delete">
+                        <use xlink:href="sprite.svg#delete"></use>
+                      </svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-input-wrap">
+            <!-- кнопка чата -->
+            <label for="toggle--chat-btn" class="label-btn">
+              <div class="box-icon --chat-btn">
+                <img src="img/ЛС.svg" alt="-">
+              </div>
+            </label>
+            <!-- Поле ввода: Поиск -->
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Поиск">
+              <div class="main-input__box-icon --search-icon">
+                <img src="img/Поиск.svg" alt="-">
+              </div>
+            </div>
+            <!-- кнопка социум -->
+            <label for="toggle--social-btn" class="label-btn">
+              <div class="box-icon --social-btn">
+                <img src="img/Социум.svg" alt="-">
+              </div>
+            </label>
+          </div>
+        </div>
+        <!-- ==== Блок списка игроков ==== -->
+        <!-- ==== Мир ==== -->
+        <div class="player-list --social-world">
+          <div class="main-title">
+            <div class="main-title-txt">Мир</div>
+          </div>
+          <div class="light-bg">
+            <div class="social-block">
+              <div class="list-box-wrap">
+                <div class="list-box__title">В сети - 34</div>
+                <div class="list-box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
                       <div class="player-list__avatar">
                         <div class="player-list__label"></div>
                       </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
+                      <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/Удалить.svg" alt="*">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                  <div class="dialogs-list__item --check-dialogs">
-                    <div class="dialogs-list__player">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
                       <div class="player-list__avatar">
                         <div class="player-list__label"></div>
                       </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
+                      <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/Удалить.svg" alt="*">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                  <div class="dialogs-list__item --check-dialogs">
-                    <div class="dialogs-list__player">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
                       <div class="player-list__avatar">
                         <div class="player-list__label"></div>
                       </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
+                      <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/Удалить.svg" alt="*">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                  <div class="dialogs-list__item --check-dialogs">
-                    <div class="dialogs-list__player">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
                       <div class="player-list__avatar">
                         <div class="player-list__label"></div>
                       </div>
-                      <div class="chat__message">
-                        <div class="chat__message-top">
-                          <div class="chat__message-nickname">Lepistok</div>
-                          <div class="chat__message-time">17:17</div>
-                        </div>
-                        <div class="chat__message-text">Текст сообщения текст...
-                        </div>
-                      </div>
+                      <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/Удалить.svg" alt="*">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="bottom-input-wrap">
-            <!-- кнопка социум -->
-            <div class="chat-btn">
-              <img src="img/Социум.svg" alt="-">
-            </div>
+            <!-- кнопка чата -->
+            <label for="toggle--chat-btn" class="label-btn">
+              <div class="box-icon --chat-btn">
+                <img src="img/ЛС.svg" alt="-">
+              </div>
+            </label>
             <div class="main-input">
               <input type="text" class="input-text" placeholder="Поиск">
-              <div class="chat__btn-emoji">
+              <div class="main-input__box-icon --search-icon">
                 <img src="img/Поиск.svg" alt="-">
               </div>
             </div>
-            <!-- кнопка чата -->
-            <div class="dialogs-btn">
-              <img src="img/ЛС.svg" alt="-">
-            </div>
+            <!-- кнопка диалоги -->
+            <label for="toggle--dialogs-btn" class="label-btn">
+              <div class="box-icon">
+                <img src="img/Диалоги.svg" alt="-">
+              </div>
+            </label>
           </div>
         </div>
-        <!-- блок списка игроков -->
-        <div class="player-list">
+        <!-- ==== Друзья ==== -->
+        <div class="player-list --social-friends">
           <div class="main-title">
             <div class="main-title-txt">Друзья</div>
           </div>
           <div class="light-bg">
             <div class="social-block">
-              <div class="social-block__box-wrap">
-                <div class="player-list__title">В сети - 3</div>
-                <div class="social-block__box">
+              <div class="list-box-wrap">
+                <div class="list-box__title">В сети - 3 / 34</div>
+                <div class="list-box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
@@ -429,16 +973,11 @@
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
-                  </div>
-                  <div class="player-list__item">
-                    <div class="player-list__player">
-                      <div class="player-list__avatar">
-                        <div class="player-list__label"></div>
-                      </div>
-                      <div class="player-list__name">Lepistok</div>
-                    </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
                   <div class="player-list__item">
                     <div class="player-list__player">
@@ -447,90 +986,120 @@
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-              </div>
-              <div class="social-block__box-wrap">
-                <div class="player-list__title">Не в сети - 34</div>
-                <div class="social-block__box">
+                  <div class="player-list__item">
+                    <div class="player-list__player">
+                      <div class="player-list__avatar">
+                        <div class="player-list__label"></div>
+                      </div>
+                      <div class="player-list__name">Lepistok</div>
+                    </div>
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
+                  </div>
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-                <div class="social-block__box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-                <div class="social-block__box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-                <div class="social-block__box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-                <div class="social-block__box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-                <div class="social-block__box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-                <div class="social-block__box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
-                </div>
-                <div class="social-block__box">
                   <div class="player-list__item">
                     <div class="player-list__player">
                       <div class="player-list__avatar">
                       </div>
                       <div class="player-list__name">Lepistok</div>
                     </div>
-                    <img src="img/ЛС.svg" alt="*" class="player-list__dialog">
+                    <label for="toggle--dialogs-chat-btn">
+                      <svg class="icon --icon-chat">
+                        <use xlink:href="sprite.svg#chat"></use>
+                      </svg>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -538,35 +1107,111 @@
           </div>
           <div class="bottom-input-wrap">
             <!-- кнопка чата -->
-            <div class="chat-btn">
-              <img src="img/ЛС.svg" alt="-">
-            </div>
+            <label for="toggle--chat-btn" class="label-btn">
+              <div class="box-icon --chat-btn">
+                <img src="img/ЛС.svg" alt="-">
+              </div>
+            </label>
             <div class="main-input">
               <input type="text" class="input-text" placeholder="Поиск">
-              <div class="chat__btn-emoji">
+              <div class="main-input__box-icon --search-icon">
                 <img src="img/Поиск.svg" alt="-">
               </div>
             </div>
             <!-- кнопка диалоги -->
-            <div class="dialogs-btn">
-              <img src="img/Диалоги.svg" alt="-">
-            </div>
+            <label for="toggle--dialogs-btn" class="label-btn">
+              <div class="box-icon">
+                <img src="img/Диалоги.svg" alt="-">
+              </div>
+            </label>
           </div>
         </div>
+        <!-- ==== Клан ==== -->
+        <div class="player-list --social-clan">
+          <div class="main-title">
+            <div class="main-title-txt">Клан</div>
+          </div>
+          <div class="light-bg">
+            <div class="social-block"></div>
+          </div>
+          <div class="bottom-input-wrap">
+            <!-- кнопка чата -->
+            <label for="toggle--chat-btn" class="label-btn">
+              <div class="box-icon --chat-btn">
+                <img src="img/ЛС.svg" alt="-">
+              </div>
+            </label>
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Поиск">
+              <div class="main-input__box-icon --search-icon">
+                <img src="img/Поиск.svg" alt="-">
+              </div>
+            </div>
+            <!-- кнопка диалоги -->
+            <label for="toggle--dialogs-btn" class="label-btn">
+              <div class="box-icon">
+                <img src="img/Диалоги.svg" alt="-">
+              </div>
+            </label>
+          </div>
+        </div>
+        <!-- ==== Администрация ==== -->
+        <div class="player-list --social-administration">
+          <div class="main-title">
+            <div class="main-title-txt">Администрация</div>
+          </div>
+          <div class="light-bg">
+            <div class="social-block"></div>
+          </div>
+          <div class="bottom-input-wrap">
+            <!-- кнопка чата -->
+            <label for="toggle--chat-btn" class="label-btn">
+              <div class="box-icon --chat-btn">
+                <img src="img/ЛС.svg" alt="-">
+              </div>
+            </label>
+            <div class="main-input">
+              <input type="text" class="input-text" placeholder="Поиск">
+              <div class="main-input__box-icon --search-icon">
+                <img src="img/Поиск.svg" alt="-">
+              </div>
+            </div>
+            <!-- кнопка диалоги -->
+            <label for="toggle--dialogs-btn" class="label-btn">
+              <div class="box-icon">
+                <img src="img/Диалоги.svg" alt="-">
+              </div>
+            </label>
+          </div>
+        </div>
+        <!-- Менюха социума -->
         <div class="main-nav">
-          <div class="main-nav__btn">
-            <img src="img/Мир.svg" alt="-">
-          </div>
-          <div class="main-nav__btn">
-            <img src="img/Друзья.svg" alt="-">
-          </div>
-          <div class="main-nav__btn">
-            <img src="img/Клан.svg" alt="-">
-          </div>
-          <div class="main-nav__btn">
-            <img src="img/Администрация.svg" alt="-">
-          </div>
-          <label for="toggle--social-btn" class="label-btn --hide-pc">
+          <!-- Кнопка Мир-социума -->
+          <label for="toggle-social-world-btn" class="label-btn" onclick="uncheckDialogs()">
+            <div class="main-nav__btn --social-world-btn">
+              <img src="img/Мир.svg" alt="-">
+            </div>
+          </label>
+          <!-- Кнопка Друзья-социума -->
+          <label for="toggle-social-friends-btn" class="label-btn" onclick="uncheckDialogs()">
+            <div class="main-nav__btn --social-friends-btn">
+              <img src="img/Друзья.svg" alt="-">
+            </div>
+          </label>
+          <!-- Кнопка Клан-социума -->
+          <label for="toggle-social-clan-btn" class="label-btn" onclick="uncheckDialogs()">
+            <div class="main-nav__btn --social-clan-btn">
+              <img src="img/Клан.svg" alt="-">
+            </div>
+          </label>
+          <!-- Кнопка Администрация-социума -->
+          <label for="toggle-social-administration-btn" class="label-btn" onclick="uncheckDialogs()">
+            <div class="main-nav__btn --social-administration-btn">
+              <img src="img/Администрация.svg" alt="-">
+            </div>
+          </label>
+          <!-- кнопка закрытия списка игроков -->
+          <label for="toggle--close-btn" class="label-btn --hide-pc">
             <div class="main-nav__btn --close-btn">
               <img src="img/крестик.svg" alt="-">
             </div>
@@ -579,4 +1224,64 @@
 
 </body>
 
+<script>
+  //Сброс чекбоксов
+
+  function uncheckAll() {
+    var inputs = document.querySelectorAll('.checkbox');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].checked = false;
+    }
+  }
+
+  //Сброс чекбоксов у чата (Крестик)
+
+  function uncheckChat() {
+    var inputs = document.getElementsByName('chat');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].checked = false;
+    }
+  }
+
+  //Сброс чекбоксов у социума (Крестик)
+
+  function uncheckSocial() {
+    var inputs = document.getElementsByName('social');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].checked = false;
+    }
+  }
+
+  //Сброс чекбокса у диалогов 
+  function uncheckDialogs() {
+    var inputs = document.querySelectorAll('#toggle--dialogs-btn');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].checked = false;
+    }
+  }
+
+  //Делает зачеканым мировой чат , при нажатии кнопки меню чата
+  function checkСhatWorld() {
+    var inputs = document.querySelectorAll('.--check-chat-world');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].checked = true;
+    }
+  }
+
+  //Делает зачеканым мировой список социума , при нажатии кнопки  социума
+  function checkSocialWorld() {
+    var inputs = document.querySelectorAll('.--check-social-world');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].checked = true;
+    }
+  }
+
+  //Делает зачеканым мировой чат и социум, при нажатии на крестик и чат в диалогах, типо возвращение к дефолтному стотоянию ибо там чекбоксы слетаю и ломается верстка
+  function checkDefault() {
+    var inputs = document.querySelectorAll('.--check-default');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].checked = true;
+    }
+  } 
+</script>
 </html>
