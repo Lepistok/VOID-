@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Exo 2' ;
+  src: url(fonts/Exo2-Regular.ttf);
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Exo 2' ;
+  src: url(fonts/Exo2-SemiBold.ttf);
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
 *,
 *::before,
 *::after {
@@ -17,23 +33,28 @@
 
 /* Скрываем scrollbar для IE, Edge и Firefox */
 * {
-  -ms-overflow-style: none;  /* IE и Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE и Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 body {
   background-color: #74C1E4;
-  color: #fff;
+  color: #FFF4E6;
 }
 
 html {
   box-sizing: border-box;
   font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
 }
 
 .checkbox {
   display: none;
 }
+
+
 
 .container {
   margin: 0 auto;
@@ -41,12 +62,42 @@ html {
   /* border: 5px solid red; */
   display: grid;
   overflow: hidden;
-  grid-auto-rows: min-content  1.5fr  1.4fr;
+  grid-auto-rows: 1.5fr 1.4fr;
   height: 100vh;
   grid-template-columns: none;
+  background: #262B3C;
+  gap: 1px;
+}
+
+.action-container {
+  position: relative;
+  display: grid;
+  grid-template-rows: 40px 1fr;
 }
 
 /*==============Header===============*/
+
+.icon {
+  fill: #FFF4E6;
+  width: 20px;
+  height: 20px;
+  transition: all .2s ease-out;
+}
+
+.--icon-chat:hover {
+  fill: #0E9BBB;
+}
+
+.--icon-delete {
+  fill: #CA4C57;
+  height: 20px;
+  width: 17px;
+  transition: all .2s ease-out;
+}
+
+.--icon-delete:hover {
+  fill: #F67A84;
+}
 
 .root-menu--mobile {
   display: none;
@@ -57,12 +108,18 @@ html {
   display: grid;
 }
 
+
+/* Скрывает крестик у пк версии */
 .--hide-pc {
   display: none;
 }
 
 .--hide-pc:hover {
   background: #D65068;
+}
+
+.--close-btn {
+  background: #CA4C57;
 }
 
 
@@ -74,18 +131,20 @@ html {
 
 
 
+
 .root-menu {
   /* justify-content: space-between; */
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  height: 45px;
+  /* height: 45px; */
 }
 
 .root-menu__butt-end {
   display: grid;
   align-items: center;
   background-color: #2D3246;
-  padding: 10px 20px;
+  padding: 0 40px;
+  height: 40px;
 }
 
 
@@ -102,13 +161,14 @@ html {
   align-items: center;
   justify-content: center;
   background-color: #3E75D7;
-  transition:.5s ease;
+  transition: .5s ease;
   cursor: pointer;
 }
 
-.--close-btn {
-  background: #CA4C57;
+.main-nav__btn > img {
+  height: 20px;
 }
+
 
 .main-nav__btn:hover {
   background: #4E85E5;
@@ -118,6 +178,7 @@ html {
   background: #2D3246;
 }
 
+/* костылик чтоб при наведении мышкой иконка не исчезала */
 .--burger:hover {
   background-image: url(img/бургер.svg);
   background-repeat: no-repeat;
@@ -126,7 +187,7 @@ html {
 
 .--fight:active {
   background: #2D3246;
-  transition:.2s
+  transition: .2s
 }
 
 .root-menu__profile-box {
@@ -159,34 +220,30 @@ html {
   /* grid-column-gap: 45px; */
 }
 
+.time-text {
+  font-size: 14px;
+}
 
+.root-menu__butt-end img {
+  height: 20px;
+}
 
-.header__time {
+.profile-name {
+  font-weight: 600;
   font-size: 20px;
-}
-
-
-.header__burger {
-  display: none;
-}
-
-.header__btn-mobile {
-  display: none;
 }
 
 /*==============Main===============*/
 
-.main{
+.main {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  /* margin: 0 auto; */
-  /* max-width: 1200px; */
 }
 
 .view-art {
   background-image: url(img/25d60b1a2d96fbb4de2580984cdf7fd9.jpg);
   background-size: cover;
-  
+
   /* object-fit: cover; */
 }
 
@@ -194,17 +251,16 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 50px;
-  color:#fff;
-  font-size: 12px;
-  border: 0.5px solid #FFFFFF;
+  padding: 7px 0px;
+  font-size: 14px;
+  background: #3E75D7;
+  width: 165px;
 }
 
-.game-box{
+.game-box {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-row-gap: 10px;
+  grid-row-gap: 15px;
   padding: 6px;
   justify-items: center;
   align-content: center;
@@ -218,9 +274,11 @@ html {
   align-items: center;
   justify-content: center;
   background-color: #2D3246;
-  height: 40px;
-  padding: 5px 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 600;
 }
+
 /* мод тайтла для распихивания по краям */
 .--sb {
   justify-content: space-between;
@@ -236,8 +294,7 @@ html {
   display: grid;
   grid-template-columns: 2.5fr 1fr;
   overflow: hidden;
-  background: #1D1E2C;
-  gap: 2px;
+  gap: 1px;
 }
 
 
@@ -260,28 +317,28 @@ html {
   overflow: auto;
   display: grid;
   grid-auto-rows: min-content;
-  gap: 20px;
+  gap: 10px;
   background: #252638;
-  /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
-  box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 10px ;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15), inset 0px -4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
 }
 
 .bottom-input-wrap {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   background: #2D3246;
   /* box-shadow: 3px -4px 4px rgba(0, 0, 0, 0.25); */
-  height: 60px;
-  padding: 10px;
+  /* height: 60px; */
+  padding: 5px;
 }
 
 .main-input {
   display: grid;
   grid-template-columns: 1fr min-content;
   background: #31334A;
-  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.15), inset 0px 0px 4px rgba(0, 0, 0, 0.15);
   flex-grow: 1;
+  height: 35px;
 }
 
 input {
@@ -301,19 +358,30 @@ input::placeholder {
   color: #A3A6AA;
 }
 
-.chat__btn-emoji {
+.main-input__box-icon {
   display: flex;
   margin-right: 10px;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   align-self: center;
   cursor: pointer;
+}
+
+.--search-icon  {
+  cursor: text;
+}
+
+
+.--search-icon > img {
+  width: 20px;
+  height: 20px;
+  /* background: rgba(240, 230, 210, 0.5); */
 }
 
 .chat__message-container {
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 .chat__avatar {
@@ -328,6 +396,7 @@ input::placeholder {
 }
 
 .chat__clan {
+  position: relative;
   box-sizing: content-box;
   width: 15px;
   height: 15px;
@@ -335,6 +404,8 @@ input::placeholder {
   background-size: cover;
   border-radius: 100%;
   border: 1px solid #252638;
+  bottom: 2px;
+  left: 5px;
 }
 
 .chat__message {
@@ -342,23 +413,28 @@ input::placeholder {
   grid-gap: 5px;
 }
 
-.chat__message-top {
+.message__name-time {
   display: flex;
   gap: 5px;
-  align-items: flex-end;
+  align-items: center;
 }
 
-.chat__message-nickname {
+.message-nickname {
   color: #C8FF6D;
+  font-weight: 600;
 }
 
-.chat__message-time {
-  font-weight: 400;
+.message-time {
   font-size: 12px;
-  color: #A3A6AA;
+  padding: 2px 0px 0px;
 }
 
 .chat__message-text {
+  line-height: 130%;
+  letter-spacing: -0.015em;
+}
+
+.dialogs__message-text {
   font-size: 15px;
 }
 
@@ -393,26 +469,42 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   background: #3E75D7;
   border-radius: 100px;
-  padding: 12px 10px 10px 15px;
+  padding: 10px 10px 10px 15px;
 }
 
-.social-btn, .chat-btn, .dialogs-btn {
+
+
+.box-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 35px;
+  width: 40px;
+}
+
+.--social-btn > img {
+  height: 16px;
+  width: 32px;
+}
+
+.--chat-btn,
+.--social-btn {
   display: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  /* justify-self: start; */
 }
 
 /*==============player-list===============*/
 
 .player-list__wrap {
   display: grid;
-  grid-template-columns: 1fr 60px ;
+  grid-template-columns: 1fr 60px;
   /* border: 5px solid green; */
   overflow: hidden;
 }
@@ -426,52 +518,69 @@ input::placeholder {
 
 .light-bg {
   background: #2D3246;
-  /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
-  box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 10px;
+  
+  box-shadow: -1px 0px 0px #202030, inset 0px 4px 4px rgba(0, 0, 0, 0.15), inset 0px -4px 4px rgba(0, 0, 0, 0.15);
+  padding: 5px;
   overflow: auto;
 }
 
 .social-block {
   display: grid;
-  gap: 20px;
 }
 
-.social-block__box-wrap {
+.dialogs-block {
   display: grid;
-  gap: 15px;
+  gap: 5px;
 }
 
-.player-list__title {
-  font-size: 20px;
+.list-box-wrap {
+  display: grid;
 }
 
-.social-block__box {
+.list-box__title {
+  font-size: 14px;
+  padding: 10px 0px;
+}
+
+.list-box {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .player-list__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 15px;
+  padding: 10px 10px 10px 5px;
+  background: #2B2F42;
   cursor: pointer;
-  transition:.5s ease
+  transition: .5s ease;
+  font-size: 15px;
+  border-left: 5px solid #2B2F42;
 }
 
 .player-list__item:hover {
-  background: #3D4256;
+  border-left: 5px solid #4B538C;
+  transition: all .2s ease-out;
 }
+
+.player-list__item > img {
+  height: 20px;
+  width: 20px;
+  /* fill: #00DF4C; */
+}
+
 
 .player-list__player {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 8px;
+  font-size: 15px;
 }
 
 .player-list__avatar {
+  /* position: relative; */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -483,17 +592,17 @@ input::placeholder {
 }
 
 .player-list__label {
+  position: relative;
   width: 10px;
   height: 10px;
-  background: #00DF4C;
-  border: 1px solid #2D3246;
+  background: #2EC76A;;
+  border: 1px solid #66F8A0;
   border-radius: 100%;
-} 
-
-.player-list__name {
-  font-size: 20px;
-  font-weight: 300;
+  bottom: 3px;
+  left: 3px;
 }
+
+
 
 /*==============Диалоги===============*/
 
@@ -506,37 +615,140 @@ input::placeholder {
 }
 
 .dialogs-list__item {
-  /* height: 45px; */
-  padding: 5px 8px;
+  padding: 5px 10px 5px 5px;
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
-  background: #3A3F61;
-  border-radius: 5px;
+  background: #2B2F42;
   cursor: pointer;
-  border: 2px solid #3A3F61;
+  border-left: 5px solid #2B2F42;
+}
+
+.--notification {
+  justify-content: center;
+  align-items: center;
+}
+
+.notification-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  height: 30px;
+}
+
+.notification-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #3A3F61;
+  border-radius: 100%;
+  padding-bottom: 1px;
 }
 
 .dialogs-list__player {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 13px;
 }
 
 .dialogs-list__item:hover {
-  border: 2px solid #0E9BBB;
-  transition: all .1s ease-out;
+  border-left: 5px solid #4B538C;
+  transition: all .2s ease-out;
 }
 
-.--check-dialogs {
-  background: #333853;
+.--new-dialogs {
+  background: #3D4256;
+  border-left: 5px solid #3D4256;
+  /* border-left: 5px solid #333853; */
+  /* background: #333853; */
 }
 
 /*-------------------------------------*/
 
+/* ==== Чат диалогов ==== */
 
+.dialogs-chat-wrap {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  width: 100%;
+  /* border: 5px solid red; */
+  padding: 10px;
+  z-index: 99;
+}
+
+.dialogs-chat {
+  display: grid;
+  grid-auto-rows: min-content 1fr;
+  height: 100%;
+  width: 700px;
+}
+
+.dialogs-chat__title {
+  height: 40px;
+  background: #2D3246;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.dialogs-chat__area {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background: #252638;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15), inset 0px -4px 4px rgba(0, 0, 0, 0.15);
+  padding: 5px;
+  gap: 5px;
+}
+
+.dialogs-chat__message {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+  background: #3A3F61;
+}
+
+.dialogs-chat__message-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dialogs-chat__message-time {
+  font-size: 12px;
+  align-self: end;
+}
+
+.--my-message-bg {
+  background: #613A48;
+}
+
+.--my-message-name {
+  color: #FF8250;
+}
+
+.new-message-label {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0px;
+  color: rgba(240, 230, 210, 0.5);
+  font-size: 14px;
+}
+
+.dialogs-chat__btn-close {
+  cursor: pointer;
+}
 /*==============@Media===============*/
+
 
 @media (max-width: 1000px) {
 
@@ -544,47 +756,31 @@ input::placeholder {
     display: grid;
   }
 
+
+
   .title__btn-close {
     display: block;
   }
 
-  /* .chat-wrap {
-    display: none;
-  } */
-
-  .social-btn, .dialogs-btn, .chat-btn {
+  .--social-btn,
+  .--chat-btn {
     display: flex;
   }
-  .chat__container {
-    grid-template-columns: 1fr 1fr ;
-    grid-template-areas: 
-    "a a";
-  }
+
+/* переставляет блоки лок и персов под картинку */
   .main {
-    grid-template-columns: 1fr 1fr ;
-    grid-template-areas: 
-    "b b";
-    grid-auto-rows: 1fr ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "b b";
+    grid-auto-rows: 1fr;
   }
-  .view-art{
+
+  .view-art {
     grid-area: b;
   }
-  .header__burger {
-    display: block;
-    position: relative;
-    width: 30px;
-    height: 20px;
-    z-index: 4;
-    margin: 10px;
-    cursor: pointer;
-  }
-  .header__btn-mobile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* border: 1px solid yellow; */
-    grid-column-gap: 45px;
-    padding: 0 30px 0 30px;
-  }
+
+
+/* ==== Для основного меню ==== */
 
   .root-menu--mobile {
     display: grid;
@@ -601,49 +797,107 @@ input::placeholder {
     /* width: 0%; */
   }
 
-  .header__menu {
+  /* Удаляет кнопку боя */
+  .root-menu>.main-nav>label {
     display: none;
   }
-  .header__info {
-    display: none;
-  }
-/* Удаляет кнопку боя */
-  .root-menu > .main-nav > label {
-    display: none;
-  }
-/* делает менюху плиткой */
-  .root-menu > .main-nav {
+
+  /* делает менюху плиткой */
+  .root-menu>.main-nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-/* увеличивает размер кортинок у конпок */
-  .root-menu > .main-nav img {
+
+  /* увеличивает размер кортинок у конпок */
+  .root-menu>.main-nav img {
     height: 50px;
   }
 
+
+  /* ==== для нижнего блока чат + социум ==== */
+
+  /* удаляет нижний блок чат + социум в моб версии */
   .bottom-content {
     display: none;
   }
 
   /* для диалогов */
-  .dialogs-list > .main-title {
+
+  .dialogs-list>.main-title {
     justify-content: space-between;
   }
+
   /* через медиа , для того чтоб в пк версии не ломалась верстка */
 
   /* Удаляет блок чата */
-#toggle--dialogs-btn:checked ~ .bottom-content > .chat-wrap {
-  display: none !important;
-}
-/* Удаляет панель навигации у социального блока */
-#toggle--dialogs-btn:checked ~ .bottom-content > .player-list__wrap > .main-nav {
-  display: none;
-}
-/* выстраивает социальный блок в 1 колонку */
-#toggle--dialogs-btn:checked ~ .bottom-content > .player-list__wrap  {
-  grid-template-columns: 1fr;
-}
+  #toggle--dialogs-btn:checked~.bottom-content>.chat-wrap {
+    display: none !important;
+  }
 
+  /* Удаляет панель навигации у социального блока */
+  #toggle--dialogs-btn:checked~.bottom-content>.player-list__wrap>.main-nav {
+    display: none;
+  }
+
+  /* выстраивает социальный блок в 1 колонку */
+  #toggle--dialogs-btn:checked~.bottom-content>.player-list__wrap {
+    grid-template-columns: 1fr;
+  }
+
+  /* удаляет игровой экран */
+  #toggle--dialogs-btn:checked~.action-container {
+    display: none;
+  }
+
+  /* Удаляет основное меню
+  #toggle--dialogs-btn:checked~.action-container .root-menu--mobile {
+    display: none;
+  } */
+
+  /* в место него добавляет контейнер чата + социум*/
+  #toggle--dialogs-btn:checked~.bottom-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+  }
+
+  /* дя чата диалогов */
+
+  /* убирает падинги */
+  .dialogs-chat-wrap {
+    padding: 0;
+  }
+
+  /* Удаляет контейнер чата + социум */
+  #toggle--dialogs-chat-btn:checked~.bottom-content {
+    display: none !important;
+  }
+  /* добавляет икровой контейнер */
+  #toggle--dialogs-chat-btn:checked~.action-container {
+    display: grid !important;
+  }
+}
+/* в горезонтальной ареинтации перестовляет блоки лок и персов по краям */
+@media (orientation: landscape) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+      "a b c";
+  }
+
+  .locations {
+    grid-area: a;
+  }
+
+  .npc {
+    grid-area: c;
+  }
+
+  .game__link {
+    width: 135px;
+    font-size: 11px;
+  }
 }
 
 /*=----- Инпуты для иметации функционала -----=*/
@@ -651,29 +905,31 @@ input::placeholder {
 /* Для кнопки боя */
 
 /* красит активную кнопку боя в пк и моб версии*/
-#toggle--fight-btn:checked ~ .root-menu--mobile .--fight {
+#toggle--fight-btn:checked~.action-container .--fight {
   background: #2D3246;
 }
 
-#toggle--fight-btn:checked ~ .root-menu .--fight {
+#toggle--fight-btn:checked~.action-container .--fight {
   background: #2D3246;
 }
 
 /* для бургера */
 
 /* меняет бургер на крестик и красит эктив*/
-#toggle--burger-btn:checked ~ .root-menu--mobile .--burger {
+#toggle--burger-btn:checked~.action-container .--burger {
   background: #2D3246;
   background-image: url(img/крестик.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
+
 /* удаляет игровой экран при клике на бургер */
-#toggle--burger-btn:checked ~ main {
+#toggle--burger-btn:checked~.action-container .main {
   display: none;
 }
+
 /* в место него добавляет меню */
-#toggle--burger-btn:checked ~ .root-menu {
+#toggle--burger-btn:checked~.action-container .root-menu {
   display: grid;
   height: 100%;
   grid-template-rows: min-content 1fr min-content;
@@ -682,134 +938,265 @@ input::placeholder {
   /* right: 0; */
   /* width: 100%; */
   /* position: relative; */
-  
+
 }
+
 /* отсупы для плитки меню */
-#toggle--burger-btn:checked ~ .root-menu > .main-nav {
+#toggle--burger-btn:checked~.action-container .root-menu>.main-nav {
   gap: 10px;
   padding: 10px;
 }
 
+
 /* для чата */
 
-/* удаляет основное меню */
-#toggle--chat-btn:checked ~ .root-menu--mobile {
+/* Удаляет основное меню */
+#toggle--chat-btn:checked~.action-container .root-menu--mobile {
   display: none;
 }
-/* удаляет игровой экран при клике на чат */
-#toggle--chat-btn:checked ~ main {
+
+/* удаляет игровой экран */
+#toggle--chat-btn:checked~.action-container {
   display: none;
 }
-/* в место него добавляет окно чата + социум*/
-#toggle--chat-btn:checked ~ .bottom-content {
+
+/* в место него добавляет контейнер чата + социум*/
+#toggle--chat-btn:checked~.bottom-content {
   display: grid;
   grid-template-columns: 1fr;
   height: 100vh;
 }
+
 /* выстраивает чат в 1 колонку */
-#toggle--chat-btn:checked ~ .bottom-content > .chat-wrap {
+#toggle--chat-btn:checked~.bottom-content>.chat-wrap {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40px auto;
 }
+
 /* Удаляет окно социума */
-#toggle--chat-btn:checked ~ .bottom-content > .player-list__wrap {
+#toggle--chat-btn:checked~.bottom-content>.player-list__wrap {
   display: none;
 }
 
-/* для социума */
 
-/* удаляет чат */
-#toggle--social-btn:checked ~ .bottom-content > .chat-wrap {
-  display: none;
-}
-/* добавляет окно социума */
-#toggle--social-btn:checked ~ .bottom-content > .player-list__wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 40px auto;
-}
-/* меняет порядок расположения блоков */
-#toggle--social-btn:checked ~ .bottom-content > .player-list__wrap > .player-list {
-  order: 1;
-}
+/* ==== Кнопки переключения чатов ====*/
 
-/* для диалогов */
+/* --- Мир ---*/
 
-/* красит активную кнопку боя в пк и моб версии*/
-#toggle--dialogs-btn:checked ~ .bottom-content  .--dialogs {
+/* красит активную кнопку мир-чата в пк и моб версии*/
+#toggle-сhat-world-btn:checked~.bottom-content .--сhat-world-btn {
   background: #2D3246;
 }
 
+/* Удаляет чаты торга и клана */
+#toggle-сhat-world-btn:checked~.bottom-content .--сhat-trading {
+  display: none;
+}
+
+#toggle-сhat-world-btn:checked~.bottom-content .--сhat-clan {
+  display: none;
+}
+
+
+/* --- Торговый ---*/
+
+/* красит активную кнопку торг-чата в пк и моб версии*/
+#toggle-сhat-trading-btn:checked~.bottom-content .--сhat-trading-btn {
+  background: #2D3246;
+}
+
+/* Удаляет чаты мира и клана */
+#toggle-сhat-trading-btn:checked~.bottom-content .--chat-world {
+  display: none;
+}
+
+#toggle-сhat-trading-btn:checked~.bottom-content .--сhat-clan {
+  display: none;
+}
+
+
+/* --- Клан --- */
+
+/* красит активную кнопку клан-чата в пк и моб версии*/
+#toggle-сhat-clan-btn:checked~.bottom-content .--сhat-clan-btn {
+  background: #2D3246;
+}
+
+/* Удаляет чаты мира и торга*/
+#toggle-сhat-clan-btn:checked~.bottom-content .--chat-world {
+  display: none;
+}
+
+#toggle-сhat-clan-btn:checked~.bottom-content .--сhat-trading {
+  display: none;
+}
+
+
+
+/* для социума */
+
+/* Удаляет основное меню */
+#toggle--social-btn:checked~.action-container .root-menu--mobile {
+  display: none;
+}
+
+/* удаляет игровой экран */
+#toggle--social-btn:checked~.action-container  {
+  display: none;
+}
+
+/* в место него добавляет контейнер чата + социум*/
+#toggle--social-btn:checked~.bottom-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+}
+
+/* удаляет чат */
+#toggle--social-btn:checked~.bottom-content>.chat-wrap {
+  display: none;
+}
+
 /* добавляет окно социума */
-#toggle--dialogs-btn:checked ~ .bottom-content > .player-list__wrap {
+#toggle--social-btn:checked~.bottom-content>.player-list__wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px auto;
+}
+
+/* меняет порядок расположения блоков */
+#toggle--social-btn:checked~.bottom-content>.player-list__wrap>.player-list {
+  order: 1;
+}
+
+
+
+
+/* ==== Кнопки переключения социума ====*/
+
+/* --- Мир ---*/
+
+/* красит активную кнопку Мир-социума в пк и моб версии*/
+#toggle-social-world-btn:checked~.bottom-content .--social-world-btn {
+  background: #2D3246;
+}
+
+/* Удаляет списки друзья, клана, администрация */
+#toggle-social-world-btn:checked~.bottom-content .--social-friends {
+  display: none;
+}
+
+#toggle-social-world-btn:checked~.bottom-content .--social-clan {
+  display: none;
+}
+
+#toggle-social-world-btn:checked~.bottom-content .--social-administration {
+  display: none;
+}
+
+/* --- Друзья ---*/
+
+/* красит активную кнопку Друзья-социума в пк и моб версии*/
+#toggle-social-friends-btn:checked~.bottom-content .--social-friends-btn {
+  background: #2D3246;
+}
+
+/* Удаляет списки мир, клана, администрация */
+#toggle-social-friends-btn:checked~.bottom-content .--social-world {
+  display: none;
+}
+
+#toggle-social-friends-btn:checked~.bottom-content .--social-clan {
+  display: none;
+}
+
+#toggle-social-friends-btn:checked~.bottom-content .--social-administration {
+  display: none;
+}
+
+/* --- Клан ---*/
+
+/* красит активную кнопку Клан-социума в пк и моб версии*/
+#toggle-social-clan-btn:checked~.bottom-content .--social-clan-btn {
+  background: #2D3246;
+}
+
+/* Удаляет списки мир, друзья, администрация */
+#toggle-social-clan-btn:checked~.bottom-content .--social-world {
+  display: none;
+}
+
+#toggle-social-clan-btn:checked~.bottom-content .--social-friends {
+  display: none;
+}
+
+#toggle-social-clan-btn:checked~.bottom-content .--social-administration {
+  display: none;
+}
+
+/* --- Администрация ---*/
+
+#toggle-social-administration-btn:checked~.bottom-content .--social-administration-btn {
+  background: #2D3246;
+}
+
+/* Удаляет списки мир, друзья, клан */
+#toggle-social-administration-btn:checked~.bottom-content .--social-world {
+  display: none;
+}
+
+#toggle-social-administration-btn:checked~.bottom-content .--social-friends {
+  display: none;
+}
+
+#toggle-social-administration-btn:checked~.bottom-content .--social-clan {
+  display: none;
+}
+
+
+/* для диалогов */
+
+/* Удаляет основное меню --мобила*/
+#toggle--dialogs-btn:checked~.root-menu--mobile {
+  display: none;
+}
+
+
+/* добавляет окно социума */
+#toggle--dialogs-btn:checked~.bottom-content>.player-list__wrap {
   display: grid;
 }
 
 /* Удаляет блок списка игроков */
-#toggle--dialogs-btn:checked ~ .bottom-content  .player-list {
+#toggle--dialogs-btn:checked~.bottom-content .player-list {
   display: none;
 }
 
 
 
 /* добавляет блок списка диалогов */
-#toggle--dialogs-btn:checked ~ .bottom-content  .dialogs-list {
+#toggle--dialogs-btn:checked~.bottom-content .dialogs-list {
   display: grid;
 }
+
+
 /* остальная логика для диалогов в медиазапросах */
 
 
+/* Для чата диалогов */
+
+#toggle--dialogs-chat-btn:checked~.action-container .dialogs-chat-wrap {
+  display: flex;
+}
+
 /* ------------------------------------------- */
 
-#header__burger-toggle:checked ~ .header__menu {
-  display: flex;
-  position: absolute;
-  top: 50px;
-}
 
-#chat__btn-toggle:checked ~ .main {
-  display: none;
-}
-
-
-#chat__btn-toggle:checked ~ .chat {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
 
 
 
 
 /*=============================*/
-.header__burger span {
-  content: '';
-  background-color: #fff;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  left: 0;
-  top: 9px;
-}
 
-.header__burger::before,
-.header__burger::after {
-  content: '';
-  background-color: #fff;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  left: 0;
-}
-
-.header__burger::before {
-  top: 0;
-}
-
-.header__burger::after {
-  bottom: 0;
-}
 /*=============================*/
-
-
