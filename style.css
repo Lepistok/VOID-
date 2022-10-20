@@ -24,6 +24,7 @@
   text-decoration: none;
   box-sizing: border-box;
   outline: none;
+  user-select: none;
 }
 
 /* Скрываем scrollbar для Chrome, Safari и Opera */
@@ -39,8 +40,30 @@
   /* Firefox */
 }
 
+/* убирает стрелки у инпута для цифр */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  padding: 0;
+}
+
 body {
-  background-color: #74C1E4;
+  background-image: url(img/bg.svg);
   color: #FFF4E6;
 }
 
@@ -62,7 +85,7 @@ html {
   /* border: 5px solid red; */
   display: grid;
   overflow: hidden;
-  grid-auto-rows: 1.5fr 1.4fr;
+  grid-auto-rows: 1.5fr 1.3fr;
   height: 100vh;
   grid-template-columns: none;
   background: #262B3C;
@@ -70,11 +93,23 @@ html {
 }
 
 .action-container {
+  overflow: hidden;
   position: relative;
+  display: grid;
+  /* height: 100vh; */
+}
+
+.action__content {
+  overflow: hidden;
   display: grid;
   grid-template-rows: 40px 1fr;
 }
 
+.main-wrap {
+  display: grid;
+  /* display: none; */
+  
+}
 /*==============Header===============*/
 
 .icon {
@@ -82,10 +117,12 @@ html {
   width: 20px;
   height: 20px;
   transition: all .2s ease-out;
+  /* z-index: 9999; */
 }
 
 .--icon-chat:hover {
   fill: #0E9BBB;
+  cursor: pointer;
 }
 
 .--icon-delete {
@@ -99,6 +136,7 @@ html {
   fill: #F67A84;
 }
 
+
 .root-menu--mobile {
   display: none;
   height: 40px;
@@ -108,6 +146,9 @@ html {
   display: grid;
 }
 
+.--flex-grow {
+  flex-grow: 1;
+}
 
 /* Скрывает крестик у пк версии */
 .--hide-pc {
@@ -119,7 +160,11 @@ html {
 }
 
 .--close-btn {
-  background: #CA4C57;
+  background: #CA4C57 !important;
+}
+
+.--close-btn:hover {
+  background: #D65068 !important;
 }
 
 
@@ -145,9 +190,10 @@ html {
   background-color: #2D3246;
   padding: 0 40px;
   height: 40px;
+  transition: all .5s ease-out;
 }
 
-
+/* основное меню */
 
 .main-nav {
   display: grid;
@@ -178,6 +224,54 @@ html {
   background: #2D3246;
 }
 
+/* меню сортировки */
+
+.sort-nav {
+  position: relative;
+  overflow: auto;
+  display: flex;
+  grid-gap: 5px;
+  background-color: #2D3246;
+  box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+  height: 33px;
+  /* border-bottom: 1px solid rgb(128 134 160 / 50%); */
+}
+
+.sort-nav::before {
+  position: absolute;
+  content: '';
+  height: 1px;
+  background: rgb(128 134 160 / 50%);
+  width: 100%;
+  bottom: -1px;
+  left: 0;
+  z-index: 2;
+}
+
+
+.sort-nav__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease;
+  cursor: pointer;
+  border-bottom: 3px solid #2D3246;
+  font-size: 14px;
+  padding-top: 3px;
+  min-width: 46px;
+  height: 32px;
+  /* padding-right: 3px; */
+}
+
+.sort-nav__btn > img {
+  height: 20px;
+  width: 20px;
+}
+
+.sort-nav__btn:hover {
+  border-bottom: 3px solid #383E66;
+}
+
 /* костылик чтоб при наведении мышкой иконка не исчезала */
 .--burger:hover {
   background-image: url(img/бургер.svg);
@@ -195,6 +289,31 @@ html {
   align-items: center;
   gap: 10px;
   justify-self: center;
+  transition: all .6s ease-out;
+  background: #2D3246;
+  
+}
+
+.--hover-left {
+  cursor: pointer;
+  transition: all .6s ease-out;
+}
+
+.--hover-left:hover {
+  background: #2C63E1;
+  transition: all .4s ease-out;
+  
+}
+.--hover-left:hover > .root-menu__profile-box {
+  border-radius: 10px;
+  transition: all .5s ease-out;
+  padding: 2px 20px;
+}
+
+.--hover-left:active > .root-menu__profile-box {
+  border-radius: 10px;
+  transition: all .4s ease-out;
+  padding: 2px 10px;
 }
 
 .root-menu__avatar {
@@ -220,6 +339,19 @@ html {
   /* grid-column-gap: 45px; */
 }
 
+.root-menu__setting-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.root-menu__setting-btn:hover {
+  transform: rotate(45deg);
+  transition: all .2s ease-out;
+}
+
 .time-text {
   font-size: 14px;
 }
@@ -232,19 +364,2414 @@ html {
   font-weight: 600;
   font-size: 20px;
 }
+/*==============Добавить лот===============*/
+.add-lot {
+  /* display: grid; */
+  display: none;
+  overflow: hidden;
+  grid-template-rows:  repeat(2 , min-content) 1fr min-content;
+}
+
+.add-lot-wrap {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.add-lot-box-wrap {
+  align-self: center;
+  /* width: 100%; */
+  padding: 5px;
+  /* height: 100%; */
+}
+
+.add-lot-box {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  grid-template-rows: 1fr 1fr;
+  background: #262B3C;
+  gap: 5px;
+}
+
+.add-lot-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #2D3246;
+  border: 1px solid #262B3C;
+  grid-row: 1 / 3 ;
+  padding: 10px;
+}
+
+.add-lot-panel-inner > .money-box {
+  width: 100%;
+}
+
+.add-lot-panel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-lot-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.add-lot-commission {
+  display: flex;
+  gap: 10px;
+}
+
+.add-lot-commission > span {
+  font-size: 15px;
+}
+
+.add-lot-commission > .money {
+  gap: 5px;
+}
+
+.add-lot-time {
+  display: flex;
+  gap: 5px;
+  font-size: 15px;
+  align-items: center;
+}
+
+.add-lot-panel-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-lot-panel-btn-box {
+  display: flex;
+  gap: 10px;
+}
+
+.add-lot-panel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-lot-panel-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.add-lot-item {
+  position: relative;
+  background: #2D3246;
+  border: 1px solid #262B3C;
+  padding: 5px;
+  height: 80px;
+  width: 80px;
+}
+
+.add-lot-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2D3246;
+  border: 1px solid #262B3C;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  height: 80px;
+  width: 80px;
+}
+
+.add-lot-btn:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.add-lot-btn > img {
+  height: 25px;
+}
+
+.add-lot-item > .inventory-container__item {
+  height: 100%;
+}
+
+.--icon-plus, .--icon-minus {
+  height: 17px;
+  width: 17px;
+  fill: #F0E6D2;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.--icon-plus:hover, .--icon-minus:hover {
+  fill: #0E9BBB;
+  transition: all .2s ease-out;
+}
+
+.money > input::placeholder {
+  font-size: 16px;
+  color: #F0E6D2;
+}
+
+/*==============Питомник===============*/
+.pokemon-storage {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  /* display: none; */
+}
+.pokemon-storage-wrap {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: min-content min-content;
+  justify-content: space-between;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #2D3246;
+  padding: 10px;
+}
+.pokemon-storage__container {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 153px);
+  grid-auto-rows: 125px;
+  gap: 10px;
+}
+
+.pokemon-storage__my-team-wrap {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.pokemon-storage__my-team {
+  overflow: auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 145px);
+  /* grid-template-columns: repeat(auto-fit, minmax(145px, 145px)); */
+  grid-auto-rows: 95px;
+}
+
+.my-team-pokemon {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  background: #3A3F61;
+  gap: 5px;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.pokemon-storage .my-team-pokemon:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.my-team-pokemon__top {
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  align-items: center;
+}
+
+.pokemon-storage .pokemon-box {
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.pokemon-storage .pokemon-box:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+
+.pokemon-storage .gene-code__item {
+  font-size: 10px;
+  padding: 3px 0px 0px;
+  width: 21px;
+}
+
+.pokemon-storage .gene-code__item img {
+  height: 10px;
+}
+
+.pokemon-storage .pokemon-box__left img {
+  height: 16px !important;
+}
+
+.pokemon-storage .pokemon-box__left svg {
+  height: 16px !important;
+}
+
+
+.pokemon-box__left {
+  display: grid;
+  gap: 14px;
+  align-items: end;
+}
+
+.pokemon-storage-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #31364F;
+}
+
+.pokemon-storage-empty:last-child {
+  cursor: pointer;
+}
+
+
+/*==============Лечение покемонов===============*/
+.healing {
+  /* display: grid; */
+  display: none !important;
+}
+
+.healing-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr) 0.8fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #2D3246;
+  padding: 10px;
+}
+
+.healing-all-btn {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 2px;
+  background: #3E75D7;
+  grid-column: 4 / -1;
+  grid-row: 1 / -1;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.healing-all-btn > span {
+  width: 51px;
+  text-align: center;
+}
+
+.healing-all-btn:hover {
+  background: #4E85E5;
+}
+
+
+
+.healing-box {
+    display: grid;
+    grid-template-rows: min-content 1fr repeat(2,min-content);
+    background: #3A3F61;
+    cursor: pointer;
+    padding: 3px 5px;
+    gap: 3px;
+    transition: all .2s ease-out;
+    border: 1px solid transparent;
+}
+
+.healing-box:hover {
+  transition: all .2s ease-out;
+  border: 1px solid #F0E6D2;
+}
+
+.healing .pokemon-name {
+  text-align: center;
+  font-size: 12px;
+}
+
+.healing .money-box {
+  width: 90px;
+  height: 27px;
+  justify-self: center;
+}
+
+.healing .money {
+  align-items: center;
+}
+
+.healing .money-box img {
+  height: 15px;
+}
+
+.healing .money-box .money-value {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/*==============Разведение===============*/
+.breeding {
+  /* display: grid; */
+  display: none !important;
+}
+
+.breeding .pokemon-box {
+  width: 100%;
+  height: 100%;
+  padding: 5px 3px 3px;
+  cursor: pointer;
+  display: none;
+}
+
+.breeding .pokemon-box .pokemon-lvl {
+  font-size: 14px;
+  height: auto;
+}
+.breeding .pokemon-box .pokemon-name {
+  font-size: 14px;
+}
+.breeding .pokemon-box .pokemon-box__left img {
+  height: 16px !important;
+}
+.breeding .pokemon-box .pokemon-box__left svg {
+  height: 16px !important;
+}
+.breeding .pokemon-box .pokemon-box__left {
+  gap: 14px;
+}
+.breeding .pokemon-box .gene-code__item {
+  font-size: 10px;
+  width: 100%;
+  padding: 4px 0px 0px;
+}
+.breeding .pokemon-box .gene-code {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.breeding .breeding-egg-box .gene-code {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 5px;
+}
+.breeding .breeding-egg-box .gene-code__item {
+  font-size: 10px;
+  width: 100%;
+  padding: 4px 0px 0px;
+}
+.breeding-wrap {
+  display: grid;
+  grid-template-columns: 0.5fr 0.4fr;
+  justify-content: space-between;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #2D3246;
+  padding: 10px;
+}
+
+.breeding-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50%;
+  gap: 10px;
+}
+
+.breeding-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3A3F61;
+  border-radius: 1px;
+}
+
+.breeding-box > img {
+  height: 80px;
+}
+
+.breeding-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  background: #282D3F;
+  color: #8C8988;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.--female {
+  border: 1px solid #EB4968;
+}
+.breeding__my-team  .--female:hover {
+  background: rgba(235, 73, 104, 0.3);
+}
+.--male {
+  border: 1px solid #2C6AEC;
+}
+.breeding__my-team  .--male:hover {
+  background: rgba(44, 106, 236, 0.3);
+}
+
+
+.breeding__my-team-wrap {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 7px;
+}
+
+.breeding__my-team {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+
+.breeding .pokemon-lvl {
+  font-size: 11px;
+  height: 13px;
+  padding: 0 2px;
+}
+.breeding .pokemon-name {
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.breeding .my-team-pokemon__top {
+  gap: normal !important;
+}
+
+.breeding .pokemon-box__left  img {
+  height: 12px !important;
+}
+.breeding .pokemon-box__left  svg {
+  height: 12px !important;
+}
+
+.breeding .pokemon-box__left {
+  gap: normal;
+}
+
+.breeding .my-team-pokemon {
+  padding: 3px;
+}
+
+
+.breeding-egg-box {
+  display: none;
+  grid-template-rows: min-content 1fr repeat(2, min-content);
+  height: 100%;
+  width: 100%;
+  padding: 5px 3px 3px;
+}
+.breeding-egg-top {
+  display: flex;
+  padding-left: 2px;
+}
+.breeding-egg-top > .pokemon-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.breeding-egg-bottom {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.breeding-egg-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3px;
+}
+
+/*==============Обмен===============*/
+.exchange {
+  position: absolute;
+  /* display: grid; */
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.exchange-container {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-top: 5px;
+  padding-right: 10px;
+  background: #2D3246;
+  gap: 5px;
+}
+
+.exchange-inventory > .sort-nav {
+  flex-direction: column;
+  height: 100%;
+  width: 46px;
+  box-shadow: none;
+}
+
+.exchange-inventory {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+
+.exchange-inventory-wrap {
+  display: grid;
+  overflow: hidden;
+  
+}
+
+.exchange-inventory-wrap > .inventory-container {
+  overflow: auto;
+  height: 100%;
+}
+
+.exchange-inventory-bottom {
+  display: flex;
+  padding: 5px 0;
+  border-top: 1px solid #262B3C;
+  height: 40px;
+  padding-left: 5px;
+}
+
+.exchange-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: #2D3246;
+  box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.exchange-header > img {
+  height: 20px;
+  width: 22px;
+}
+
+.exchange-player {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+}
+
+.exchange-player:nth-child(3) {
+  flex-direction: row-reverse;
+}
+
+.exchange-player-avatar {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.exchange-player-avatar > img {
+  border-radius: 100%;
+}
+
+.exchange-box-wrap {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  overflow: hidden;
+  gap: 5px;
+}
+
+.exchange-box-container {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.exchange-box {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  overflow: hidden;
+  background: #2D3246;
+  box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+  padding: 9px 4px;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.exchange-box > .inventory-container {
+  overflow: auto;
+}
+
+.exchange-content {
+  overflow: hidden;
+  display: grid;
+  padding: 2px;
+  padding-bottom: 3px;
+  gap: 5px;
+}
+
+.exchange-box-money {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.exchange-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background: #2D3246;
+  box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+  height: 35px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.exchange-button:hover {
+  border: 1px solid #3C4554;
+  transition: all .2s ease-out;
+}
+
+.exchange-button > img:nth-child(2) {
+  display: none;
+}
+
+.exchange .money-box {
+  width: 120px;
+}
+
+/*==============Клуб-публичный===============*/
+.public-clan {
+  display: none !important;
+}
+
+.clan-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*==============Персонализация===============*/
+.personalization {
+  display: none !important;
+}
+
+.personalization-container {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  gap: 30px;
+}
+
+.personalization-result {
+  display: grid;
+}
+
+.personalization-wrap {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 10px;
+}
+
+.personalization .profile__skin-box {
+  display: grid;
+  justify-items: center;
+  justify-content: start;
+  padding: 10px;
+}
+
+.personalization .profile__avatar {
+  align-self: start;
+  z-index: 9999;
+}
+
+
+.personalization .tabs-wrap > label {
+  width: 100%;
+}
+
+/* Персонализация-иконка */
+.personalization-download-img {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.download-img-wrap {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+}
+.download-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3A3F61;
+  width: 150px;
+  height: 150px;
+}
+
+.download-img-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3E75D7;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.download-img-btn:hover {
+  background: #4E85E5;
+}
+
+.download-img {
+  display: none;
+  /* display: flex; */
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.download-img > img {
+  border-radius: 100%;
+}
+
+/* Персонализация-Фоны */
+.personalization-bg {
+  overflow: auto;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 40%;
+  gap: 10px;
+}
+
+.personalization-bg > div {
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.personalization-bg > div:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+.personalization-bg > label > div:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.--bg-box-purple {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #463A60 0%, #2B2F42 100%)
+}
+.--bg-box-green {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #3A6052 0%, #2B2F42 100%)
+}
+.--bg-box-red {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #603A43 0%, #2B2F42 100%)
+}
+.--bg-box-yellow {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #605E3A 0%, #2B2F42 100%)
+}
+.--bg-box-pink {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #603A57 0%, #2B2F42 100%)
+}
+
+/* Персонализация-Облики */
+.personalization-skins {
+  overflow: auto;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 60%;
+  gap: 10px;
+}
+
+.skins-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3A3F61;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.skins-box:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.skins-box > img {
+  position: absolute;
+  height: 90%;
+  object-fit: contain;
+}
+
+
+/* Персонализация-рамки */
+.personalization-frames {
+  overflow: auto;
+  display: none;
+  grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+
+.frames-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3A3F61;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.frames-box:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+} 
+
+.frames-box > div {
+  width: 90%;
+  height: 90%;
+  border-radius: 100%;
+}
+
+.frame-img {
+  display: none;
+  position: absolute;
+  height: 160%;
+  top: -15px;
+  left: -15px;
+}
+
+.frames-box > img {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.--frame-blue{
+  border: 5px solid #3E75D7;
+}
+.--frame-red {
+  border: 5px solid #C4262A;
+}
+.--frame-yellow {
+  border: 5px solid #F2BF44;
+}
+.--frame-green {
+  border: 5px solid #25E64A;
+}
+.--frame-gray {
+  border: 5px solid #252638;
+}
+
+
+/*==============Настройоки===============*/
+.setting {
+  display: none !important;
+}
+
+.setting-bg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #3B4054;
+  padding: 10px;
+  gap: 5px;
+}
+
+.setting-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2D3246;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.setting-btn:hover {
+  border: 1px solid #E6D6CA;
+  transition: all .2s ease-out;
+}
+
+/*==============Модальные окна===============*/
+.light-bg-modal {
+  display: grid;
+  overflow: hidden;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #2D3246;
+}
+/* Подтверждение покупки */
+.buy-confirm-modal {
+  display: none !important;
+}
+
+/* Покупка-2 колонки */
+.premium-store-buy-col2 {
+  display: none !important;
+}
+
+.modal-msg-col2 {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  padding: 10px;
+  gap: 10px;
+  height: 100%;
+}
+
+.modal-msg-col2 .modal-item-name {
+  font-weight: 600;
+}
+
+.premium-store-box-wrap {
+  display: grid;
+  grid-template-rows: 1fr repeat(2, min-content);
+  gap: 10px;
+}
+
+.modal-item-descr {
+  display: grid;
+  grid-auto-rows: min-content;
+  font-size: 15px;
+  gap: 2px; 
+}
+
+.modal-pack-wrap {
+  /* overflow: auto; */
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 1fr min-content;
+}
+
+.modal-pack-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.modal-pack-container > .premium-store-box {
+  position: relative;
+}
+
+.modal-pack-container > .premium-store-box > img{
+  position: absolute;
+  height: 60%;
+}
+
+/* Покупка-1 колонка */
+.premium-store-buy-col1 {
+  display: none !important;
+}
+
+
+
+
+.modal-msg-col1 {
+  display: grid;
+  grid-auto-rows: min-content;
+  justify-items: center;
+  align-content: center;
+  gap: 8px;
+}
+
+.light-bg-modal .money {
+  justify-content: center;
+}
+
+.modal-btn-wrap {
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: min-content;
+  justify-content: center;
+}
+
+.modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 25px;
+  cursor: pointer;
+  background: #1E2328;
+  border: 1px solid #0E9BBB;
+  color: #0E9BBB;
+  
+}
+
+.modal-btn .--icon-donate {
+  fill: #0E9BBB;
+  width: 20px;
+  height: 20px;
+  transition: all .2s ease-out;
+}
+
+.modal-btn-disabled {
+  border: 1px solid #5C5B57;
+  color: #5C5B57;
+  transition: all .2s ease-out;
+}
+
+.modal-btn:hover {
+  border: 1px solid #F0E6D2;
+  color: #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.modal-btn-wrap > label:hover ~ .modar-error-txt {
+  display: none !important;
+}
+
+.modal-btn-disabled .--icon-donate {
+  fill: #5C5B57;
+  width: 20px;
+  height: 20px;
+  transition: all .2s ease-out;
+}
+
+.modal-btn:hover .--icon-donate {
+  fill: #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.modal-item-name {
+  font-size: 20px;
+}
+
+.modar-error-txt {
+  font-size: 10px;
+  color: #FF5462;
+  text-align: center;
+}
+
+/*==============Премиум-магазин===============*/
+.premium-store {
+  /* display: grid; */
+  display: none;
+  overflow: hidden;
+  grid-template-rows: min-content 1fr ;
+}
+
+.premium-store-wrap {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 15%);
+  background: #2D3246;
+  padding-top: 10px;
+}
+
+.premium-store-wrap > .sort-nav {
+  flex-direction: column;
+  height: 100%;
+  width: 46px;
+  box-shadow: none;
+}
+
+.premium-store-container {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 145px;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.premium-store-box {
+  display: grid;
+  border: 1px solid #287EB5;
+  background: #3D4A76;
+  justify-items: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.premium-store-box:hover {
+  transition: all .2s ease-out;
+  border: 1px solid #F0E6D2;
+}
+
+.--premium-col-2 {
+  grid-template-columns: 1fr 1fr;
+  /* grid-column: 1 / 3; */
+}
+
+label[for="toggle--premium-store-modal-col2"] {
+  grid-column: 1 / 3;
+}
+
+/* .--premium-col-2 > img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+} */
+
+.premium-store-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  background: #616894;
+  border-radius: 5px;
+  border: 1px solid #33C4DD;
+}
+
+.premium-store-icon > img {
+  position: absolute;
+  height: 80%;
+}
+
+.money-top-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.money-top-box > .money {
+  gap: 5px;
+  font-weight: 600;
+}
+
+.premium-store-box .money {
+  gap: 5px;
+  font-weight: 600;
+}
+
+.money-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  background: linear-gradient(180deg, rgba(45, 164, 224, 0.1) 0%, rgba(65, 135, 232, 0.1) 100%);
+  border: 1px solid #287EB5;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.--money-top-btn {
+  fill: #38C9DE;
+  width: 15px;
+  height: 15px;
+  transition: all .2s ease-out;
+}
+
+.money-top-btn:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.money-top-btn:hover > .--money-top-btn {
+  fill: #F0E6D2;
+}
+
+.premium-store-discr {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 5px;
+}
+
+.premium-store-discr__box {
+  display: grid;
+  grid-auto-rows: min-content;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.premium-store-discr__title {
+  font-weight: 600;
+}
+
+.premium-store-bottom {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 5px;
+}
+
+.premium-store-bottom > .money {
+  justify-self: center;
+}
+
+.premium-store__item-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*==============Крафт===============*/
+.craft {
+  /* display: grid; */
+  display: none;
+  overflow: hidden;
+  grid-template-rows:  repeat(2 , min-content) 1fr min-content;
+}
+
+.dark-bg {
+  background: #252638;
+  padding: 5px;
+  overflow: auto;
+}
+
+.craft-item {
+  display: grid;
+  grid-template-columns: 78px 1fr 75px;
+  height: 78px;
+  gap: 5px;
+}
+
+.craft-item > div {
+  background: #2D3246;
+  height: 100%;
+}
+
+.craft-item__icon {
+  padding: 9px;
+}
+
+.craft-item__icon > .--inventory-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.craft-item__icon img {
+  position: absolute;
+  height: 80%;
+}
+
+.craft-item__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  border: 1px solid transparent;
+}
+
+.craft-item__btn:hover {
+  background: #373C50;
+  border: 1px solid #939191;
+  transition: all .2s ease-out;
+}
+
+.craft-item__btn > img {
+  height: 25px;
+}
+
+.craft-item__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.craft-item__need-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.craft-item__need {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.craft-item__need > .--inventory-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.craft-item__need img {
+  position: absolute;
+  height: 80%;
+}
+
+.raft-item__title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.craft-item__need-value {
+  font-size: 12px;
+}
+
+/*==============Рынок===============*/
+.market-swap {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: 1fr min-content;
+}
+
+.market {
+  /* display: grid; */
+  display: none;
+  overflow: hidden;
+  grid-template-rows:  repeat(2 , min-content) 1fr min-content;
+}
+
+.market-wrap {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+
+.market-wrap > .sort-nav {
+  flex-direction: column;
+  height: 100%;
+  width: 46px;
+}
+
+.market-wrap > .sort-nav > .main-nav__btn {
+  min-height: 32px;
+}
+
+.market-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.bottom-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, auto));
+  background: #353444;
+  height: 40px;
+}
+
+.bottom-nav__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease;
+  cursor: pointer;
+}
+
+.market-item-wrap {
+  display: flex;
+  gap: 5px;
+  height: 70px;
+}
+
+.market-item {
+  display: flex;
+  gap: 10px;
+  background: #3A3F61;
+  padding: 0 5px;
+  width: 100%;
+}
+
+.market-item-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.market-item-left {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 7px;
+}
+
+.market-item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 5px 0;
+}
+
+.market-item-avatar {
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+
+.market-item-avatar > img {
+  position: absolute;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.market-item-name {
+  font-size: 15px;
+  font-weight: 600;
+  /* line-height: 15px; */
+}
+
+.market-item-time {
+  font-size: 12px;
+}
+
+.market-item-player-box {
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+  align-items: center;
+}
+
+.market-item-player {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.market-item-player-name:hover {
+  text-decoration: underline;
+}
+
+.market-item-money-box {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.market-item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  background: #4C5173;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  border: 1px solid #4C5173;
+}
+
+.market-item-btn:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.market-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 73px;
+  height: 60px;
+  background: #60658D;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0;
+  transition: all .2s ease-out;
+}
+
+.market-item-icon:hover {
+  background: #757AA2;
+  transition: all .2s ease-out;
+}
+
+.market-item-icon > img {
+  width: 50px;
+  height: 50px;
+}
+
+.market-item-right > svg {
+  align-self: end;
+}
+
+.--icon-favorite {
+  fill: transparent;
+  stroke: #F0E6D2;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.--icon-favorite:hover {
+  fill: #F0E6D2;
+  transition: all .2s ease-out;
+}
+/*==============Окно Избранное===============*/
+.favorite {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+.favorite .--icon-favorite {
+  fill: #F0E6D2;
+}
+.favorite .--icon-favorite:hover {
+  fill: transparent;
+}
+
+/*==============Окно Добавленный лот===============*/
+.added-lot {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+
+.added-lot .market-item-btn > img {
+  height: 25px;
+}
+
+.added-lot .market-item-left {
+  align-content: space-evenly;
+}
+
+/*==============Окно Склад===============*/
+.storage {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+
+.storage .market-item-btn > img {
+  height: 25px;
+}
+
+.storage .market-item-left {
+  padding-top: 5px;
+}
+
+
+/*==============Задание-модал-акт===============*/
+.quest-inner-act {
+  display: none !important;
+}
+
+.quest-txt-box {
+  overflow: auto;
+  background: #3A3F61;
+  padding: 5px;
+}
+
+.quest-txt-box > span {
+  line-height: 130%;
+  letter-spacing: -0.015em;
+}
+
+/*==============Задание-модал===============*/
+.quest-inner {
+  display: none !important;
+}
+
+.quest-inner-container {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  background: #2D3246;
+  gap: 10px;
+}
+
+.quest-panel {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: min-content 1fr 0.35fr;
+  gap: 10px;
+}
+
+.quest-panel-title {
+  text-align: center;
+  font-weight: 600;
+  background: #4C5173;
+  padding: 5px;
+}
+
+.quest-act-wrap {
+  overflow: auto;
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 5px;
+}
+
+.quest-act-box {
+  box-sizing: content-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+  padding: 6px;
+}
+
+.--act-disabled {
+  background: #3A3F61;
+}
+
+.quest-act-box > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.quest-act-box:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.quest-act-discr {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 99;
+}
+
+.quest-act-discr-txt {
+  display: grid;
+  grid-auto-rows: min-content;
+}
+
+
+.quest-mark-actual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: #D1336E;
+  height: 18px;
+  width: 18px;
+}
+.quest-mark-completed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: #189DC0;
+  height: 18px;
+  width: 18px;
+}
+.quest-mark-disabled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: #2B3043;
+  height: 18px;
+  width: 18px;
+}
+.quest-mark-disabled > img {
+  height: 10px;
+}
+.quest-mark-completed > img {
+  height: 9px;
+}
+
+.quest-reward-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 5px;
+}
+
+.quest-reward {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3A3F61;
+  border: 1px solid rgba(240, 230, 210, 0.5);
+  box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.15), inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.quest-reward:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.quest-reward > img {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+/*==============Задания===============*/
+.quest-wrap {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+  height: 100%;
+}
+
+.quest-container {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 48%;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #2D3246;
+  gap: 10px;
+  padding: 10px;
+  /* margin: 10px; */
+}
+
+.quest-box {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  gap: 5px;
+  padding: 5px;
+  background: #3D4A76;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.quest-box:hover {
+  border: 1px solid #D268E7;
+  transition: all .2s ease-out;
+}
+
+.quest-completed {
+  background: #385A58;
+}
+
+.quest-completed  img {
+  opacity: 0.3 ;
+}
+
+.quest-disabled  img {
+  opacity: 0.3 ;
+}
+
+
+.quest-completed > .quest-art::before {
+  position: absolute;
+  content: url(img/Квест-выполнен.svg);
+  z-index: 99;
+  
+}
+
+.quest-disabled > .quest-art::before {
+  position: absolute;
+  content: url(img/Квест-замок.svg);
+  z-index: 99;
+}
+
+.quest-completed .quest-line {
+  background: linear-gradient(180deg, #66F8A0 0%, #2EC76A 100%);
+}
+
+.quest-disabled .quest-line {
+  width: 0;
+}
+
+
+.quest-art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 1px;
+}
+
+.quest-art > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quest-line {
+  background: linear-gradient(180deg, #E64AE0 0%, #CE69E7 100%);
+  box-shadow: inset 0px 0px 0px 1px rgb(255 255 255 / 14%);
+  border-radius: 5px;
+  height: 100%;
+}
+
+.quest-wrap .pokemon-progressbar-box {
+  height: 10px;
+  border-radius: 5px;
+}
+
+.quest-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.quest-checkbox {
+  display: flex;
+  cursor: pointer;
+}
+
+.checkbox-on {
+  display: none;
+}
+
+/*==============Рейтинг===============*/
+.rating {
+  display: none !important;
+}
+
+.rating-your {
+  display: flex;
+  background: #4C5173;
+  height: 60px;
+  border-left: 5px solid #FFD63F;
+  color: #FFD63F;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.rating-list-box {
+  display: flex;
+  background: #3A3F61;
+  border-left: 5px solid transparent;
+  transition: all .2s ease-out;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.rating-list-wrap {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #2D3246;
+  gap: 5px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.rating-list {
+  overflow: auto;
+  display: grid;
+  grid-auto-rows: 40px;
+  gap: 5px;
+}
+
+.rating-list-box:hover {
+  border-left: 5px solid #4B538C;
+  transition: all .2s ease-out;
+}
+
+.rating-info-box {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.7fr;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+
+.rating-avatar {
+  display: flex;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.rating-name {
+  font-size: 16px;
+}
+
+.rating-avatar > img {
+  border-radius: 100%;
+}
+
+/* --- Рейтинг-клан --- */
+.rating-clan {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+
+/* --- Рейтинг-клан --- */
+.rating-players {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+
+/*==============Декс главная===============*/
+.pokebook{
+  /* display: flex; */
+  display: none !important;
+}
+
+.tasks-menu {
+  height: 40px;
+}
+
+.dex-wrap {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: repeat(2, min-content) 1fr;
+  height: 100%;
+}
+
+.dex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+  gap: 5px;
+}
+
+.dex-pokemon-wrap {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.dex-pokemon-wrap:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.dex-pokemon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3A3F61;
+}
+
+.dex-pokemon > img {
+  position: absolute;
+  height: 80%;
+  object-fit: contain;
+  width: 80%;
+}
+
+.dex-pokemon-bottom {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background: #4C5173;
+  font-size: 14px;
+}
+
+/*==============Декс покемон===============*/
+.dex-inner {
+  /* display: flex; */
+  display: none !important;
+}
+
+.dex-inner-content {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #2D3246;
+  gap: 5px;
+}
+
+.dex-inner-pokemon-card {
+  display: grid;
+  /* grid-template-rows: repeat(2, min-content) 0.5fr 1fr ; */
+  grid-template-rows: min-content 0.5fr 0.5fr 1fr ;
+  /* grid-auto-rows: repeat(3, min-content) 1fr; */
+  gap: 5px;
+}
+
+.dex-inner-pokemon-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 0.1fr);
+  gap: 5px;
+}
+
+.dex-inner-pokemon-top > .dex-pokemon {
+  grid-row: 1 / 4;
+}
+
+.dex-pokemon-info-box {
+  display: flex;
+  align-items: center;
+  background: #3A3F61;
+  gap: 3px;
+  padding: 7px 10px;
+  font-size: 14px;
+  /* grid-column-start: 2; */
+}
+
+.dex-pokemon-info-value {
+  font-weight: 600;
+}
+
+.dex-inner-pokemon-info {
+  display: grid;
+  grid-template-columns: min-content 1fr 1fr;
+  gap: 5px;
+}
+
+.dex-inner-pokemon-info > .dex-pokemon-info-box {
+  padding: 5px 10px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.dex-pokemon-info-box  .genome-box {
+  height: 26px;
+  width: 27px;
+}
+
+.dex-pokemon-info-box > .pokemon-genome {
+  display: flex;
+}
+
+.dex-pokemon-info-box  .genome-box > img {
+  height: 18px;
+}
+
+.dex-pokemon-info-wrap {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.dex-pokemon-info-txt-box {
+  display: flex;
+  gap: 5px;
+}
+
+.dex-inner-pokemon-stats {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  background: #3A3F61;
+  align-items: center;
+}
+
+.dex-inner-pokemon-stats-box {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+
+.dex-inner-pokemon-stats-value {
+  font-size: 12px;
+}
+
+.dex-inner-pokemon-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.dex-inner-pokemon-bottom  .dex-pokemon-bottom {
+  gap: 5px;
+}
+
+.dex-inner-pokemon-skills {
+  overflow: hidden;
+  display: grid;
+  grid-auto-rows: min-content 1fr ;
+}
+
+.dex-passive-skill {
+  display: none;
+  /* display: grid; */
+}
+
+.passive-skill-wrap {
+  display: flex;
+  gap: 10px;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.passive-skill-wrap > .passive-skill-icon {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.passive-skill-wrap > .passive-skill-icon:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.dex-inner-pokemon-skills > .passive-skill-box {
+  margin-top: 5px;
+}
+
+.dex-skill {
+  overflow: hidden;
+  display: none;
+  /* display: grid; */
+  grid-template-rows: min-content 1fr min-content;
+  /* height: 100%; */
+}
+
+.dex-skill .bottom-nav__btn > img {
+  height: 20px;
+}
+
+.dex-skill-title {
+  font-size: 15px;
+  justify-self: center;
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+
+.dex-skill  .skills-container{
+  display: grid;
+  margin: 0;
+  justify-content: center;
+}
+
+.dex-skill-overflow-wrap {
+  display: grid;
+  overflow: hidden;
+  
+}
+
+.dex-skill-overflow-wrap > .skills-container {
+  padding-bottom: 5px;
+}
+
+.dex-inner-pokemon-skills  .tabs-btn {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+/*==============Инвентарь===============*/
+
+.inventory-wrap {
+  display: none;
+  /* display: grid; */
+}
+
+.inventory {
+  /* display: grid; */
+  display: none;
+  overflow: hidden;
+  grid-template-rows:  repeat(2 , min-content) 1fr min-content;
+}
+
+.inventory-container {
+  display: grid;
+  justify-content: center;
+  grid-auto-rows: minmax(50px, 60px);
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 10px;
+  padding: 5px;
+  /* height: 100%; */
+}
+
+.inventory-container__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0px;
+  border-radius: 5px;
+  background: #333853;
+}
+
+.--inventory-item {
+  background: #3A3F61;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.--inventory-item:hover {
+  background: #3D4A76;
+}
+
+.inventory-container__item > img {
+  height: 100%;
+}
+
+.inventory-item__count {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.--inventory-add {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.inventory-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-top: 1px solid #262B3C; */
+  background: #2D3246;
+  height: 50px;
+  padding: 10px;
+}
+
+.money-wrap, .money {
+  display: flex;
+  gap: 10px;
+}
+
+.money-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px 0px 10px;
+  width: 160px;
+  height: 30px;
+  background: #3A4361;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.15), inset 0px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.--icon-add {
+  width: 15px;
+  height: 15px;
+  fill: #F0E6D2;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.--icon-add:hover {
+  fill: #0E9BBB;;
+}
+
+.money-value {
+  letter-spacing: -0.015em;
+
+}
+
+.inventory-value {
+  font-size: 14px;
+}
+
+.money-box-mobile {
+  display: none;
+  padding: 5px 10px;
+  background: #2D3246;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.15), inset 0px 1px 4px rgba(0, 0, 0, 0.15);
+  height: 30px;
+  background-image: url(img/Донат.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 42px;
+  transition: all .2s ease-out;
+}
 
 /*==============Main===============*/
 
 .main {
+  /* overflow: hidden; */
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
+  /* display: none; */
 }
 
 .view-art {
-  background-image: url(img/25d60b1a2d96fbb4de2580984cdf7fd9.jpg);
-  background-size: cover;
+  /* overflow: hidden; */
+  display: grid;
+  grid-template-rows: 33px 1fr;
+  /* background-image: url(img/25d60b1a2d96fbb4de2580984cdf7fd9.jpg); */
+  /* background-size: cover; */
 
-  /* object-fit: cover; */
+  
+}
+
+.view-art__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background: #252638;
+}
+
+.view-art__img {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+}
+
+.view-art__img > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.view-art__box {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  z-index: 999;
+  align-self: end;
+  height: 200px;
+}
+
+.view-art__descr {
+  overflow: auto;
+  display: none;
+  background: rgba(27, 28, 40, 0.95);
+  border: 2px solid #353444;
+  padding: 15px;
+  
+}
+
+.view-art__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  /* grid-auto-rows: min-content; */
+  height: 100%;
+}
+
+.view-art__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #2D3648;
+  border: 1px solid #353E51;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.view-art__nav > .view-art__nav-btn {
+  display: none;
+}
+
+.view-art__active-btn {
+  align-self: end;
+}
+
+.view-art__nav-btn:hover {
+  background: #3D4658;
+  transition: all .2s ease-out;
 }
 
 .game__link {
@@ -252,21 +2779,60 @@ html {
   align-items: center;
   justify-content: center;
   padding: 7px 0px;
-  font-size: 14px;
+  font-size: 16px;
   background: #3E75D7;
-  width: 165px;
+  width: 100%;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.game__link:hover {
+  background: #4E85E5;
 }
 
 .game-box {
+  /* overflow: auto; */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-row-gap: 15px;
-  padding: 6px;
+  padding: 5px 15px;
   justify-items: center;
   align-content: center;
   background-color: #2D3246;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* height: 100%; */
 }
+
+
+.game-nav-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.game-nav__btn {
+  display: grid;
+  justify-items: center;
+  font-size: 16px;
+  text-align: center;
+  gap: 2px;
+  padding: 5px 0;
+  background: #3E75D7;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.game-nav__btn:hover {
+  background: #4E85E5;
+}
+
+.game-nav-box > label[for="toggle--breeding-btn"] {
+  grid-column: 1 / -1;
+}
+
+/* .game-nav__btn:nth-child(3) {
+  grid-column: 1 / -1;
+} */
 
 /* Компонет оконных заголовков  */
 .main-title {
@@ -277,6 +2843,7 @@ html {
   padding: 8px 10px;
   font-size: 14px;
   font-weight: 600;
+  height: 33px;
 }
 
 /* мод тайтла для распихивания по краям */
@@ -284,7 +2851,7 @@ html {
   justify-content: space-between;
 }
 
-.title__btn-close {
+.hid-title__btn-close {
   display: none;
 }
 
@@ -314,6 +2881,7 @@ html {
 
 /* компонент фона---тут смесь логики ??? */
 .chat-area {
+  position: relative;
   overflow: auto;
   display: grid;
   grid-auto-rows: min-content;
@@ -323,7 +2891,141 @@ html {
   padding: 10px;
 }
 
+
+
+.emoji-container {
+  overflow: hidden;
+  position: absolute;
+  display: none;
+  grid-auto-rows: min-content 1fr;
+  right: 0;
+  bottom: 100%;
+  width: 320px;
+  /* height: 150px; */
+  background: #21222E;
+  padding-top: 10px;
+  gap: 15px;
+}
+
+.emoji-box {
+  display: none;
+  overflow: auto;
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fit, minmax(36px,1fr));
+  grid-auto-rows: 36px;
+  gap: 10px;
+  padding: 0px 10px 5px;
+  height: 175px;
+  margin-bottom: 5px;
+}
+
+.emoji-box__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: transparent; */
+  border-radius: 5px;
+  padding: 4px;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.emoji-box__item:hover {
+  background: #31323E;
+  transition: all .2s ease-out;
+}
+
+.emoji-box__item > img {
+  /* height: 30px;
+  width: 30px; */
+  height: 100%;
+}
+
+.sticker-box-wrap {
+  /* display: grid; */
+  display: none;
+  grid-template-rows: 1fr min-content;
+}
+
+.sticker-box {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px,1fr));
+  grid-auto-rows: 64px;
+  gap: 10px;
+  height: 150px;
+  padding: 0px 10px;
+  padding-bottom: 5px;
+}
+
+.sticker-box__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all .2s ease-out;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.sticker-box__item:hover {
+  background: #31323E;
+  transition: all .2s ease-out;
+}
+
+.sticker-box__item > img {
+  height: 100%;
+}
+
+.sticker-bottom {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  height: 30px;
+  gap: 5px;
+  background: #2D3246;
+  border-bottom: 1px solid #3C4554;
+  padding: 0px 10px;
+  padding-top: 1px;
+}
+
+.sticker-bottom__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  transition: all .2s ease-out;
+}
+
+.sticker-bottom__item:hover {
+  background: #454A5E;
+  transition: all .2s ease-out;
+}
+
+.sticker-bottom__item > img {
+  height: 20px;
+  width: 20px;
+}
+
+.emoji__top-panel {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+
+
+.emoji-tabs-btn {
+  padding: 5px 12px;
+  background: #2D3246;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .bottom-input-wrap {
+  /* overflow: hidden; */
+  position: relative;
   display: flex;
   gap: 5px;
   background: #2D3246;
@@ -393,6 +3095,102 @@ input::placeholder {
   border-radius: 100%;
   background-image: url(img/avatar.png);
   background-size: cover;
+  cursor: pointer;
+}
+
+.modal-player {
+  display: grid;
+  visibility: hidden;
+  grid-template-rows: min-content;
+  position: absolute;
+  height: 220px;
+  width: 320px;
+  background: #252638;
+  z-index: 9999999;
+  gap: 55px;
+}
+
+.modal-player .profile__avatar-box {
+  position: relative;
+  top: 22px;
+  justify-items: start;
+}
+
+.modal-player__top-bg {
+  display: flex;
+  background: #51A2A5;
+  justify-content: space-between;
+  padding: 5px 5px 0px 15px;
+  height: 60px;
+  border-bottom: 1px solid #3C4554;
+}
+
+.modal-player__panel-wrap {
+  display: grid;
+  gap: 1px;
+  background: #3C4554;
+}
+
+.modal-player__panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #21222E;
+}
+
+.modal-player__btn-wrap {
+  display: flex;
+  gap: 24px;
+}
+
+.modal-player__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: #4C5173;
+  border: 1px solid #3C4554;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.modal-player__btn:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.modal-player__btn > img {
+  height: 18px;
+}
+
+.modal-btn-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2B3043;
+  border-radius: 3px;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.modal-btn-close:hover {
+  background: #3D4255;
+  transition: all .2s ease-out;
+}
+
+.profile__avatar-label {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #00DF4C;
+  border: 2px solid #252638;
+  border-radius: 100%;
+  bottom: -5px;
+  right: -5px;
 }
 
 .chat__clan {
@@ -518,7 +3316,6 @@ input::placeholder {
 
 .light-bg {
   background: #2D3246;
-  
   box-shadow: -1px 0px 0px #202030, inset 0px 4px 4px rgba(0, 0, 0, 0.15), inset 0px -4px 4px rgba(0, 0, 0, 0.15);
   padding: 5px;
   overflow: auto;
@@ -569,6 +3366,7 @@ input::placeholder {
   height: 20px;
   width: 20px;
   /* fill: #00DF4C; */
+  
 }
 
 
@@ -580,7 +3378,6 @@ input::placeholder {
 }
 
 .player-list__avatar {
-  /* position: relative; */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -589,6 +3386,7 @@ input::placeholder {
   border-radius: 100%;
   background-image: url(img/avatar.png);
   background-size: cover;
+  cursor: pointer;
 }
 
 .player-list__label {
@@ -670,33 +3468,50 @@ input::placeholder {
 
 /* ==== Чат диалогов ==== */
 
-.dialogs-chat-wrap {
+.modal-bg {
+  display: flex;
   position: absolute;
-  display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(23, 23, 23, 0.8);
   height: 100%;
   width: 100%;
-  /* border: 5px solid red; */
   padding: 10px;
-  z-index: 99;
+  z-index: 99999;
 }
 
 .dialogs-chat {
+  display: none;
+}
+
+.modal-content {
   display: grid;
   grid-auto-rows: min-content 1fr;
   height: 100%;
   width: 700px;
 }
 
-.dialogs-chat__title {
+.sb-h40-title {
   height: 40px;
   background: #2D3246;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 10px;
+}
+
+.sb-h33-title {
+  height: 33px;
+  background: #2D3246;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+
+.title-txt {
+  font-weight: 600;
 }
 
 .dialogs-chat__area {
@@ -744,23 +3559,1499 @@ input::placeholder {
   font-size: 14px;
 }
 
-.dialogs-chat__btn-close {
+.title__btn-close {
   cursor: pointer;
 }
+
+/*======== Покемоны / Команда ======== */
+.my-team {
+  /* display: flex; */
+  display: none;
+}
+
+.my-team-conatiner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 10px;
+  height: 100%;
+  padding: 5px;
+}
+
+.my-team-conatiner  .pokemon-box:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.pokemon-box {
+  display: grid;
+  grid-auto-rows: min-content 1fr;
+  background: #3A3F61;
+  padding: 9px;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all .2s ease-out;
+  border: 1px solid transparent;
+}
+
+.pokemon-box__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokemon-gender {
+  display: flex;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+}
+
+.pokemon-name-box {
+  display: flex;
+  gap: 8px;
+}
+
+.pokemon-box__center {
+  display: flex;
+  align-items: center;
+}
+
+.pokemon-genome {
+  display: grid;
+  gap: 5px;
+}
+
+.genome-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  width: 18px;
+  border-radius: 1px;
+}
+
+.genome-box > img {
+  height: 10px;
+}
+
+.--green-genome {
+  background: #56D497;
+}
+
+.--yellow-genome {
+  background: #FFD63F;
+}
+
+.pokemon-art {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.pokemon-art > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pokemon-box__bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pokemon-lvl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0px 3px;
+  height: 20px;
+  border-radius: 1px;
+  border: 1px solid #F0E6D2;
+}
+
+.pokemon-progressbar-wrap {
+  display: grid;
+  width: 100%;
+  gap: 2px;
+}
+
+.pokemon-progressbar-box {
+  position: relative;
+  background: rgba(89, 164, 236, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  height: 8px;
+}
+
+.xp-line {
+  background: linear-gradient(180deg, #FF8250 0%, #FFEA88 100%);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+  height: 100%;
+}
+
+.xp-line:hover::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  bottom: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.9);
+  margin-bottom: 5px;
+  border-radius: 1px;
+  transition: all .2s ease-out
+}
+
+.hp-line {
+  background: linear-gradient(180deg, #4AE6B9 0%, #69E7C5 100%);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+  height: 100%;
+}
+
+.hp-line:hover::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  bottom: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.9);
+  margin-bottom: 5px;
+  border-radius: 1px;
+}
+
+.quest-line:hover::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  bottom: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.9);
+  margin-bottom: 5px;
+  border-radius: 1px;
+}
+
+
+/* спрайт сердечка */
+.--breeding-on {
+  fill: #FB8F8F;
+  stroke: #F0E6D2;
+  height: 17px;
+  width: 18px;
+}
+
+.--breeding-off {
+  stroke: #F0E6D2;
+  height: 17px;
+  width: 18px;
+  fill: none;
+}
+
+
+/*======== Покемон: Статы/Навыки ======== */
+.pokemon-stats-skills {
+  display: none;
+}
+
+
+.pokemon-stats-skills-wrap {
+  position: relative;
+  display: grid;
+  /* display: none; */
+  grid-template-columns: 1fr 1.1fr;
+  gap: 10px;
+  padding: 5px;
+  height: 100%;
+}
+
+
+.pokemon-data-box {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  gap: 5px;
+}
+
+.pokemon-card {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  /* height: 100%; */
+}
+
+.pokemon-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center ;
+  background: #4C5173;
+  padding: 0 5px;
+  font-size: 14px;
+  height: 26px;
+}
+
+.pokemon-card__header-name {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pokemon-card__header-name-txt {
+  font-weight: 600;
+  color: #45FF8F;
+}
+
+.pokemon-card__header-avatar > img {
+  height: 17px;
+  width: 17px;
+  border-radius: 100%;
+}
+
+.pokemon-card__header-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pokemon-card__delete-btn > svg{
+  width: 13px;
+  height: 15px;
+  fill: #FF5462;
+  cursor: pointer;
+}
+
+.btn-back {
+  cursor: pointer;
+}
+
+.tabs-wrap {
+  display: flex;
+}
+
+.tabs-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #252638;
+  padding: 0px 15px;
+  color: #A3A6AA;
+  height: 27px;
+  cursor: pointer;
+}
+
+.pokemon-card-stats {
+  /* display: grid; */
+  display: none;
+  gap: 8px;
+}
+
+.pokemon-dex-transfer {
+  display: flex;
+  background: #252638;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 5px;
+  margin-top: 2px;
+}
+
+.pokemon-dex-transfer__box {
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.pokemon-dex-transfer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 57px;
+  height: 26px;
+  background: #3E75D7;
+  font-size: 14px;
+  cursor: pointer;
+  transition: .5s ease;
+}
+.pokemon-dex-transfer__btn:hover {
+  background: #4E85E5;
+}
+
+
+
+.gene-code-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gene-code {
+  display: flex;
+  gap: 3px;
+}
+
+.gene-code__item {
+  display: grid;
+  justify-items: center;
+  padding: 4px 4px 2px;
+  font-size: 12px;
+  width: 32px;
+}
+
+.gene-code__item > img {
+  height: 12px;
+}
+
+.--green-stat {
+  background: #56D497;
+}
+.--blue-stat {
+  background: #0FB7E4;
+}
+.--yellow-stat {
+  background: #FFD63F;
+}
+.--pink-stat {
+  background: #ED66A1;
+}
+.--orange-stat {
+  background: #FF8F3F;
+}
+.--green-stats-value {
+  color: #45FF8F;
+}
+.--red-stats-value {
+  color: #FF5462;
+}
+
+.pokemon-stats-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 1px;
+}
+
+.info-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #45D2FF;
+  border-radius: 2px;
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.pokemon-personality-wrap {
+  display: flex;
+  gap: 3px;
+  font-size: 13px;
+}
+
+.pokemon-stats-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pokemon-stats__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pokemon-stats__icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.pokemon-stats-box {
+  /* display: grid; */
+  display: none;
+  gap: 9px;
+  grid-auto-rows: min-content;
+}
+
+.stats-progressbar {
+  position: relative;
+  background: rgba(89, 164, 236, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 85px;
+  height: 15px;
+}
+.stats-progressbar__line {
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.stats-progressbar-value {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 600;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  line-height: 12px;
+}
+
+.pokemon-stats__value-wrap {
+  display: flex;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.stats-progressbar-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.stats-progressbar__add-btn {
+  display: flex;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+}
+
+.stats-progressbar__add-btn > img {
+  cursor: pointer;
+}
+
+.--mr {
+  margin-right: 29px;
+}
+
+.pokemon-card-skills {
+  display: none;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  border-radius: 1px;
+  background: #000000;
+  transition: all .2s ease-out;
+}
+
+.skill > img {
+  position: absolute;
+  height: 100%;
+  box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+.skill:hover {
+  box-shadow: 0px 0px 0px 1px #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.skill-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 16px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 0.5px solid #F0E6D2;
+  font-size: 13px;
+  z-index: 99;
+  align-self: end;
+  margin: 1px;
+}
+
+.skill-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 23px;
+  height: 23px;
+  background: #30475A;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+  margin: 1px;
+  justify-self: end;
+  transition: all .2s ease-out;
+  border: 1px solid transparent;
+}
+
+.skill-btn:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.skill-btn > img {
+  height: 10.5px;
+  width: 10.5px;
+}
+
+.--purple-skill {
+  border: 1px solid  #5932A2;
+}
+
+.skill::after {
+  content: '';
+  position: absolute;
+  width: 0; 
+  height: 0;
+  border-top: 30px solid  #5932A2;
+  border-left: 30px solid transparent;
+  right: 0px;
+  top: 0px;
+  z-index: 98;
+}
+
+.pokemon-skills-box {
+  overflow: hidden;
+  display: none;
+  grid-auto-rows: min-content 1fr;
+}
+
+.skills-container {
+  overflow: auto;
+  /* display: grid; */
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
+  grid-auto-rows: min-content;
+  gap: 10px;
+  margin-top: 9px;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+.passive-skill-box {
+  /* display: grid; */
+  display: none;
+  grid-auto-rows: min-content min-content auto;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.passive-skill-title {
+  color: #8445FF;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.skill-discr-wrap {
+  display: flex;
+  gap: 5px;
+}
+
+.passive-skill-icon {
+  position: relative;
+  border: 1px solid  #5932A2;
+  border-radius: 1px;
+  height: 60px;
+  width: 60px;
+}
+
+.passive-skill-icon > img {
+  height: 100%;
+  position: absolute;
+}
+
+.skill-value-box {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 4px;
+}
+
+.skill-value-box > span {
+  font-size: 12px;
+}
+
+.skill-category-wrap {
+  display: flex;
+  gap: 2px;
+}
+
+.skill-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 5px 2px;
+}
+
+.--blue-category {
+  background: #42B6F7;
+}
+.--green-category {
+  background: #00FC52;
+}
+
+
+.skill-category-txt {
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.skill-discr {
+  overflow: auto;
+  font-size: 12px;
+  line-height: 130%;
+}
+
+.skill-discr-box {
+  /* display: grid; */
+  grid-auto-rows: min-content 1fr;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  display: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.pop-up-box {
+  position: absolute;
+  background: #21222E;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+.pop-up-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #252638;
+  height: 28px;
+  padding: 0 5px;
+}
+
+.skill-dickr-title {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 5px;
+}
+
+.skill-dickr-title-txt {
+  font-weight: 600;
+  font-size: 15px;
+  color: #8445FF;
+}
+
+.skill-dickr-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  width: 16px;
+  border-radius: 1px;
+}
+
+.--purple-skill-dickr {
+  background: #5A32A4;
+}
+
+.skill-discr-icon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  height: 60px;
+  width: 60px;
+  border-radius: 1px;
+}
+
+.skill-discr-icon > img {
+  position: absolute;
+  height: 100%;
+}
+
+.skill-discr-icon::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 35px solid #5932A2;
+  border-left: 35px solid transparent;
+  right: 0px;
+  top: 0px;
+}
+
+.skill-discr-icon > .skill-btn {
+  height: 28px;
+  width: 28px;
+}
+
+.skill-discr-icon > .skill-btn > img {
+  height: 14px;
+  width: 14px;
+}
+
+.skill-info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skill-info-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  grid-row-gap: 2px;
+  grid-column-gap: 5px;
+  grid-auto-flow: column;
+}
+
+.skill-info-right {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 2px;
+}
+
+.skill-value-box span {
+  font-size: 10px;
+}
+
+.skill-info-value {
+  font-weight: 600;
+}
+
+.skill-dickr-content-wrap {
+  display: grid;
+  padding: 10px;
+  overflow: auto;
+}
+
+
+.skill-dickr-content {
+  display: grid;
+  gap: 10px;
+}
+
+.skill-discr-lvl {
+  font-size: 10px;
+  justify-self: end;
+  align-self: end;
+}
+.skill-discr-lvl-value {
+  font-weight: 600;
+}
+
+.skill-discr-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
+
+.skill-discr-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #5C5B57;
+  background: #1E2328;
+  border: 1px solid #5C5B57;
+  height: 22px;
+  padding: 0 6px;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.skill-discr-btn:hover {
+  color: #FFE777;
+  border: 1px solid #FFE777;
+  transition: all .2s ease-out;
+}
+
+.skill-discr-btn-msg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #FFE777;
+  font-size: 10px;
+}
+
+/* ====== Боёвка ====== */
+.fight-container {
+  display: none;
+  /* display: grid; */
+  grid-template-columns: 1.1fr 0.4fr;
+  overflow: hidden;
+}
+
+.fight-wrap {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr;
+}
+
+.fight-panel {
+  background: #2D3246;
+  /* border: 3px solid red; */
+  grid-column-start: 1;
+}
+
+.fight-btn-wrap {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.fight-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #3E75D7;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.fight-btn:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.fight-btn > img {
+  height: 23px;
+}
+
+.--red-fight-btn {
+  background: #F37E4F;
+}
+
+.fight-skill-wrap {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 110px);
+  justify-content: center;
+  align-content: center;
+}
+
+.fight-skill-wrap > .skill {
+  width: 110px;
+  height: 60px;
+}
+
+.fight-skill-wrap  .skill-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.fight-skill-wrap  .skill-btn > img {
+  width: 15px;
+  height: 15px;
+  transition: all .2s ease-out;
+}
+
+.fight-skill-wrap  .skill-btn:hover > img {
+  transform: rotate(45deg);
+  transition: all .2s ease-out;
+}
+
+.fight-skill-wrap > .skill::after {
+  border-top: 35px solid #5932A2;
+  border-left: 35px solid transparent;
+}
+
+.fight-skill-wrap > .skill > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.fight-window {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* border: 3px solid yellow; */
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  height: 100%;
+  padding: 5px;
+}
+
+.fight-window-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+}
+
+.fight-log {
+  /* border: 3px solid blue; */
+  overflow: hidden;
+}
+
+.fight-log-header {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  background: #3E75D7;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid #3C4554;
+}
+
+.fight-log-overflow {
+  overflow: auto;
+  height: 100%;
+}
+
+.fight-log-msg-wrap {
+  display: flex;
+  border-bottom: 1px solid #3C4554;
+}
+
+.fight-log-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0px 11px;
+}
+
+.fight-log-msg {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  padding: 7px 11px;
+}
+
+.fight-log-msg-top {
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.fight-log-name {
+  color: #0FB7E4;
+}
+
+.fight-log-skill {
+  color: #FFE777;
+}
+
+.fight-log-value {
+  font-weight: 600;
+}
+
+.--green-log-value {
+  color: #45FF8F;
+}
+
+.--red-log-value {
+  color: #FF5462;
+}
+
+.fight-log-msg-descr {
+  display: flex;
+  gap: 8px;
+}
+
+.fight-player-container {
+  position: relative;
+  display: grid;
+  grid-auto-rows: min-content 1fr;
+  z-index: 9999;
+  justify-content: start;
+  height: 100%;
+}
+
+.fight-player-box {
+  display: flex;
+  gap: 2px;
+  padding: 2px 12px 2px 2px;
+  background: rgba(35, 38, 67, 0.5);
+}
+
+.fight-player-name-box {
+  display: grid;
+  gap: 1px;
+}
+
+.fight-player-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.fight-clan-name {
+  font-size: 14px;
+}
+
+.fight-player-avatar {
+  width: 41px;
+  height: 41px;
+  cursor: pointer;
+}
+
+.fight-player-avatar > img {
+  height: 100%;
+}
+
+.fight-pokemon-box {
+  display: grid;
+  
+  width: 150px;
+}
+
+.fight-pokemon-name-box {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(35, 38, 67, 0.5);
+  padding: 2px 2px 0px;
+}
+
+.fight-pokemon-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.fight-player-pokemon {
+  display: grid;
+  gap: 2px;
+  justify-content: start;
+}
+
+.fight-pokemon-name-box > .pokemon-genome {
+  display: flex;
+  gap: 2px;
+}
+
+.fight-pokemon-avatar-wrap {
+  background: rgba(35, 38, 67, 0.5);
+  padding: 2px;
+}
+
+.fight-pokemon-wrap {
+  display: flex;
+  align-items: start;
+}
+
+.fight-pokemon-avatar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: #3A3F61;
+  border: 0.5px solid #F0E6D2;
+  border-radius: 1px;
+  padding: 5px;
+}
+
+.fight-pokemon-progressbar-wrap {
+  display: grid;
+  grid-auto-rows: min-content;
+  background: rgba(35, 38, 67, 0.5);
+  padding: 4px 2px;
+  gap: 2px;
+  
+}
+
+.fight-pokemon-progressbar-wrap .hp-line:hover::before {
+  font-size: 12px;
+}
+
+.fight-pokemon-progressbar-wrap .xp-line:hover::before {
+  font-size: 12px;
+}
+
+.fight-pokemon-progressbar-wrap > .pokemon-progressbar-box {
+  height: 7px;
+}
+
+.fight-status-wrap {
+  display: grid;
+  width: 100%;
+}
+
+.fight-lvl-box  {
+  display: flex;
+  align-items: start;
+}
+
+.fight-lvl-wrap {
+  background: rgba(35, 38, 67, 0.5);
+  padding: 2px;
+}
+
+.fight-lvl-wrap .pokemon-lvl {
+  font-weight: 400;
+  height: 18px;
+}
+
+.fight-status {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(35, 38, 67, 0.3);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.fight-status__item {
+  display: flex;
+  padding: 2px;
+}
+
+.fight-pokemon {
+  transform: scale(-1, 1);
+  margin-left: 35px;
+  margin-bottom: 35px;
+}
+
+.fight-msg-pokemon {
+  align-self: end;
+}
+
+
+.fight-msg > img{
+  height: 12px;
+}
+
+.fight-pokemon > img {
+  width: 150px;
+  
+}
+
+.--flip {
+  transform: scale(-1, 1);
+}
+
+.--end {
+  text-align: end;
+}
+
+.fight-center {
+  display: grid;
+  justify-items: center;
+  grid-auto-rows: min-content;
+  position: relative;
+  gap: 20px;
+}
+
+.fight-weather {
+  background: rgba(35, 38, 67, 0.5);
+  border-radius: 1px;
+  padding: 5px;
+}
+
+.fight-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 84, 98, 0.5);
+  border: 1px solid #FF5462;
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+}
+
+.fight-timer:hover {
+  background: rgba(15, 183, 228, 0.5);
+  border: 1px solid #0FB7E4;
+}
+
+.fight-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(35, 38, 67, 0.5);
+  padding: 2px;
+  font-size: 14px;
+}
+
+/*======== Профиль ======== */
+
+.profile-wrap {
+  display: none;
+}
+
+.profile-menu {
+  height: 40px;
+}
+
+.profile {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+.profile-container {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 15px;
+  padding: 10px 0px;
+  height: 100%;
+}
+
+.profile__avatar-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.profile__avatar-wrap {
+  display: grid;
+  gap: 20%;
+  align-content: center;
+  padding: 15px 15px 15px 10px;
+}
+
+.profile__avatar-box {
+  display: grid;
+  gap: 5px;
+  font-weight: 600;
+  justify-content: center;
+  justify-items: center;
+}
+
+.profile__avatar {
+  position: relative;
+  box-sizing: content-box;
+  display: flex;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  border: 3px solid #252638;
+}
+
+.profile__avatar > img{
+  border-radius: 100%;
+}
+
+.profile__skin-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #463A60 0%, #2B2F42 100%);
+}
+
+.profile__skin-box > img {
+  position: absolute;
+  height: 90%;
+}
+
+.profile__note-container {
+  overflow: hidden;
+  display: grid;
+  gap: 15px;
+  grid-template-rows: 1fr min-content;
+  font-size: 15px;
+}
+
+.profile-note {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  background: #2B2F42;
+  border-top: 1px solid #3C4554;
+  padding: 5px;
+  color: rgba(240, 230, 210, 0.8);
+}
+
+.profile__location-box {
+  display: grid;
+  gap: 5px;
+  /* font-weight: 600; */
+}
+
+.profile__location-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #2B2F42;
+  height: 32px;
+  padding-left: 10px;
+}
+
+.location-label-1 {
+  width: 10px;
+  height: 10px;
+  background: #4D4CA7;
+  border-radius: 100%;
+}
+
+.location-label-2 {
+  width: 10px;
+  height: 10px;
+  background: #A50894;
+  border-radius: 100%;
+}
+
+.profile-note__edit-panel {
+  display: grid;
+  padding: 5px 0px;
+  align-content: space-between;
+}
+
+.edit-panel__item {
+  cursor: pointer;
+  opacity: 0;
+  transition: all .2s ease-out;
+}
+
+.--edit-btn {
+  background-image: url(img/Редактировать.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all .2s ease-out;
+  height: 18px;
+  width: 21px;
+  cursor: pointer;
+}
+
+.profile-note__txt {
+  overflow: auto;
+  display: flex;
+  padding-right: 5px;
+}
+
+textarea {
+  display: none;
+  resize: none;
+  background: none;
+  border: none;
+  color: rgba(240, 230, 210, 0.8);
+}
+
 /*==============@Media===============*/
 
 
 @media (max-width: 1000px) {
 
+  .modal-mobile {
+    /* width: 50% !important; */
+    height: 210px;
+    width: 300px !important;
+    /* justify-content: center !important; */
+  }
+
+  .sb-h33-title > .title-txt {
+    font-size: 14px;
+  }
+
+  /* выстраивает рынок в 1 колонку */
+  .market-container {
+    grid-template-columns: 1fr;
+  }
+
+  .market-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+  }
+
+  .market-wrap > .sort-nav {
+    flex-direction: row;
+    width: 100%;
+}
+
+  .main-wrap {
+    height: 100vh;
+  }
+
+  .game__link {
+    font-size: 12px;
+  }
+
+  .game-nav__btn {
+    font-size: 12px;
+  }
+
+  /* делает на всю ширину модальные окна в мобилках */
+  .modal-content {
+    width: 100%;
+  } 
+
+  .emoji-container {
+    width: 100%;
+  }
+
+  .modal-player {
+    width: 100%;
+  }
+
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+
   .--hide-pc {
     display: grid;
   }
 
-
-
-  .title__btn-close {
+  .money-box-mobile {
     display: block;
   }
+
+  .--donate {
+    display: none;
+  }
+
+  .hid-title__btn-close {
+    display: block;
+  }
+
+  /* для питомника */
+  .pokemon-storage-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content;
+    align-content: space-between;
+    gap: 20px;
+  }
+  .pokemon-storage__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pokemon-storage__my-team {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .my-team-pokemon__bottom > .gene-code {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .my-team-pokemon__bottom .gene-code__item {
+    width: 100%;
+  }
+  .my-team-pokemon > .my-team-pokemon__top {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    gap: 3px;
+  }
+  .my-team-pokemon .pokemon-lvl {
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  .my-team-pokemon .pokemon-box__center {
+    align-items: flex-end;
+  }
+
+  .pokemon-box__left {
+    gap: 13px;
+    align-content: space-between;
+
+  }
+
 
   .--social-btn,
   .--chat-btn {
@@ -797,8 +5088,8 @@ input::placeholder {
     /* width: 0%; */
   }
 
-  /* Удаляет кнопку боя */
-  .root-menu>.main-nav>label {
+  /* Удаляет лишние кнопки*/
+  .label-hidden {
     display: none;
   }
 
@@ -861,13 +5152,13 @@ input::placeholder {
     height: 100vh;
   }
 
-  /* дя чата диалогов */
+  /* для чата диалогов */
 
   /* убирает падинги */
-  .dialogs-chat-wrap {
+  .modal-bg {
     padding: 0;
+    justify-content: normal;
   }
-
   /* Удаляет контейнер чата + социум */
   #toggle--dialogs-chat-btn:checked~.bottom-content {
     display: none !important;
@@ -876,9 +5167,199 @@ input::placeholder {
   #toggle--dialogs-chat-btn:checked~.action-container {
     display: grid !important;
   }
+
+  /* Для обмена  */
+
+  /* Удаляет контейнер чата + социум */
+  #toggle--exchange-btn:checked~.bottom-content {
+    display: none !important;
+  }
+  /* добавляет икровой контейнер */
+  #toggle--exchange-btn:checked~.action-container {
+  display: grid !important;
+  }
+
+  /* Для Профиля  */
+
+  /* Удаляет контейнер чата + социум */
+  #toggle--profile-btn:checked~.bottom-content {
+    display: none !important;
+  }
+  /* добавляет икровой контейнер */
+  #toggle--profile-btn:checked~.action-container {
+  display: grid !important;
+  }
+
+
+  /* Для боёвки */
+
+  /* Включает скрол у контейнера для лога боя */
+  #toggle--fight-btn:checked~.container {
+    height: 100%;
+  }
+
+    /* Задания */
+
+    .quest-container {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .quest-completed > .quest-art::before {
+      transform: scale(.7);
+    }
+    .quest-disabled > .quest-art::before {
+      transform: scale(.7);
+    }
+
 }
-/* в горезонтальной ареинтации перестовляет блоки лок и персов по краям */
-@media (orientation: landscape) {
+/* === портретная орентация === */
+@media (max-width: 1000px) and (orientation: portrait) {
+
+  .personalization-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .setting-bg {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-msg-col2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+  }
+
+  /* в вертикальной орентации 2 колонки у плитки поков */
+  .my-team-conatiner {
+    grid-template-columns: 1fr 1fr;
+    
+  }
+  
+  /* перестраивает в 1 колонку окно со статами пока */
+  .pokemon-stats-skills-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  /* размещает окно с описанием скила внизу */
+  .skill-discr-box {
+    grid-row-start: 2;
+    grid-column-start: 1;
+  }
+
+  /* боёвка */
+  .fight-container {
+    overflow: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .fight-log {
+    display: grid;
+    grid-auto-rows: min-content;
+  }
+
+  .fight-pokemon {
+    margin-left: 8px;
+  }
+
+  .fight-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 0.3fr 0.8fr;
+    height: calc(100vh - 20px);
+  }
+
+  .fight-window {
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  /* Добавить лот в 1 колонку */
+  .add-lot-wrap {
+    grid-template-columns: 1fr;
+    z-index: 999;
+  }
+
+  /* декс в 1 колонку */
+  .dex-inner-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /* делает обмен в 1 колонку */
+  .exchange-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .exchange-inventory-wrap, .exchange-box-wrap {
+    padding: 0 5px;
+  }
+
+  .exchange-inventory {
+    grid-template-columns: 1fr;
+  }
+
+  .exchange-inventory > .sort-nav {
+    flex-direction: row;
+    width: 100%;
+    box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Для разведения */
+
+  .breeding-wrap {
+    grid-template-columns: 1fr;
+    align-content: space-between;
+    grid-template-rows: 0.5fr 0.5fr;
+    gap: 15px;
+  }
+  .breeding-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+  .breeding__my-team {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+  }
+  .breeding__my-team-wrap {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+  }
+
+  /* Задания */
+  .quest-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 20%;
+  }
+
+    /* задание */
+    .quest-inner-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.9fr 1fr;
+    }
+
+      /*==============Премиум-магазин===============*/
+
+  .premium-store-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10px;
+  }
+
+  .premium-store-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    padding-top: 0;
+  }
+
+  .premium-store-wrap > .sort-nav {
+    flex-direction: row;
+    width: 100%;
+    box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.25);
+  }
+
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+  /* в горезонтальной ареинтации перестовляет блоки лок и персов по краям */
   .main {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -894,23 +5375,644 @@ input::placeholder {
     grid-area: c;
   }
 
+
+
+  .profile-container {
+    grid-template-columns:  1.8fr 1fr;
+  }
+
+  /* для питомника */
+  .pokemon-storage-wrap {
+    grid-template-columns: minmax(min-content,0.7fr) min-content;
+    gap: normal;
+  }
+  .pokemon-storage__my-team {
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    grid-auto-rows: auto;
+  }
+
+  /* для разведения */
+  .breeding-wrap {
+    grid-template-columns: 0.5fr 0.4fr
+  }
+
+  .breeding__my-team {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+  }
+
+  .breeding__my-team-wrap {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+  }
+
+  .breeding-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  /* Боёвка */
+
+  .fight-wrap {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    height: calc(100vh - 20px);
+  }
+
+  .fight-container {
+    overflow: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .fight-window {
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .fight-btn-wrap {
+    flex-direction: column;
+    grid-column-start: 1;
+  }
+
+  .fight-skill-wrap {
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-column-start: 3;
+  }
+
+  .game-box {
+    padding: 5px;
+  }
+
   .game__link {
     width: 135px;
-    font-size: 11px;
   }
+
+  .game-nav__btn {
+    padding: 5px 0;
+  }
+
+  .game-nav-box {
+    width: 135px;
+  }
+
+  /*==============Премиум-магазин===============*/
+
+  .premium-store-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+/* для 5 айфонов и se и всяких мини мобил */
+@media (max-width: 320px) {
+
+  .personalization .tabs-btn {
+    padding: 0;
+  }
+  .personalization-frames {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 40%;
+  }
+  .pokemon-name {
+    font-size: 12px;
+  }
+  .fight-pokemon {
+    margin-left: 20px;
+  }
+
+  .fight-pokemon > img {
+    width: 105px;
+  }
+  .fight-player-avatar  {
+    height: 30px;
+    width: 30px;
+  }
+  .fight-player-name,.fight-clan-name {
+    font-size: 10px ;
+  }
+  .fight-pokemon-name {
+    font-size: 12px;
+  }
+  .fight-pokemon-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .fight-pokemon-box {
+    width: 122px;
+  }
+  .fight-lvl-wrap .pokemon-lvl__value {
+    font-size: 10px;
+  }
+  .fight-pokemon-name-box {
+    width: 122px;
+  }
+  .fight-timer {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+  }
+
+  .game-nav-box {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .game-box {
+    padding: 5px 10px;
+  }
+
+  /* для питомника */
+  .pokemon-storage__my-team {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* задания */
+  .quest-completed > .quest-art::before {
+    transform: scale(.5);
+  }
+  .quest-disabled > .quest-art::before {
+    transform: scale(.5);
+  }
+
+}
+@media (max-width: 568px) and (orientation: landscape) {
+  .personalization-container {
+    grid-template-columns: 1fr 1.5fr;
+  }
+  
+  .personalization .tabs-btn {
+    padding: 0;
+  }
+
+  .personalization-frames {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 40%;
+  } 
+
+    .fight-pokemon > img {
+    width: 105px;
+  }
+
+  .fight-pokemon {
+    margin-left: 8px;
+  }
+  
+  .fight-pokemon-box {
+    width: 122px;
+  }
+
+  .fight-timer {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+  }
+
+  .exchange-container {
+    grid-template-columns: 1fr 1.3fr;
+  }
+
+  /* задания */
+  .quest-completed > .quest-art::before {
+    transform: scale(.5);
+  }
+  .quest-disabled > .quest-art::before {
+    transform: scale(.5);
+  }
+
 }
 
 /*=----- Инпуты для иметации функционала -----=*/
 
-/* Для кнопки боя */
+/* ==== Кнопка арта ====*/
+#toggle--art-btn:checked~.action-container .view-art__nav > .view-art__nav-btn {
+  display: flex;
+}
+#toggle--art-btn:checked~.action-container .view-art__descr {
+  display: flex;
+}
+#toggle--art-btn:checked~.action-container .view-art__active-btn img {
+  transform: rotate(180deg);
+}
 
-/* красит активную кнопку боя в пк и моб версии*/
-#toggle--fight-btn:checked~.action-container .--fight {
+
+/* ==== Лечение покемонов ====*/
+#toggle--healing-btn:checked~.action-container .healing {
+  display: grid !important;
+}
+
+/* ==== Разведение ====*/
+#toggle--breeding-btn:checked~.action-container .breeding {
+  display: grid !important;
+}
+/* Яйцо */
+#toggle--egg-btn:checked~.action-container .breeding-egg-box {
+  display: grid;
+}
+#toggle--egg-btn:checked~.action-container .breeding-box:last-child > img {
+  display: none;
+}
+#toggle--egg-btn:checked~.action-container .breeding-btn {
+  background: #3E75D7;
+  color: #F0E6D2;
+}
+
+/* Покемон-Ж */
+#toggle--breeding-female1:checked~.action-container .breeding .--female-hid {
+  display: grid;
+}
+#toggle--breeding-female1:checked~.action-container .breeding-box:first-child > img {
+  display: none;
+}
+#toggle--breeding-female1:checked~.action-container .breeding .--breeding-female1 {
+  background: rgba(235, 73, 104, 0.3);
+}
+#toggle--breeding-female1:checked~.action-container .breeding-btn {
+  background: #3E75D7;
+  color: #F0E6D2;
+}
+/* -------------------------------------------- */
+#toggle--breeding-female2:checked~.action-container .breeding .--female-hid {
+  display: grid;
+}
+#toggle--breeding-female2:checked~.action-container .breeding-box:first-child > img {
+  display: none;
+}
+#toggle--breeding-female2:checked~.action-container .breeding .--breeding-female2 {
+  background: rgba(235, 73, 104, 0.3);
+}
+#toggle--breeding-female2:checked~.action-container .breeding-btn {
+  background: #3E75D7;
+  color: #F0E6D2;
+}
+/* -------------------------------------------- */
+#toggle--breeding-female3:checked~.action-container .breeding .--female-hid {
+  display: grid;
+}
+#toggle--breeding-female3:checked~.action-container .breeding-box:first-child > img {
+  display: none;
+}
+#toggle--breeding-female3:checked~.action-container .breeding .--breeding-female3 {
+  background: rgba(235, 73, 104, 0.3);
+}
+#toggle--breeding-female3:checked~.action-container .breeding-btn {
+  background: #3E75D7;
+  color: #F0E6D2;
+}
+/* Покемон-Ж */
+#toggle--breeding-male1:checked~.action-container .breeding .--male-hid {
+  display: grid;
+}
+#toggle--breeding-male1:checked~.action-container .breeding-box:nth-child(2) > img {
+  display: none;
+}
+#toggle--breeding-male1:checked~.action-container .breeding .--breeding-male1 {
+  background: rgba(44, 106, 236, 0.3);
+}
+#toggle--breeding-male1:checked~.action-container .breeding-btn {
+  background: #3E75D7;
+  color: #F0E6D2;
+}
+/* -------------------------------------------- */
+#toggle--breeding-male2:checked~.action-container .breeding .--male-hid {
+  display: grid;
+}
+#toggle--breeding-male2:checked~.action-container .breeding-box:nth-child(2) > img {
+  display: none;
+}
+#toggle--breeding-male2:checked~.action-container .breeding .--breeding-male2 {
+  background: rgba(44, 106, 236, 0.3);
+}
+#toggle--breeding-male2:checked~.action-container .breeding-btn {
+  background: #3E75D7;
+  color: #F0E6D2;
+}
+/* -------------------------------------------- */
+#toggle--breeding-male3:checked~.action-container .breeding .--male-hid {
+  display: grid;
+}
+#toggle--breeding-male3:checked~.action-container .breeding-box:nth-child(2) > img {
+  display: none;
+}
+#toggle--breeding-male3:checked~.action-container .breeding .--breeding-male3 {
+  background: rgba(44, 106, 236, 0.3);
+}
+#toggle--breeding-male3:checked~.action-container .breeding-btn {
+  background: #3E75D7;
+  color: #F0E6D2;
+}
+
+/* ==== Питомник ====*/
+#toggle--pokemon-storage-btn:checked~.action-container .pokemon-storage {
+  display: grid;
+}
+
+/* ==== Обмен ====*/
+#toggle--exchange-btn:checked~.action-container .exchange {
+  display: grid;
+  z-index: 99999;
+}
+/* ==== Обмен замок====*/
+#toggle--exchange-lock-btn-R:checked~.action-container .--exchange-R .exchange-button {
+  border: 1px solid #3C4554;
+}
+#toggle--exchange-lock-btn-R:checked~.action-container .--exchange-R .exchange-box {
+  border: 1px solid #3C4554;
+}
+#toggle--exchange-lock-btn-R:checked~.action-container .--exchange-R .exchange-button > img:nth-child(2) {
+  display: block;
+}
+#toggle--exchange-lock-btn-R:checked~.action-container .--exchange-R .exchange-button > img:nth-child(1) {
+  display: none;
+}
+/* -------------------------------------------- */
+#toggle--exchange-lock-btn-L:checked~.action-container .--exchange-L .exchange-button {
+  border: 1px solid #3C4554;
+}
+#toggle--exchange-lock-btn-L:checked~.action-container .--exchange-L .exchange-box {
+  border: 1px solid #3C4554;
+}
+#toggle--exchange-lock-btn-L:checked~.action-container .--exchange-L .exchange-button > img:nth-child(2) {
+  display: block;
+}
+#toggle--exchange-lock-btn-L:checked~.action-container .--exchange-L .exchange-button > img:nth-child(1) {
+  display: none;
+}
+
+
+/* ==== Профиль ====*/
+#toggle--profile-btn:checked~.action-container .profile-wrap {
+  display: flex;
+}
+
+/* ==== Команда ====*/
+#toggle--my-team-btn:checked~.action-container .my-team {
+  display: flex;
+}
+/* ==== Покемон ====*/
+#toggle--pokemon-btn:checked~.action-container .pokemon-stats-skills {
+  display: flex;
+}
+/* ==== Покемон: Статы/Наввыки ====*/
+#toggle--pokemon-stats-tab:checked~.action-container .--pokemon-stats-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+#toggle--pokemon-stats-tab:checked~.action-container .pokemon-card-stats {
+  display: grid;
+}
+#toggle--pokemon-stats-tab:checked~.action-container .pokemon-stats-box {
+  display: grid;
+}
+/* -------------------------------------------- */
+#toggle--pokemon-skills-tab:checked~.action-container .--pokemon-skills-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+#toggle--pokemon-skills-tab:checked~.action-container .pokemon-card-skills {
+  display: flex;
+}
+#toggle--pokemon-skills-tab:checked~.action-container .pokemon-skills-box {
+  display: grid;
+}
+/* ==== Покемон: Пассивка/Обзор Навыков ====*/
+#toggle--pokemon-skills__passive-tab:checked~.action-container .--pokemon-skills__passive-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+#toggle--pokemon-skills__passive-tab:checked~.action-container .passive-skill-box {
+  display: grid;
+}
+/* -------------------------------------------- */
+#toggle--pokemon-skills__skills-tab:checked~.action-container .--pokemon-skills__skills-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+#toggle--pokemon-skills__skills-tab:checked~.action-container .skills-container {
+  display: grid;
+}
+/* ==== Описание навыка ====*/
+#toggle--skill-discr:checked~.action-container .skill-discr-box {
+  display: grid !important;
+}
+
+/* ==== Декс-покемон ====*/
+#toggle--dex-pokemon:checked~.action-container .dex-inner {
+  display: flex !important;
+  z-index: 999999 !important;
+}
+
+/* ==== Декс-таб ====*/
+#toggle--dex-passive-tab:checked~.action-container .--dex-passive-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+#toggle--dex-passive-tab:checked~.action-container .dex-passive-skill {
+  display: grid;
+}
+/* -------------------------------------------- */
+#toggle--dex-skills-tab:checked~.action-container .--dex-skills-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+#toggle--dex-skills-tab:checked~.action-container .dex-skill {
+  display: grid;
+}
+/* -------------------------------------------- */
+#toggle--dex-location-tab:checked~.action-container .--dex-location-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* ==== Декс-табы-навыков ====*/
+#toggle--dex-skils-tab-1:checked~.action-container .--toggle--dex-skils-tab-1 {
+  background: #0E9BBB;
+}
+#toggle--dex-skils-tab-2:checked~.action-container .--toggle--dex-skils-tab-2 {
+  background: #0E9BBB;
+}
+#toggle--dex-skils-tab-3:checked~.action-container .--toggle--dex-skils-tab-3 {
+  background: #0E9BBB;
+}
+#toggle--dex-skils-tab-4:checked~.action-container .--toggle--dex-skils-tab-4 {
+  background: #0E9BBB;
+}
+/* ==== Декс-переключение эволюции ====*/
+#toggle--dex-evo-tab-1:checked~.action-container .--dex-evo-tab-1 {
+  border: 1px solid #F0E6D2;
+}
+#toggle--dex-evo-tab-2:checked~.action-container .--dex-evo-tab-2 {
+  border: 1px solid #F0E6D2;
+}
+#toggle--dex-evo-tab-3:checked~.action-container .--dex-evo-tab-3 {
+  border: 1px solid #F0E6D2;
+}
+
+/* ====  Рейтинг ====*/
+#toggle--rating-btn:checked~.action-container .rating {
+  display: grid !important;
+}
+/* отключает основное игровое окно */
+#toggle--rating-btn:checked~.action-container .main-wrap {
+  display: none;
+}
+
+/* Рейтинг-игроки-таб */
+#toggle--rating-players-tab:checked~.action-container .rating-players {
+  display: grid;
+}
+#toggle--rating-players-tab:checked~.action-container .--rating-players-tab {
+  background: #2D3246;
+}
+/* Рейтинг-клан-таб */
+#toggle--rating-clan-tab:checked~.action-container .rating-clan {
+  display: grid;
+}
+#toggle--rating-clan-tab:checked~.action-container .--rating-clan-tab {
   background: #2D3246;
 }
 
-#toggle--fight-btn:checked~.action-container .--fight {
+/* ==== Инвентарь ====*/
+#toggle--inventory-btn:checked~.action-container .inventory-wrap {
+  display: grid;
+}
+/* отключает основное игровое окно */
+#toggle--inventory-btn:checked~.action-container .main-wrap {
+  display: none;
+}
+
+/* ==== Инвентарь-таб ====*/
+#toggle--inventory-tab:checked~.action-container .inventory {
+  display: grid;
+}
+#toggle--inventory-tab:checked~.action-container .--inventory-tab {
   background: #2D3246;
+}
+
+/* ==== Крафт-таб ====*/
+#toggle--craft-tab:checked~.action-container .craft {
+  display: grid;
+}
+#toggle--craft-tab:checked~.action-container .--craft-tab {
+  background: #2D3246;
+}
+
+/* ==== Прем-таб ====*/
+#toggle--premium-store-tab:checked~.action-container .premium-store {
+  display: grid;
+}
+#toggle--premium-store-tab:checked~.action-container .--premium-store-tab {
+  background: #2D3246;
+}
+
+/* ==== Рынок-таб ====*/
+#toggle--market-tab:checked~.action-container .market-swap {
+  display: grid;
+}
+#toggle--market-tab:checked~.action-container .--market-tab {
+  background: #2D3246;
+}
+/* ==== Рынок-внутренний-таб ====*/
+#toggle--market-inner-tab:checked~.action-container .market {
+  display: grid;
+}
+#toggle--market-inner-tab:checked~.action-container .--market-inner-tab  {
+  background: #0E9BBB;
+}
+/* ==== Добавить лот-внутренний-таб ====*/
+#toggle--add-lot-inner-tab:checked~.action-container .add-lot {
+  display: grid;
+}
+#toggle--add-lot-inner-tab:checked~.action-container .--add-lot-inner-tab  {
+  background: #0E9BBB;
+}
+/* ==== Избранное-внутренний-таб ====*/
+#toggle--favorite-inner-tab:checked~.action-container .favorite {
+  display: grid;
+}
+#toggle--favorite-inner-tab:checked~.action-container .--favorite-inner-tab  {
+  background: #0E9BBB;
+}
+/* ==== Добавленный лот-внутренний-таб ====*/
+#toggle--added-lot-inner-tab:checked~.action-container .added-lot {
+  display: grid;
+}
+#toggle--added-lot-inner-tab:checked~.action-container .--added-lot-inner-tab  {
+  background: #0E9BBB;
+}
+/* ==== Склад-внутренний-таб ====*/
+#toggle--storage-inner-tab:checked~.action-container .storage {
+  display: grid;
+}
+#toggle--storage-inner-tab:checked~.action-container .--storage-inner-tab  {
+  background: #0E9BBB;
+}
+
+
+/* ==== Боёвка ====*/
+#toggle--fight-btn:checked~.container .fight-container {
+  display: grid;
+}
+/* отключает основное игровое окно */
+#toggle--fight-btn:checked~.container .main-wrap {
+  display: none;
+}
+
+/* ==== Покебук ====*/
+#toggle--pokebook-btn:checked~.action-container .pokebook {
+  display: grid !important;
+}
+/* отключает основное игровое окно */
+#toggle--pokebook-btn:checked~.action-container .main-wrap {
+  display: none;
+}
+
+
+/* Задания-чекбокс */
+#toggle--quest-checkbox:checked~.action-container .checkbox-off {
+  display: none;
+}
+#toggle--quest-checkbox:checked~.action-container .checkbox-on {
+  display: block;
+}
+#toggle--quest-checkbox:checked~.action-container .quest-disabled {
+  display: none;
+}
+#toggle--quest-checkbox:checked~.action-container .quest-completed {
+  display: none;
+}
+
+/* Задания-таб */
+#toggle--quest-tab:checked~.action-container .--quest-tab {
+  background: #2D3246;
+}
+#toggle--quest-tab:checked~.action-container .quest-wrap {
+  display: grid;
+}
+/* -------------------------------------------- */
+/* Декс-таб */
+#toggle--dex-tab:checked~.action-container .--dex-tab {
+  background: #2D3246;
+}
+#toggle--dex-tab:checked~.action-container .dex-wrap {
+  display: grid;
+}
+/* -------------------------------------------- */
+/* События-таб */
+#toggle--events-tab:checked~.action-container .--events-tab {
+  background: #2D3246;
+}
+
+/* Задание-модал */
+#toggle--quest-box:checked~.action-container .quest-inner {
+  display: flex !important;
+}
+
+/* Задание-модал-акт */
+#toggle--quest-act-box:checked~.action-container .quest-inner-act {
+  display: flex !important;
+  z-index: 999999;
 }
 
 /* для бургера */
@@ -935,16 +6037,121 @@ input::placeholder {
   grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
   position: static;
-  /* right: 0; */
-  /* width: 100%; */
-  /* position: relative; */
-
 }
 
 /* отсупы для плитки меню */
 #toggle--burger-btn:checked~.action-container .root-menu>.main-nav {
   gap: 10px;
   padding: 10px;
+}
+
+/* Клуб-публичный */
+#toggle--public-clan-btn:checked~.action-container .public-clan {
+  display: flex !important;
+}
+
+/* Настройки */
+#toggle--setting-btn:checked~.action-container .setting {
+  display: flex !important;
+}
+/* Персонализация */
+#toggle--personalization-btn:checked~.action-container .personalization {
+  display: flex !important;
+  z-index: 999999;
+}
+/* Иконки-таб */
+#toggle--personalization-icon-tab:checked~.action-container .personalization-download-img {
+  display: flex;
+}
+#toggle--personalization-icon-tab:checked~.action-container .--personalization-icon-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* Рамки-таб */
+#toggle--personalization-frames-tab:checked~.action-container .personalization-frames {
+  display: grid;
+}
+#toggle--personalization-frames-tab:checked~.action-container .--personalization-frames-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* ------------------------------ */
+#toggle--frames-box-1:checked~.action-container .profile__avatar  {
+  border: 5px solid #252638;
+}
+#toggle--frames-box-1:checked~.action-container .--frames-box-1  {
+  border: 1px solid #F0E6D2;
+}
+#toggle--frames-box-2:checked~.action-container .frame-img  {
+  display: block;
+}
+#toggle--frames-box-2:checked~.action-container .--frames-box-2  {
+  border: 1px solid #F0E6D2;
+}
+#toggle--frames-box-3:checked~.action-container .profile__avatar  {
+  border: 5px solid #C4262A;
+}
+#toggle--frames-box-3:checked~.action-container .--frames-box-3  {
+  border: 1px solid #F0E6D2;
+}
+/* ------------------------------ */
+/* Фоны-таб */
+#toggle--personalization-bg-tab:checked~.action-container .personalization-bg {
+  display: grid;
+}
+/* ------------------------------ */
+#toggle--bg-box-1:checked~.action-container .--bg-box-1  {
+  border: 1px solid #F0E6D2;
+}
+#toggle--bg-box-1:checked~.action-container .profile__skin-box  {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #463A60 0%, #2B2F42 100%)
+}
+#toggle--bg-box-2:checked~.action-container .--bg-box-2  {
+  border: 1px solid #F0E6D2;
+}
+#toggle--bg-box-2:checked~.action-container .profile__skin-box  {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #3A6052 0%, #2B2F42 100%)
+}
+#toggle--bg-box-3:checked~.action-container .--bg-box-3  {
+  border: 1px solid #F0E6D2;
+}
+#toggle--bg-box-3:checked~.action-container .profile__skin-box  {
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #603A43 0%, #2B2F42 100%)
+}
+/* ------------------------------ */
+#toggle--personalization-bg-tab:checked~.action-container .--personalization-bg-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* Облики-таб */
+#toggle--personalization-skins-tab:checked~.action-container .personalization-skins {
+  display: grid;
+}
+#toggle--personalization-skins-tab:checked~.action-container .--personalization-skins-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* ----------------------------------------- */
+/* Загрузить изображение */
+#toggle--download-img-btn:checked~.action-container .download-img {
+  display: flex;
+}
+#toggle--download-img-btn:checked~.action-container .download-img-btn {
+  display: none;
+}
+
+/* -- Модальные окна -- */
+#toggle--premium-store-modal-col1:checked~.action-container .premium-store-buy-col1 {
+  display: flex !important;
+  justify-content: center;
+}
+#toggle--premium-store-modal-col2:checked~.action-container .premium-store-buy-col2 {
+  display: flex !important;
+}
+#toggle--buy-confirm-modal:checked~.action-container .buy-confirm-modal {
+  display: flex !important;
+  justify-content: center;
+  z-index: 9999999;
 }
 
 
@@ -977,6 +6184,27 @@ input::placeholder {
 /* Удаляет окно социума */
 #toggle--chat-btn:checked~.bottom-content>.player-list__wrap {
   display: none;
+}
+
+/* ==== смайлы/стикеры ====*/
+#toggle--emoji-btn:checked~.bottom-content .emoji-container {
+  display: grid;
+}
+/* ==== смайлы-таб ====*/
+#toggle--emoji-tab:checked~.bottom-content .--emoji-tab {
+  background: #2C63E1;
+}
+/* включает окно смайлов */
+#toggle--emoji-tab:checked~.bottom-content .emoji-box {
+  display: grid;
+}
+/* ==== стикеры-таб ====*/
+#toggle--stickers-tab:checked~.bottom-content .--stickers-tab {
+  background: #2C63E1;
+}
+/* включает окно Стикеров */
+#toggle--stickers-tab:checked~.bottom-content .sticker-box-wrap {
+  display: grid;
 }
 
 
@@ -1186,16 +6414,88 @@ input::placeholder {
 
 /* Для чата диалогов */
 
-#toggle--dialogs-chat-btn:checked~.action-container .dialogs-chat-wrap {
+#toggle--dialogs-chat-btn:checked~.action-container .dialogs-chat {
   display: flex;
 }
 
 /* ------------------------------------------- */
 
+/* ==== Для Инвентаря ==== */
 
+/* ==== Кнопки переключения сортировки ==== */
 
+/* Красит кнопки */
+#toggle-sort-btn1:checked~.action-container .--sort-btn1 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn2:checked~.action-container .--sort-btn2 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn3:checked~.action-container .--sort-btn3 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn4:checked~.action-container .--sort-btn4 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn5:checked~.action-container .--sort-btn5 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn6:checked~.action-container .--sort-btn6 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn7:checked~.action-container .--sort-btn7 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn8:checked~.action-container .--sort-btn8 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+#toggle-sort-btn9:checked~.action-container .--sort-btn9 > .sort-nav__btn {
+  background: #3E75D7;
+  border-bottom: 3px solid #3E75D7;
+}
+/* ------------------------------------------- */
 
+/* Переключает валюту */
+#toggle--money-btn:checked~.action-container .money-box-mobile {
+  background-image: url(img/деньга.svg);
+}
 
+#toggle--money-btn:checked~.action-container .--donate {
+  display: flex;
+}
+
+#toggle--money-btn:checked~.action-container .--main-mony {
+  display: none;
+}
+
+/* ==== Для Профиля ==== */
+
+/* переключает кнопку редактирования на крестик */
+#toggle--edit-btn:checked~.action-container .--edit-btn {
+  background-image: url(img/крестик.svg);
+  height: 16px;
+  width: 16px;
+}
+/* включает панель кнопок */
+#toggle--edit-btn:checked~.action-container .edit-panel__item {
+  opacity: 1;
+}
+/* включает поле для воода текста */
+#toggle--edit-btn:checked~.action-container textarea {
+  display: flex;
+}
+/* отключает текстовый блок заметки */
+#toggle--edit-btn:checked~.action-container .profile-note__txt {
+  display: none;
+}
 
 /*=============================*/
 
