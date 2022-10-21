@@ -4941,9 +4941,7 @@ textarea {
 
 @media (max-width: 1000px) {
 
-  body {
-        position:fixed;
-   }
+ 
   
   .modal-mobile {
     /* width: 50% !important; */
