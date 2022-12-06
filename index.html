@@ -12,10 +12,261 @@
 <body>
   <!-- ==== Боёвка ==== -->
   <input type="checkbox" class="checkbox" id="toggle--fight-btn">
+  <!-- ==== Боёвка-Расходники ==== -->
+  <input type="checkbox" class="checkbox" id="toggle--fight-inventory-btn" >
+  <!-- Зелья-таб -->
+  <input type="radio" class="checkbox" id="toggle--fight-potion-tab" name="fight-inventory" checked>
+  <!--Навыки-таб -->
+  <input type="radio" class="checkbox" id="toggle--fight-skills-tab" name="fight-inventory">
+  <!-- ==== Боёвка-Чат ==== -->
+  <input type="checkbox" class="checkbox" id="toggle--fight-chat-btn">
+  <!-- ==== Боёвка-Покеболы ==== -->
+  <input type="checkbox" class="checkbox" id="toggle--fight-pokeballs-btn" >
+  <!-- ==== Боёвка-Команда ==== -->
+  <input type="checkbox" class="checkbox" id="toggle--fight-team-btn">
+  <!-- ==== Боёвка-Навык-модал ==== -->
+  <input type="checkbox" class="checkbox" id="toggle--fight-skill-modal">
 
+  <!------Мини модалки ------>
+  <!-- блок-игрока -->
+  <input type="checkbox" class="checkbox" id="toggle--request-block">
+  <!-- ------------------- -->
+  <input type="checkbox" class="checkbox" id="toggle--swap-btn">
+
+  <!-- ==== Главная ==== -->
+  <input type="checkbox" class="checkbox" id="toggle--start-page">
+  <!-- чекбокс -->
+  <input type="checkbox" class="checkbox" id="toggle--checkbox">
+  <!-- Регистрация -->
+  <input type="checkbox" class="checkbox" id="toggle--reg">
+  <!-- Вход выполнен -->
+  <input type="checkbox" class="checkbox" id="toggle--logined">
+  <!-- Валидация формы -->
+  <input type="checkbox" class="checkbox" id="toggle--form-error">
+
+  <div class="start-page">
+    <div class="start-page__intro" id="top">
+      <div class="start-page__header">
+        <a class="start-page__title" href="#top">
+          <div>PROJECT V</div> 
+        </a>
+        <a class="start-page__vk" href="#">
+          <img src="img/вк.png" alt="-">
+        </a>
+      </div>
+      <div class="start-page__intro-bg">
+        <img src="img/Квест-арт.png" alt="-">
+        <!-- Регистрация -->
+        <div class="start-page__form-box --reg">
+          <div class="form-box__title">Регистрация</div>
+          <div class="start-page__form-wrap">
+            <div class="start-page__form-error">
+              <div class="form-error-box">
+                <div class="form-error-box-title">ИМЯ ПЕРСОНАЖА</div>
+                <div class="form-error-box-subtitle">Anistemi</div>
+              </div>
+              <div class="form-error-box-msg">Вы неправильно ввели имя пользователя </div>
+            </div>
+            <label class="start-page__input-box" for="toggle--form-error">
+              <input type="text" class="start-page__input">
+              <div class="start-page__input-title">ИМЯ ИЛИ ПОЧТА</div>
+            </label>
+            <label class="start-page__input-box">
+              <input type="text" class="start-page__input">
+              <div class="start-page__input-title">E-MAIL</div>
+            </label>
+            <label class="start-page__input-box">
+              <input type="password" class="start-page__input">
+              <div class="start-page__input-title">ПАРОЛЬ</div>
+            </label>
+            <label class="start-page__input-box">
+              <input type="password" class="start-page__input">
+              <div class="start-page__input-title">ПОДТВЕРДИТЕ ПАРОЛЬ</div>
+            </label>
+          </div>
+          <label for="toggle--start-page" class="label-btn">
+            <div class="start-page-btn">
+              <img src="img/Войти.svg" alt="-">
+            </div>
+          </label>
+          <div class="start-page-policy">
+            <label for="toggle--checkbox" class="label-btn">
+              <div class="quest-checkbox">
+                <img src="img/Чекбокс-OFF.svg" alt="-" class="checkbox-off">
+                <img src="img/Чекбокс-ON.svg" alt="-" class="checkbox-on">
+              </div>
+            </label>
+            <div class="start-page__policy-txt">Я принимаю:
+              <a class="start-page__policy-link" href="#">Правила игры,<br/> пользовательское соглашение,<br/> политику конфиденциальности</a>
+            </div>
+          </div>
+        </div>
+        <!-- Вход выполнен -->
+        <div class="start-page__form-box --logined">
+          <div class="logined-avatar-box">
+            <div class="logined-avatar">
+              <img src="img/avatar.png" alt="-">
+            </div>
+            <div class="logined-avatar-name">Anistemi</div>
+          </div>
+          <div class="start-page-btn-wrap">
+            <label for="toggle--logined" class="label-btn">
+              <div class="start-page-btn">
+                <img src="img/Выйти.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--start-page" class="label-btn">
+              <div class="start-page-btn">
+                <img src="img/Войти.svg" alt="-">
+              </div>
+            </label>
+          </div>
+        </div>
+        <!-- Авторизация -->
+        <div class="start-page__form-box --login">
+          <div class="start-page__form-wrap">
+            <div class="start-page__form-error">
+              <div class="form-error-box">
+                <div class="form-error-box-title">ИМЯ ПЕРСОНАЖА</div>
+                <div class="form-error-box-subtitle">Anistemi</div>
+              </div>
+              <div class="form-error-box-msg">Вы неправильно ввели имя пользователя </div>
+            </div>
+            <label class="start-page__input-box" for="toggle--form-error">
+              <input type="text" class="start-page__input">
+              <div class="start-page__input-title">ИМЯ ИЛИ ПОЧТА</div>
+            </label>
+            <label class="start-page__input-box">
+              <input type="password" class="start-page__input">
+              <div class="start-page__input-title">ПАРОЛЬ</div>
+            </label>
+          </div>
+          <label for="toggle--logined" class="label-btn">
+            <div class="start-page-btn">
+              <img src="img/Войти.svg" alt="-">
+            </div>
+          </label>
+          <div class="start-page__form-text">
+            <div class="start-page__form-link">НЕ МОЖЕТЕ ВОЙТИ?</div>
+            <label for="toggle--reg" class="label-btn">
+              <div class="start-page__form-link">РЕГИСТРАЦИЯ</div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="start-page__news">
+      <div class="start-page__news-title">Новостная лента</div>
+      <div class="start-page__news-container">
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+        <div class="start-page__news-box">
+          <div class="start-page__news-txt">
+            <div class="news-box__date">24.04.2022</div>
+            <div class="news-box__title">Заголовок...</div>
+            <div class="news-box__descr">Вчера, около 23:20, совершилась DDoS Атака на наш сайт. Прежняя защита была бесплатна и не спасала совсем. Теперь же пришлось раскошелиться на лучшую защиту, и вручную заблокировать около 250 IP Адресов. Посмотрим как будет дальше.</div>
+          </div>
+          <div class="news-box__img">
+            <img src="img/скил-бг.jpg" alt="-">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <!-- модальное окно игрока -->
     <div class="modal-player --modal">
+      <div class="modal-player-container">
+      <!--  Мини модалки / запросы  -->
+      <div class="--modal-inner">
+        <div class="request-modal-content">
+          <div class="request-modal-top">
+            <label for="toggle--request-block" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="request-modal-middle">
+            <!-- блок-игрока -->
+            <div class="request-modal-text --request-block">Вы уверенны что хотите <br/> заблокировать Lepistok?</div>
+          </div>
+          <div class="request-modal-bottom">
+            <div class="request-modal-btn">Да</div>
+            <label for="toggle--request-block" class="label-btn">
+              <div class="request-modal-btn">Нет</div>
+            </label>
+          </div>
+        </div>
+      </div>
       <div class="modal-player__top-bg">
         <div class="profile__avatar-box">
           <div class="profile__avatar">
@@ -41,22 +292,31 @@
               <img src="img/ЛС.svg" alt="-">
             </div>
             </label>
-            <div class="modal-player__btn">
-              <img src="img/Добавить в друзья.svg" alt="-">
-            </div>
-            <div class="modal-player__btn">
-              <img src="img/Заблокировать.svg" alt="-">
-            </div>
-            <div class="modal-player__btn">
-              <img src="img/Добавить в клан.svg" alt="-">
-            </div>
+            <label for="toggle--swap-btn" class="label-btn">
+              <div class="modal-player__btn">
+                <img src="img/Добавить в друзья.svg" alt="-">
+                <img src="img/Удалить-друга.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--request-block" class="label-btn">
+              <div class="modal-player__btn">
+                <img src="img/Заблокировать.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--request-clan" class="label-btn">
+              <div class="modal-player__btn">
+                <img src="img/Добавить в клан.svg" alt="-">
+              </div>
+            </label>
           </div>
         </div>
         <div class="modal-player__panel">
           <div class="modal-player__btn-wrap">
-            <div class="modal-player__btn">
-              <img src="img/Бой.svg" alt="-">
-            </div>
+            <label for="toggle--request-fight" class="label-btn">
+              <div class="modal-player__btn">
+                <img src="img/Бой.svg" alt="-">
+              </div>
+            </label>
             <div class="modal-player__btn">
               <img src="img/Яйцо.svg" alt="-">
             </div>
@@ -68,13 +328,50 @@
           </div>
         </div>
       </div>
-
+    </div>
     </div>
 
     <!-- Инпуты для иметации функционала -->
+
+    <!-- Купить валюту -->
+    <input type="checkbox" class="checkbox" id="toggle--buy-money" >
+    <input type="checkbox" class="checkbox" id="toggle--buy-donate">
+
+
+    <!--=--=--=-Мини модалки-=--=--=-->
+    <!-- добавить лут -->
+    <input type="checkbox" class="checkbox" id="toggle--add-loot">
+    <!-- добавить деньги -->
+    <input type="checkbox" class="checkbox" id="toggle--add-money">
+    <!-- Инвентарь клуба -->
+    <input type="checkbox" class="checkbox" id="toggle--club-inventory">
+    <!-- дабавить стату -->
+    <input type="checkbox" class="checkbox" id="toggle--add-stats">
+    <!-- Описание предмета -->
+    <input type="checkbox" class="checkbox" id="toggle--descr-item">
+    <!-- Вызов на бой -->
+    <input type="checkbox" class="checkbox" id="toggle--request-fight">
+    <!-- преглос в клан -->
+    <input type="checkbox" class="checkbox" id="toggle--request-clan">
+    <!-- Удалить диалог -->
+    <input type="checkbox" class="checkbox" id="toggle--request-remove">
+    
+    <!-- -------------------------- -->
+
+    <!-- ==== NPC ==== -->
+    <input type="checkbox" class="checkbox" id="toggle--npc-modal" >
     
     <!-- ==== Профиль ==== -->
-    <input type="checkbox" class="checkbox" id="toggle--profile-btn">
+    <input type="checkbox" class="checkbox" id="toggle--profile-btn" >
+    <!-- Профиль-таб -->
+    <input type="radio" class="checkbox" id="toggle--profile-tab" name="profile" checked>
+    <!-- Награды-таб -->
+    <input type="radio" class="checkbox" id="toggle--awards-tab" name="profile" >
+    <!-- Достижения-таб -->
+    <input type="radio" class="checkbox" id="toggle--achievement-tab" name="profile" >
+    <!-- Перки-таб -->
+    <input type="radio" class="checkbox" id="toggle--perks-tab" name="profile" >
+
     <!-- ==== Команда ==== -->
     <input type="checkbox" class="checkbox" id="toggle--my-team-btn">
     <!-- ==== Покемон ==== -->
@@ -112,8 +409,49 @@
     <!-- Рейтинг-клан-таб -->
     <input type="radio" class="checkbox" id="toggle--rating-clan-tab" name="rating">
 
+    <!-- Клуб -->
+    <input type="checkbox" class="checkbox" id="toggle--clan-btn">
+    <!-- Главная-таб -->
+    <input type="radio" class="checkbox" id="toggle--clan-main-tab" name="clan" checked>
+    <!-- Задания-таб -->
+    <input type="radio" class="checkbox" id="toggle--clan-quest-tab" name="clan" >
+    <!-- Развитие-таб -->
+    <input type="radio" class="checkbox" id="toggle--clan-up-tab" name="clan">
+    <!-- Настройки-таб -->
+    <input type="radio" class="checkbox" id="toggle--clan-setting-tab" name="clan" >
+    <!-- Настройки-Участники -->
+    <input type="checkbox" class="checkbox" id="toggle--setting-player-list" >
+    <!-- Настройки-Заявки -->
+    <input type="checkbox" class="checkbox" id="toggle--setting-request-list" >
+    <!-- Настройки-Персонализация -->
+    <input type="checkbox" class="checkbox" id="toggle--setting-personalization">
+
+    <!-- Настройки-Персонализация/Иконка -->
+    <input type="radio" class="checkbox" id="toggle--setting-icon-tab" name="clan-setting" checked>
+    <!-- Настройки-Персонализация/Рамки -->
+    <input type="radio" class="checkbox" id="toggle--setting-frame-tab" name="clan-setting" >
+    <!-- Настройки-Персонализация/Фон -->
+    <input type="radio" class="checkbox" id="toggle--setting-bg-tab" name="clan-setting" >
+    <!-- Настройки-Персонализация/Знамя -->
+    <input type="radio" class="checkbox" id="toggle--setting-flag-tab" name="clan-setting" >
+
+
+    <!-- ==== Клан-Задания-чекбокс ==== -->
+    <input type="checkbox" class="checkbox" id="toggle--clan-quest-checkbox">
+    <!-- ==== Клан-Задания-описание ==== -->
+    <input type="checkbox" class="checkbox" id="toggle--clan-quest-open">
+
+    <!-- ==== Кнопочка модера ==== -->
+    <input type="checkbox" class="checkbox" id="--clan-setting-check">
+    
     <!-- Клуб-публичный -->
-    <input type="checkbox" class="checkbox" id="toggle--public-clan-btn" checked>
+    <input type="checkbox" class="checkbox" id="toggle--public-clan-btn">
+    <!-- Участники-таб -->
+    <input type="radio" class="checkbox" id="toggle--clan-main-list" name="clan-main" checked>
+    <!-- О клубе-таб -->
+    <input type="radio" class="checkbox" id="toggle--clan-main-about" name="clan-main" >
+    <!-- Награды-таб -->
+    <input type="radio" class="checkbox" id="toggle--clan-main-awards" name="clan-main">
 
     <!-- Настройки -->
     <input type="checkbox" class="checkbox" id="toggle--setting-btn">
@@ -1021,10 +1359,12 @@
               <div class="exchange-inventory-wrap">
                 <!-- Плитка -->
                 <div class="inventory-container">
-                  <div class="inventory-container__item --inventory-item">
-                    <img src="img/банка.png" alt="-">
-                    <span class="inventory-item__count">12</span>
-                  </div>
+                  <label for="toggle--add-loot" class="label-btn">
+                    <div class="inventory-container__item --inventory-item">
+                      <img src="img/банка.png" alt="-">
+                      <span class="inventory-item__count">12</span>
+                    </div>
+                  </label>
                   <div class="inventory-container__item --inventory-item">
                     <img src="img/банка.png" alt="-">
                   </div>
@@ -1332,6 +1672,474 @@
             </div>
           </div>
       </div>
+      <!-- ---------Модалки------------ -->
+      <!-- Мини модалки / запросы -->
+      <div class="modal-bg request-modal">
+        <div class="request-modal-content">
+          <div class="request-modal-top">
+            <div class="player-list__player --click-box">
+              <div class="player-list__avatar">
+                <div class="player-list__label"></div>
+              </div>
+              <div class="player-list__name">Lepistok</div>
+            </div>
+            <label for="toggle--request-fight" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="request-modal-middle">
+            <!-- Вызов на бой -->
+            <div class="request-modal-text --request-fight">Вызывает вас на бой</div>
+            <!-- преглос в клан -->
+            <div class="request-modal-text --request-clan">Приглашает Вас в клан VOID</div>
+          </div>
+          <div class="request-modal-bottom">
+            <div class="request-modal-btn">Принять</div>
+            <label for="toggle--request-clan" class="label-btn">
+              <div class="request-modal-btn">Отклонить</div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Описание предмета -->
+      <div class="modal-bg descr-item">
+        <div class="mini-modal-content">
+          <div class="sb-h28-title">
+            <div class="title-txt">Зелье выносливости</div>
+            <label for="toggle--descr-item" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="descr-item-container">
+            <div class="descr-item-img">
+              <img src="img/банка.png" alt="-">
+            </div>
+            <div class="descr-item-text">Монстр устремляется к противнику, прикасается к нему и высасывает небольшое количество жизненной силы, временно паразитируя на противнике. Половина отнятых у соперника НР преобразуются в собственные.</div>
+            <div class="add-stats-btn-wrap">
+              <div class="mini-modal-btn">Удалить</div>
+              <div class="mini-modal-btn">Применить</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- дабавить стату -->
+      <div class="modal-bg add-stats">
+        <div class="mini-modal-content">
+          <div class="sb-h28-title">
+            <div class="title-txt">Очки тренеровки: 5</div>
+            <label for="toggle--add-stats" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="add-stats-container">
+            <div class="add-stats-box">
+              <div class="add-stats-title">Здоровье</div>
+              <div class="add-stats-panel">
+                <div class="add-lot-panel-btn">
+                  <svg class="--icon-minus">
+                    <use xlink:href="sprite.svg#minus"></use>
+                  </svg>
+                </div>
+                <div class="stats-progressbar">
+                  <div class="stats-progressbar-value">126/126</div>
+                  <div class="stats-progressbar__line --green-stat"></div>
+                </div>
+                <div class="add-lot-panel-btn">
+                  <svg class="--icon-plus">
+                    <use xlink:href="sprite.svg#plus"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="add-stats-btn-wrap">
+              <div class="mini-modal-btn">Сохранить</div>
+              <div class="mini-modal-btn --red-btn-modal">Отменить</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- добавить деньги -->
+      <div class="modal-bg add-money">
+        <div class="mini-modal-content">
+          <div class="sb-h28-title">
+            <div class="title-txt">Взнос в клуб</div>
+            <label for="toggle--add-money" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="modal-box add-money-container">
+            <div class="add-money-input-box">
+              <div class="money-box --main-mony">
+                <div class="money">
+                  <img src="img/деньга.svg" alt="-">
+                  <div class="money-value">12345</div>
+                </div>
+              </div>
+              <div class="money-box --main-mony">
+                <div class="money">
+                  <img src="img/деньга.svg" alt="-">
+                  <input type="number" class="money-value" placeholder="0">
+                </div>
+              </div>
+            </div>
+            <label for="toggle--add-money" class="label-btn">
+              <div class="mini-modal-btn">Положить</div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- добавить лут -->
+      <div class="modal-bg add-loot">
+        <div class="mini-modal-content">
+          <div class="sb-h28-title">
+            <div class="title-txt">Положить предмет</div>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="modal-box add-loot-container">
+            <div class="premium-store-icon">
+              <img src="img/банка.png" alt="-">
+            </div>
+            <div class="add-loot__input-wrap">
+              <div class="input-range-container">
+                <input type="range" min="0" max="100" value="30" step="1" class="input-range">
+                <div class="input-range-bar"></div>
+              </div>
+              <div class="add-loot__input-value-box">
+                <div class="add-lot-panel-btn">
+                  <svg class="--icon-minus">
+                    <use xlink:href="sprite.svg#minus"></use>
+                  </svg>
+                </div>
+                <span>5 / 20</span>
+                <div class="add-lot-panel-btn">
+                  <svg class="--icon-plus">
+                    <use xlink:href="sprite.svg#plus"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="mini-modal-btn">Положить</div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Инвентарь клуба -->
+      <div class="modal-bg club-inventory">
+        <div class="mini-modal-content">
+          <div class="sb-h28-title">
+            <div class="title-txt">Инвентарь</div>
+            <label for="toggle--club-inventory" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="modal-box club-inventory-container">
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+            <label for="toggle--add-loot" class="label-btn">
+              <div class="club-inventory__item">
+                <img src="img/банка.png" alt="-">
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- ---------------------------- -->
+      <!-- ===== Боёвка-Навык-модал ===== -->
+      <div class="modal-bg fight-skill-modal">
+        <div class="fight-skill-content">
+          <div class="pop-up-header">
+            <div class="skill-dickr-title">
+              <div class="skill-dickr-icon --purple-skill-dickr">
+                <img src="img/Призрак.svg" alt="-">
+              </div>
+              <div class="skill-dickr-title-txt">Иссушение</div>
+            </div>
+            <label for="toggle--fight-skill-modal" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="fight-skill-container">
+            <div class="skill-dickr-content">
+              <div class="skill-discr-wrap">
+                <div class="skill-discr-icon --purple-skill">
+                  <img src="img/скил-бг.jpg" alt="-">
+                  <div class="skill-value">35</div>
+                  <div class="skill-btn --purple-skill ">
+                    <img src="img/Спец атака.svg" alt="-">
+                  </div>
+                </div>
+                <div class="skill-value-box">
+                  <div class="skill-category-wrap">
+                    <div class="skill-category --green-category">
+                      <div class="skill-category-txt">Лечение</div>
+                    </div>
+                    <div class="skill-category --blue-category">
+                      <div class="skill-category-txt">Бафф</div>
+                    </div>
+                  </div>
+                  <div class="skill-info-container">
+                    <div class="skill-info-left">
+                      <span>Мощность</span>
+                      <span>Точность</span>
+                      <span>Приоритет</span>
+                      <span class="skill-info-value">40</span>
+                      <span class="skill-info-value">100%</span>
+                      <span class="skill-info-value">+7</span>
+                    </div>
+                    <div class="skill-info-right">
+                      <span>Дальний бой</span>
+                      <span>Применение: <span class="skill-info-value">На себя</span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-discr">Монстр устремляется к противнику, прикасается к нему и высасывает небольшое
+                количество жизненной силы, временно паразитируя на противнике. Половина отнятых у соперника НР
+                преобразуются в собственные.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- -----Купить валюту----- -->
+      <!-- деньга -->
+      <div class="modal-bg buy-money">
+        <div class="modal-content --buy-currency">
+          <div class="sb-h40-title">
+            <div class="title-txt">Покупка валюты</div>
+            <label for="toggle--buy-money" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="modal-box">
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-деньги.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/деньга.svg" alt="-">
+                  <div class="money-value">12345</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">200</div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-деньги.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/деньга.svg" alt="-">
+                  <div class="money-value">12345</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">200</div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-деньги.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/деньга.svg" alt="-">
+                  <div class="money-value">12345</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">200</div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-деньги.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/деньга.svg" alt="-">
+                  <div class="money-value">12345</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">200</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- донат -->
+      <div class="modal-bg buy-donate">
+        <div class="modal-content --buy-currency">
+          <div class="sb-h40-title">
+            <div class="title-txt">Покупка алмазиков</div>
+            <label for="toggle--buy-donate" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="modal-box">
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-донат.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">100</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <div class="money-value">200 ₽</div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-донат.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">500</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <div class="money-value">450 ₽</div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-донат.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">700</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <div class="money-value">699 ₽</div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-currency__item">
+              <div class="buy-currency-box">
+                <div class="buy-currency-img">
+                  <img src="img/Мешок-донат.png" alt="-">
+                </div>
+                <div class="money">
+                  <img src="img/Донат.svg" alt="-">
+                  <div class="money-value">2000</div>
+                </div>
+              </div>
+              <div class="buy-currency-btn">
+                <div class="money">
+                  <div class="money-value">1000 ₽</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------- -->
       <!-- ===== Команда ===== -->
       <div class="modal-bg my-team">
         <div class="modal-content">
@@ -1899,9 +2707,11 @@
                         <div class="stats-progressbar-value">126/126</div>
                         <div class="stats-progressbar__line --green-stat"></div>
                       </div>
-                      <div class="stats-progressbar__add-btn">
-                        <img src="img/Плюс-статы.svg" alt="-">
-                      </div>
+                      <label for="toggle--add-stats" class="label-btn">
+                        <div class="stats-progressbar__add-btn">
+                          <img src="img/Плюс-статы.svg" alt="-">
+                        </div>
+                      </label>
                     </div>
                   </div>
                   <div class="pokemon-stats__item">
@@ -1922,9 +2732,11 @@
                         <div class="stats-progressbar-value">126/126</div>
                         <div class="stats-progressbar__line --blue-stat"></div>
                       </div>
-                      <div class="stats-progressbar__add-btn">
-                        <img src="img/Плюс-статы.svg" alt="-">
-                      </div>
+                      <label for="toggle--add-stats" class="label-btn">
+                        <div class="stats-progressbar__add-btn">
+                          <img src="img/Плюс-статы.svg" alt="-">
+                        </div>
+                      </label>
                     </div>
                   </div>
                   <div class="pokemon-stats__item">
@@ -1945,9 +2757,11 @@
                         <div class="stats-progressbar-value">126/126</div>
                         <div class="stats-progressbar__line --blue-stat"></div>
                       </div>
-                      <div class="stats-progressbar__add-btn">
-                        <img src="img/Плюс-статы.svg" alt="-">
-                      </div>
+                      <label for="toggle--add-stats" class="label-btn">
+                        <div class="stats-progressbar__add-btn">
+                          <img src="img/Плюс-статы.svg" alt="-">
+                        </div>
+                      </label>
                     </div>
                   </div>
                   <div class="pokemon-stats__item">
@@ -1968,9 +2782,11 @@
                         <div class="stats-progressbar-value">126/126</div>
                         <div class="stats-progressbar__line --pink-stat"></div>
                       </div>
-                      <div class="stats-progressbar__add-btn">
-                        <img src="img/Плюс-статы.svg" alt="-">
-                      </div>
+                      <label for="toggle--add-stats" class="label-btn">
+                        <div class="stats-progressbar__add-btn">
+                          <img src="img/Плюс-статы.svg" alt="-">
+                        </div>
+                      </label>
                     </div>
                   </div>
                   <div class="pokemon-stats__item">
@@ -1991,9 +2807,11 @@
                         <div class="stats-progressbar-value">126/126</div>
                         <div class="stats-progressbar__line --pink-stat"></div>
                       </div>
-                      <div class="stats-progressbar__add-btn">
-                        <img src="img/Плюс-статы.svg" alt="-">
-                      </div>
+                      <label for="toggle--add-stats" class="label-btn">
+                        <div class="stats-progressbar__add-btn">
+                          <img src="img/Плюс-статы.svg" alt="-">
+                        </div>
+                      </label>
                     </div>
                   </div>
                   <div class="pokemon-stats__item">
@@ -2014,9 +2832,11 @@
                         <div class="stats-progressbar-value">126/126</div>
                         <div class="stats-progressbar__line --yellow-stat"></div>
                       </div>
-                      <div class="stats-progressbar__add-btn">
-                        <img src="img/Плюс-статы.svg" alt="-">
-                      </div>
+                      <label for="toggle--add-stats" class="label-btn">
+                        <div class="stats-progressbar__add-btn">
+                          <img src="img/Плюс-статы.svg" alt="-">
+                        </div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -2613,6 +3433,29 @@
             <div class="game__link">Поле для тренеровок</div>
           </div>
           <div class="view-art">
+            <!-- NPC -->
+            <div class="npc-modal">
+              <div class="sb-h40-title">
+                <div class="title-txt">Персонаж</div>
+                <label for="toggle--npc-modal" class="label-btn">
+                  <div class="modal-btn-close">
+                    <img src="img/Крестик-2.svg" alt="-">
+                  </div>
+                </label>
+              </div>
+              <div class="npc-modal-container">
+                <div class="npc-art">
+                  <img src="img/npc.png" alt="-">
+                </div>
+                <div class="npc-text-box">
+                  <div class="npc-text-descr">Добрый день, тренер! Видимо тебя послал ко мне Сорен. Я обучаюсь в аспирантуре Академии тренеров монстров. Моя работа посвящена изучению эволюции обитающих в районе Голденолда монстров.</div>
+                  <div class="npc-dialog">
+                    <div class="npc-dialog__link">Конечно</div>
+                    <div class="npc-dialog__link">Извини, но я пока не могу уделить тебе время...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="view-art__header">Поле для тренеровок</div>
             <div class="view-art__img">
               <img src="img/25d60b1a2d96fbb4de2580984cdf7fd9.jpg" alt="-">
@@ -2645,8 +3488,12 @@
             </div>
           </div>
           <div class="npc game-box">
-            <div class="game__link">Лаборант</div>
-            <div class="game__link">Сестра джой</div>
+            <label for="toggle--npc-modal" class="label-btn">
+              <div class="game__link">Лаборант</div>
+            </label>
+            <label for="toggle--npc-modal" class="label-btn">
+              <div class="game__link">Сестра джой</div>
+            </label>
             <div class="game-nav-box">
               <label for="toggle--pokemon-storage-btn" class="label-btn">
                 <div class="game-nav__btn">
@@ -2673,6 +3520,505 @@
       <!-- ====== Боёвка ====== -->
       <div class="fight-container">
         <div class="fight-wrap">
+          <!-- Боёвка-Чат -->
+          <div class="fight-chat --fight-box">
+            <div class="sb-h40-title">
+              <div class="player-list__avatar --click-box">
+                <div class="player-list__label"></div>
+              </div>
+              <span class="profile-name">Lepistok</span>
+              <label for="toggle--fight-chat-btn" class="label-btn">
+                <div class="modal-btn-close">
+                  <img src="img/Крестик-2.svg" alt="-">
+                </div>
+              </label>
+            </div>
+            <div class="dialogs-chat__area">
+              <div class="dialogs-chat__message">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="message-nickname">Lepistok</div>
+                  <div class="chat__message-text">
+                    Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                    ширина и высота))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+              <div class="new-message-label">Новые сообщения</div>
+              <div class="dialogs-chat__message">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="chat__message-text">
+                    Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                    ширина и высота))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+              <div class="dialogs-chat__message --my-message-bg">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="message-nickname --my-message-name">Anistemi</div>
+                  <div class="chat__message-text">
+                    Йоу йоу))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+              <div class="dialogs-chat__message">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="message-nickname">Lepistok</div>
+                  <div class="chat__message-text">
+                    Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                    ширина и высота))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+              <div class="dialogs-chat__message">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="chat__message-text">
+                    Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                    ширина и высота))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+              <div class="dialogs-chat__message">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="chat__message-text">
+                    Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                    ширина и высота))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+              <div class="dialogs-chat__message --my-message-bg">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="message-nickname --my-message-name">Anistemi</div>
+                  <div class="chat__message-text">
+                    Йоу йоу))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+              <div class="dialogs-chat__message --my-message-bg">
+                <div class="dialogs-chat__message-wrap">
+                  <div class="chat__message-text">
+                    Ещё то что ты так меришь там разные масштабы то че на скрине и то че в нашем макете) типо разная
+                    ширина и высота))
+                  </div>
+                </div>
+                <span class="dialogs-chat__message-time">17:17</span>
+              </div>
+            </div>
+            <div class="bottom-input-wrap">
+              <!-- кнопка социума -->
+              <div class="main-input">
+                <input type="text" class="input-text" placeholder="Сообщение">
+                <div class="main-input__box-icon">
+                  <img src="img/Смайлик.svg" alt="-">
+                </div>
+              </div>
+              <div class="addmsg-btn">
+                <img src="img/отправить.svg" alt="-">
+              </div>
+            </div>
+          </div>
+          <!-- Боёвка-Команда -->
+          <div class="fight-team --fight-box">
+            <div class="sb-h40-title">
+              <div class="title-txt">Команда</div>
+              <label for="toggle--fight-team-btn" class="label-btn">
+                <div class="modal-btn-close">
+                  <img src="img/Крестик-2.svg" alt="-">
+                </div>
+              </label>
+            </div>
+            <div class="fight-fight-team__container">
+              <div class="fight-fight-team__item">
+                <div class="fight-fight-team__item-content">
+                  <div class="fight-fight-team__item-left">
+                    <div class="pokemon-lvl">
+                      <div class="pokemon-lvl__value">35</div>
+                    </div>
+                    <div class="pokemon-gender">
+                      <img src="img/мальчик.svg" alt="-">
+                    </div>
+                    <div class="pokemon-genome">
+                      <div class="genome-box --green-genome">
+                        <img src="img/Трава.svg" alt="-">
+                      </div>
+                      <div class="genome-box --yellow-genome">
+                        <img src="img/Электричество.svg" alt="-">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fight-fight-team__item-box">
+                    <div class="fight-fight-team__item-name">Ивизавралак</div>
+                    <div class="pokemon-art">
+                      <img src="img/Покемон.gif" alt="-">
+                    </div>
+                  </div>
+                </div>
+                <div class="pokemon-progressbar-wrap">
+                  <div class="pokemon-progressbar-box">
+                    <div class="xp-line" data-tooltip="XP: 1000 / 1000"></div>
+                  </div>
+                  <div class="pokemon-progressbar-box">
+                    <div class="hp-line" data-tooltip="HP: 1000 / 1000"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="fight-fight-team__item">
+                <div class="fight-fight-team__item-content">
+                  <div class="fight-fight-team__item-left">
+                    <div class="pokemon-lvl">
+                      <div class="pokemon-lvl__value">35</div>
+                    </div>
+                    <div class="pokemon-gender">
+                      <img src="img/мальчик.svg" alt="-">
+                    </div>
+                    <div class="pokemon-genome">
+                      <div class="genome-box --green-genome">
+                        <img src="img/Трава.svg" alt="-">
+                      </div>
+                      <div class="genome-box --yellow-genome">
+                        <img src="img/Электричество.svg" alt="-">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fight-fight-team__item-box">
+                    <div class="fight-fight-team__item-name">Ивизавралак</div>
+                    <div class="pokemon-art">
+                      <img src="img/Покемон.gif" alt="-">
+                    </div>
+                  </div>
+                </div>
+                <div class="pokemon-progressbar-wrap">
+                  <div class="pokemon-progressbar-box">
+                    <div class="xp-line" data-tooltip="XP: 1000 / 1000"></div>
+                  </div>
+                  <div class="pokemon-progressbar-box">
+                    <div class="hp-line" data-tooltip="HP: 1000 / 1000"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="fight-fight-team__item">
+                <div class="fight-fight-team__item-content">
+                  <div class="fight-fight-team__item-left">
+                    <div class="pokemon-lvl">
+                      <div class="pokemon-lvl__value">35</div>
+                    </div>
+                    <div class="pokemon-gender">
+                      <img src="img/мальчик.svg" alt="-">
+                    </div>
+                    <div class="pokemon-genome">
+                      <div class="genome-box --green-genome">
+                        <img src="img/Трава.svg" alt="-">
+                      </div>
+                      <div class="genome-box --yellow-genome">
+                        <img src="img/Электричество.svg" alt="-">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fight-fight-team__item-box">
+                    <div class="fight-fight-team__item-name">Ивизавралак</div>
+                    <div class="pokemon-art">
+                      <img src="img/Покемон.gif" alt="-">
+                    </div>
+                  </div>
+                </div>
+                <div class="pokemon-progressbar-wrap">
+                  <div class="pokemon-progressbar-box">
+                    <div class="xp-line" data-tooltip="XP: 1000 / 1000"></div>
+                  </div>
+                  <div class="pokemon-progressbar-box">
+                    <div class="hp-line" data-tooltip="HP: 1000 / 1000"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="fight-fight-team__item">
+                <div class="fight-fight-team__item-content">
+                  <div class="fight-fight-team__item-left">
+                    <div class="pokemon-lvl">
+                      <div class="pokemon-lvl__value">35</div>
+                    </div>
+                    <div class="pokemon-gender">
+                      <img src="img/мальчик.svg" alt="-">
+                    </div>
+                    <div class="pokemon-genome">
+                      <div class="genome-box --green-genome">
+                        <img src="img/Трава.svg" alt="-">
+                      </div>
+                      <div class="genome-box --yellow-genome">
+                        <img src="img/Электричество.svg" alt="-">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fight-fight-team__item-box">
+                    <div class="fight-fight-team__item-name">Ивизавралак</div>
+                    <div class="pokemon-art">
+                      <img src="img/Покемон.gif" alt="-">
+                    </div>
+                  </div>
+                </div>
+                <div class="pokemon-progressbar-wrap">
+                  <div class="pokemon-progressbar-box">
+                    <div class="xp-line" data-tooltip="XP: 1000 / 1000"></div>
+                  </div>
+                  <div class="pokemon-progressbar-box">
+                    <div class="hp-line" data-tooltip="HP: 1000 / 1000"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="fight-fight-team__item">
+                <div class="fight-fight-team__item-content">
+                  <div class="fight-fight-team__item-left">
+                    <div class="pokemon-lvl">
+                      <div class="pokemon-lvl__value">35</div>
+                    </div>
+                    <div class="pokemon-gender">
+                      <img src="img/мальчик.svg" alt="-">
+                    </div>
+                    <div class="pokemon-genome">
+                      <div class="genome-box --green-genome">
+                        <img src="img/Трава.svg" alt="-">
+                      </div>
+                      <div class="genome-box --yellow-genome">
+                        <img src="img/Электричество.svg" alt="-">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fight-fight-team__item-box">
+                    <div class="fight-fight-team__item-name">Ивизавралак</div>
+                    <div class="pokemon-art">
+                      <img src="img/Покемон.gif" alt="-">
+                    </div>
+                  </div>
+                </div>
+                <div class="pokemon-progressbar-wrap">
+                  <div class="pokemon-progressbar-box">
+                    <div class="xp-line" data-tooltip="XP: 1000 / 1000"></div>
+                  </div>
+                  <div class="pokemon-progressbar-box">
+                    <div class="hp-line" data-tooltip="HP: 1000 / 1000"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="fight-fight-team__item">
+                <div class="fight-fight-team__item-content">
+                  <div class="fight-fight-team__item-left">
+                    <div class="pokemon-lvl">
+                      <div class="pokemon-lvl__value">35</div>
+                    </div>
+                    <div class="pokemon-gender">
+                      <img src="img/мальчик.svg" alt="-">
+                    </div>
+                    <div class="pokemon-genome">
+                      <div class="genome-box --green-genome">
+                        <img src="img/Трава.svg" alt="-">
+                      </div>
+                      <div class="genome-box --yellow-genome">
+                        <img src="img/Электричество.svg" alt="-">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fight-fight-team__item-box">
+                    <div class="fight-fight-team__item-name">Ивизавралак</div>
+                    <div class="pokemon-art">
+                      <img src="img/Покемон.gif" alt="-">
+                    </div>
+                  </div>
+                </div>
+                <div class="pokemon-progressbar-wrap">
+                  <div class="pokemon-progressbar-box">
+                    <div class="xp-line" data-tooltip="XP: 1000 / 1000"></div>
+                  </div>
+                  <div class="pokemon-progressbar-box">
+                    <div class="hp-line" data-tooltip="HP: 1000 / 1000"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Боёвка-Покеболы -->
+          <div class="fight-pokeballs --fight-box">
+            <div class="sb-h40-title">
+              <div class="title-txt">Покеболы</div>
+              <label for="toggle--fight-pokeballs-btn" class="label-btn">
+                <div class="modal-btn-close">
+                  <img src="img/Крестик-2.svg" alt="-">
+                </div>
+              </label>
+            </div>
+            <div class="fight-inventory-container fight-inventory--pokeballs">
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+              <div class="fight-inventory-item">
+                <img src="img/Покебол2.png" alt="-">
+              </div>
+            </div>
+          </div>
+          <!-- Боёвка-Расходники -->
+          <div class="fight-inventory --fight-box">
+            <div class="sb-h40-title">
+              <div class="title-txt"></div>
+              <label for="toggle--fight-inventory-btn" class="label-btn">
+                <div class="modal-btn-close">
+                  <img src="img/Крестик-2.svg" alt="-">
+                </div>
+              </label>
+            </div>
+            <div class="fight-inventory-wrap">
+              <div class="fight-inventory__nav">
+                <label for="toggle--fight-potion-tab" class="label-btn">
+                  <div class="fight-inventory__nav-btn --fight-potion">
+                    <img src="img/Зелье.svg" alt="-">
+                  </div>
+                </label>
+                <label for="toggle--fight-skills-tab" class="label-btn">
+                  <div class="fight-inventory__nav-btn --fight-skills">
+                    <img src="img/Прочее.svg" alt="-">
+                  </div>
+                </label>
+              </div>
+              <!-- Зелья-таб -->
+              <div class="fight-inventory-container fight-inventory--potion">
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+                <div class="fight-inventory-item">
+                  <img src="img/банка.png" alt="-">
+                </div>
+              </div>
+              <!-- Навыки-таб -->
+              <div class="fight-inventory-container fight-inventory--skills">
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+                <div class="fight-inventory__skill">
+                  <img src="img/скил-бг.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- кнопки -->
           <div class="fight-panel fight-btn-wrap">
             <label for="toggle--fight-btn" class="label-btn">
@@ -2680,45 +4026,64 @@
                 <img src="img/Сдаться.svg" alt="-">
               </div>
             </label>
-            <div class="fight-btn">
-              <img src="img/Зелье.svg" alt="-">
-            </div>
-            <div class="fight-btn">
-              <img src="img/ЛС.svg" alt="-">
-            </div>
-            <div class="fight-btn">
-              <img src="img/Команда.svg" alt="-">
-            </div>
+            <label for="toggle--fight-inventory-btn" class="label-btn">
+              <div class="fight-btn --fight-inventory">
+                <img src="img/Зелье.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--fight-chat-btn" class="label-btn">
+              <div class="fight-btn --fight-chat">
+                <img src="img/ЛС.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--fight-pokeballs-btn" class="label-btn">
+              <div class="fight-btn --fight-pokeballs">
+                <img src="img/Покебол.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--fight-team-btn" class="label-btn">
+              <div class="fight-btn --fight-team">
+                <img src="img/Команда.svg" alt="-">
+              </div>
+            </label>
           </div>
           <!-- навыки -->
           <div class="fight-panel fight-skill-wrap">
             <div class="skill --purple-skill">
               <img src="img/скил-бг.jpg" alt="">
               <div class="skill-value">35</div>
-              <div class="skill-btn --purple-skill">
-                <img src="img/Спец атака.svg" alt="-">
-              </div>
+              <label for="toggle--fight-skill-modal" class="label-btn">
+                <div class="skill-btn --purple-skill">
+                  <img src="img/Спец атака.svg" alt="-">
+                </div>
+              </label>
             </div>
             <div class="skill --purple-skill">
               <img src="img/скил-бг.jpg" alt="">
               <div class="skill-value">35</div>
-              <div class="skill-btn --purple-skill">
-                <img src="img/Спец атака.svg" alt="-">
-              </div>
+              <label for="toggle--fight-skill-modal" class="label-btn">
+                <div class="skill-btn --purple-skill">
+                  <img src="img/Спец атака.svg" alt="-">
+                </div>
+              </label>
             </div>
             <div class="skill --purple-skill">
               <img src="img/скил-бг.jpg" alt="">
               <div class="skill-value">35</div>
-              <div class="skill-btn --purple-skill">
-                <img src="img/Спец атака.svg" alt="-">
-              </div>
+              <label for="toggle--fight-skill-modal" class="label-btn">
+                <div class="skill-btn --purple-skill">
+                  <img src="img/Спец атака.svg" alt="-">
+                </div>
+              </label>
             </div>
             <div class="skill --purple-skill">
               <img src="img/скил-бг.jpg" alt="">
               <div class="skill-value">35</div>
-              <div class="skill-btn --purple-skill">
-                <img src="img/Спец атака.svg" alt="-">
-              </div>
+              <label for="toggle--fight-skill-modal" class="label-btn">
+                <div class="skill-btn --purple-skill">
+                  <img src="img/Спец атака.svg" alt="-">
+                </div>
+              </label>
             </div>
           </div>
           <!-- окно боя -->
@@ -3205,36 +4570,42 @@
               <div class="rating-value">51354</div>
             </div>
             <div class="rating-list">
-              <div class="rating-list-box">
-                <div class="rating-info-box">
-                  <div class="rating-num">1</div>
-                  <div class="rating-avatar">
-                    <img src="img/Klan.png" alt="-">
+              <label for="toggle--public-clan-btn" class="label-btn">
+                <div class="rating-list-box">
+                  <div class="rating-info-box">
+                    <div class="rating-num">1</div>
+                    <div class="rating-avatar">
+                      <img src="img/Klan.png" alt="-">
+                    </div>
+                    <div class="rating-name">VOID</div>
                   </div>
-                  <div class="rating-name">VOID</div>
+                  <div class="rating-value">51354</div>
                 </div>
-                <div class="rating-value">51354</div>
-              </div>
-              <div class="rating-list-box">
-                <div class="rating-info-box">
-                  <div class="rating-num">2</div>
-                  <div class="rating-avatar">
-                    <img src="img/Klan.png" alt="-">
+              </label>
+              <label for="toggle--public-clan-btn" class="label-btn">
+                <div class="rating-list-box">
+                  <div class="rating-info-box">
+                    <div class="rating-num">2</div>
+                    <div class="rating-avatar">
+                      <img src="img/Klan.png" alt="-">
+                    </div>
+                    <div class="rating-name">VOID</div>
                   </div>
-                  <div class="rating-name">VOID</div>
+                  <div class="rating-value">51354</div>
                 </div>
-                <div class="rating-value">51354</div>
-              </div>
-              <div class="rating-list-box">
-                <div class="rating-info-box">
-                  <div class="rating-num">3</div>
-                  <div class="rating-avatar">
-                    <img src="img/Klan.png" alt="-">
+              </label>
+              <label for="toggle--public-clan-btn" class="label-btn">
+                <div class="rating-list-box">
+                  <div class="rating-info-box">
+                    <div class="rating-num">3</div>
+                    <div class="rating-avatar">
+                      <img src="img/Klan.png" alt="-">
+                    </div>
+                    <div class="rating-name">VOID</div>
                   </div>
-                  <div class="rating-name">VOID</div>
+                  <div class="rating-value">51354</div>
                 </div>
-                <div class="rating-value">51354</div>
-              </div>
+              </label>
               <div class="rating-list-box">
                 <div class="rating-info-box">
                   <div class="rating-num">4</div>
@@ -3412,10 +4783,12 @@
           <div class="light-bg">
             <!-- плитка -->
             <div class="inventory-container">
-              <div class="inventory-container__item --inventory-item">
-                <img src="img/банка.png" alt="-">
-                <span class="inventory-item__count">12</span>
-              </div>
+              <label for="toggle--descr-item" class="label-btn">
+                <div class="inventory-container__item --inventory-item">
+                  <img src="img/банка.png" alt="-">
+                  <span class="inventory-item__count">12</span>
+                </div>
+              </label>
               <div class="inventory-container__item --inventory-item">
                 <img src="img/банка.png" alt="-">
               </div>
@@ -3503,18 +4876,22 @@
                   <img src="img/деньга.svg" alt="-">
                   <div class="money-value">12345</div>
                 </div>
-                <svg class="--icon-add">
-                  <use xlink:href="sprite.svg#add"></use>
-                </svg>
+                <label for="toggle--buy-money" class="label-btn">
+                  <svg class="--icon-add">
+                    <use xlink:href="sprite.svg#add"></use>
+                  </svg>
+                </label>
               </div>
               <div class="money-box --donate">
                 <div class="money">
                   <img src="img/Донат.svg" alt="-">
                   <div class="money-value">12345</div>
                 </div>
-                <svg class="--icon-add">
-                  <use xlink:href="sprite.svg#add"></use>
-                </svg>
+                <label for="toggle--buy-donate" class="label-btn">
+                  <svg class="--icon-add">
+                    <use xlink:href="sprite.svg#add"></use>
+                  </svg>
+                </label>
               </div>
               <label for="toggle--money-btn" class="label-btn">
                 <div class="money-box-mobile"></div>
@@ -4322,10 +5699,12 @@
               <div class="light-bg">
                 <!-- плитка -->
                 <div class="inventory-container">
-                  <div class="inventory-container__item --inventory-item">
-                    <img src="img/банка.png" alt="-">
-                    <span class="inventory-item__count">12</span>
-                  </div>
+                  <label for="toggle--add-loot" class="label-btn">
+                    <div class="inventory-container__item --inventory-item">
+                      <img src="img/банка.png" alt="-">
+                      <span class="inventory-item__count">12</span>
+                    </div>
+                  </label>
                   <div class="inventory-container__item --inventory-item">
                     <img src="img/банка.png" alt="-">
                   </div>
@@ -4694,11 +6073,13 @@
                 <img src="img/Донат.svg" alt="-">
                 <div class="money-value">12345</div>
               </div>
-              <div class="money-top-btn">
-                <svg class="--money-top-btn">
-                  <use xlink:href="sprite.svg#add"></use>
-                </svg>
-              </div>
+              <label for="toggle--buy-donate" class="label-btn">
+                <div class="money-top-btn">
+                  <svg class="--money-top-btn">
+                    <use xlink:href="sprite.svg#add"></use>
+                  </svg>
+                </div>
+              </label>
             </div>
           </div>
           <div class="premium-store-wrap">
@@ -6735,6 +8116,946 @@
             </div>
         </div>
       </div>
+      <!-- Клуб -->
+      <div class="modal-bg clan">
+        <div class="modal-content">
+          <div class="sb-h40-title">
+            <label for="toggle--clan-btn" class="label-btn --btn-back-main">
+              <div class="btn-back">
+                <img src="img/Назад.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--setting-player-list" class="label-btn --setting-player-list">
+              <div class="btn-back">
+                <img src="img/Назад.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--setting-request-list" class="label-btn --setting-request-list">
+              <div class="btn-back">
+                <img src="img/Назад.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--setting-personalization" class="label-btn --setting-personalization">
+              <div class="btn-back">
+                <img src="img/Назад.svg" alt="-">
+              </div>
+            </label>
+            <div class="title-txt">Клуб</div>
+            <label for="toggle--clan-btn" class="label-btn">
+              <div class="modal-btn-close">
+                <img src="img/Крестик-2.svg" alt="-">
+              </div>
+            </label>
+          </div>
+          <div class="light-bg-modal clan-switch-box">
+            <div class="clan-nav">
+              <label for="toggle--clan-main-tab" class="label-btn">
+                <div class="clan-nav__btn --clan-main-tab">Главная</div>
+              </label>
+              <label for="toggle--clan-quest-tab" class="label-btn">
+                <div class="clan-nav__btn --clan-quest-tab">Задания</div>
+              </label>
+              <label for="toggle--clan-up-tab" class="label-btn">
+                <div class="clan-nav__btn --clan-up-tab">Развитие</div>
+              </label>
+              <label for="toggle--clan-setting-tab" class="label-btn">
+                <div class="clan-nav__btn --clan-setting-tab">
+                  <svg class="--icon-setting">
+                    <use xlink:href="sprite.svg#setting"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+            <!-- Главная-таб -->
+            <div class="clan-main-container">
+              <div class="clan-main-switch-box">
+                <div class="clan-main-nav">
+                  <label for="toggle--clan-main-list" class="label-btn">
+                    <div class="clan-main-nav__btn --clan-main-list">Участники</div>
+                  </label>
+                  <label for="toggle--clan-main-about" class="label-btn">
+                    <div class="clan-main-nav__btn --clan-main-about">О клубе</div>
+                  </label>
+                  <label for="toggle--clan-main-awards" class="label-btn">
+                    <div class="clan-main-nav__btn --clan-main-awards">Награды</div>
+                  </label>
+                </div>
+                <!-- Участники-таб -->
+                <div class="clan-main-list">
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>1</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </div>
+                    <div class="rating-value">51354</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>2</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>3</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </div>
+                    <div class="rating-value">51354</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>4</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">49424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>5</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">30724</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>6</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">23323</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>7</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">13424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>8</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">43324</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>9</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">24424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>10</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>11</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>12</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                </div>
+                <!-- О клубе-таб -->
+                <div class="clan-main-about">
+                  <div class="clan-main-about-top">
+                    <div class="clan-main-about-top__box">
+                      <div class="clan-main-about-top__title">Уровень</div>
+                      <div class="clan-main-about-top__value">28</div>
+                    </div>
+                    <div class="clan-main-about-top__box">
+                      <div class="clan-main-about-top__title">Глава клуба</div>
+                      <div class="clan-main-about-top__value">Lepistok</div>
+                    </div>
+                    <div class="clan-main-about-top__box">
+                      <div class="clan-main-about-top__title">Участники</div>
+                      <div class="clan-main-about-top__value">20/50</div>
+                    </div>
+                  </div>
+                  <div class="clan-main-about-bonus">
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Учить.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Учить.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Награды-таб -->
+                <div class="clan-main-awards">
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">День св валентина</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Духи цветения</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Праздник чая</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">8 Марта</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Новый год</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Эмпирейцы</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">День св валентина</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Духи цветения</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Праздник чая</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">8 Марта</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Новый год</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Эмпирейцы</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">День св валентина</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Духи цветения</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Праздник чая</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">8 Марта</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Новый год</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Эмпирейцы</div>
+                  </div>
+                </div>
+              </div>
+              <div class="clan-emblem-wrap">
+                <div class="clan-emblem-flag">
+                  <svg class="--icon-flag">
+                    <use xlink:href="sprite.svg#flag"></use>
+                    <!-- градиент к флагу -->
+                    <defs>
+                      <linearGradient id="gradient-flag-1" x1="127.302" y1="4.49405" x2="32.4962" y2="181.826" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#2D3246"/>
+                      <stop offset="0.489548" stop-color="#463A60"/>
+                      <stop offset="1" stop-color="#5B6074"/>
+                      </linearGradient>
+                    </defs>
+                    <!-- ---------------- -->
+                  </svg>
+                </div>
+                <div class="clan-emblem-box">
+                  <div class="clan-emblem-overlay">
+                    <div class="clan-emblem-icon">
+                      <img src="img/Klan.png" alt="-">
+                    </div>
+                    <div class="clan-emblem-frame">
+                      <img src="img/Рамка.png" alt="-">
+                    </div>
+                    <div class="profile__avatar-name">VOID</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Задания-таб -->
+            <div class="clan-quest">
+                <label for="toggle--clan-quest-open" class="clan-quest-open label-btn">
+                  <div class="clan-quest-open__txt">
+                    <div class="clan-quest-open__title">Хорошая возможность?</div>
+                    <div class="clan-quest-open__discr">
+                      <span>Первым делом вам нужно будет пройти задание Архонтов «Дракон и буря» из 1-й главы Пролога под названием «Чужеземец, поймавший ветер». После этого направляйтесь к зданию гильдии искателей приключений в городе Мондштадт и поговорите с Сайрусом.</span>
+                      <span>
+                        — Выследите Джека <br>
+                        — Зачистите лагерь <br>
+                        — Победите рядовых мобов
+                      </span>
+                    </div>
+                  </div>
+                  <div class="clan-quest-open__bottom">
+                    <div class="clan-quest__item-icon">
+                      <img src="img/банка.png" alt="-">
+                    </div>
+                    <div class="pokemon-progressbar-box">
+                      <div class="quest-line" data-tooltip="100%"></div>
+                    </div>
+                  </div>
+                </label>
+              <div class="clan-quest-list">
+                <label for="toggle--clan-quest-open" class="label-btn">
+                  <div class="clan-quest__item">
+                    <div class="clan-quest__item-content">
+                      <div class="clan-quest__item-txt">
+                        <div class="clan-quest__item-title">Хорошая возможность?</div>
+                        <div class="clan-quest__item-discr">Пройти задание Архонтов «Дракон и буря»</div>
+                      </div>
+                      <div class="clan-quest__item-icon">
+                        <img src="img/банка.png" alt="-">
+                      </div>
+                    </div>
+                    <div class="pokemon-progressbar-box">
+                      <div class="quest-line" data-tooltip="100%"></div>
+                    </div>
+                  </div>
+                </label>
+                <label for="toggle--clan-quest-open" class="label-btn">
+                  <div class="clan-quest__item clan-quest-completed">
+                    <div class="clan-quest__item-content">
+                      <div class="clan-quest__item-txt">
+                        <div class="clan-quest__item-title">Хорошая возможность?</div>
+                        <div class="clan-quest__item-discr">Пройти задание Архонтов «Дракон и буря»</div>
+                      </div>
+                      <div class="clan-quest__item-icon">
+                        <img src="img/банка.png" alt="-">
+                      </div>
+                    </div>
+                    <div class="pokemon-progressbar-box">
+                      <div class="quest-line" data-tooltip="100%"></div>
+                    </div>
+                  </div>
+                </label>
+                <div class="clan-quest__item clan-quest-disabled">
+                  <div class="clan-quest__item-content">
+                    <div class="clan-quest__item-txt">
+                      <div class="clan-quest__item-title">Хорошая возможность?</div>
+                      <div class="clan-quest__item-discr">Пройти задание Архонтов «Дракон и буря»</div>
+                    </div>
+                    <div class="clan-quest__item-icon">
+                      <img src="img/банка.png" alt="-">
+                    </div>
+                  </div>
+                  <div class="pokemon-progressbar-box">
+                    <div class="quest-line" data-tooltip="100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="quest-checkbox-wrap">
+                <div class="title-txt">Доступные</div>
+                <label for="toggle--clan-quest-checkbox" class="label-btn">
+                  <div class="quest-checkbox">
+                    <img src="img/Чекбокс-OFF.svg" alt="-" class="checkbox-off">
+                    <img src="img/Чекбокс-ON.svg" alt="-" class="checkbox-on">
+                  </div>
+                </label>
+              </div>
+            </div>
+            <!-- Развитие-таб -->
+            <div class="clan-up">
+              <div class="clan-up__improve">
+                <div class="clan-up__improve-wrap">
+                  <div class="clan-up__header">Для повышения до 30 уровня</div>
+                  <div class="clan-up__improve-container">
+                    <label for="toggle--club-inventory" class="label-btn">
+                      <div class="clan-up__improve-item">
+                        <img src="img/банка.png" alt="-">
+                        <span>30/100</span>
+                      </div>
+                    </label>
+                    <div class="clan-up__improve-item">
+                      <img src="img/банка.png" alt="-">
+                      <span>30/100</span>
+                    </div>
+                    <div class="clan-up__improve-item">
+                      <img src="img/банка.png" alt="-">
+                      <span>30/100</span>
+                    </div>
+                    <div class="clan-up__improve-item">
+                      <img src="img/банка.png" alt="-">
+                      <span>30/100</span>
+                    </div>
+                    <div class="clan-up__improve-item">
+                      <img src="img/банка.png" alt="-">
+                      <span>30/100</span>
+                    </div>
+                    <div class="clan-up__improve-item">
+                      <img src="img/банка.png" alt="-">
+                      <span>30/100</span>
+                    </div>
+                    <div class="clan-up__improve-item">
+                      <img src="img/банка.png" alt="-">
+                      <span>30/100</span>
+                    </div>
+                    <div class="clan-up__improve-item">
+                      <img src="img/банка.png" alt="-">
+                      <span>30/100</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="clan-up__improve-wrap">
+                  <div class="clan-up__header">Взносы/Активность</div>
+                  <div class="clan-up__improve-box">
+                    <div class="clan-up__improve-active">
+                      <span>Активность:</span>
+                      <div class="clan-up__improve-active-value">12345/15000000</div>
+                    </div>
+                    <div class="clan-up__improve-money">
+                      <div class="money">
+                        <img src="img/деньга.svg" alt="-">
+                        <div class="money-value">12345 / 15000000</div>
+                      </div>
+                      <label for="toggle--add-money" class="label-btn">
+                        <svg class="--icon-add">
+                          <use xlink:href="sprite.svg#add"></use>
+                        </svg>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clan-up__bonus">
+                <div class="clan-up__header">Бонусы клуба 30 уровня</div>
+                <div class="clan-main-about-bonus">
+                  <div class="clan-main-about-bonus__item">
+                    <img src="img/Расходники.svg" alt="-">
+                    <span>1.5%</span>
+                  </div>
+                  <div class="clan-main-about-bonus__item">
+                    <img src="img/Учить.svg" alt="-">
+                    <span>1.5%</span>
+                  </div>
+                  <div class="clan-main-about-bonus__item">
+                    <img src="img/Расходники.svg" alt="-">
+                    <span>1.5%</span>
+                  </div>
+                  <div class="clan-main-about-bonus__item">
+                    <img src="img/Расходники.svg" alt="-">
+                    <span>1.5%</span>
+                  </div>
+                  <div class="clan-main-about-bonus__item">
+                    <img src="img/Учить.svg" alt="-">
+                    <span>1.5%</span>
+                  </div>
+                  <div class="clan-main-about-bonus__item">
+                    <img src="img/Расходники.svg" alt="-">
+                    <span>1.5%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Настройки-таб -->
+            <div class="clan-setting">
+              <div class="setting-bg">
+                <label for="toggle--setting-player-list" class="label-btn">
+                  <div class="setting-btn">Участники</div>
+                </label>
+                <label for="toggle--setting-request-list" class="label-btn">
+                  <div class="setting-btn">
+                    <span>Заявки</span> 
+                    <div class="--mark">2</div>
+                  </div>
+                </label>
+                <label for="toggle--setting-personalization" class="label-btn">
+                  <div class="setting-btn">Персонализация</div>
+                </label>
+                <div class="setting-btn">Выход</div>
+              </div>
+              <!-- Настройки-Персонализация -->
+              <div class="clan-setting__personalization">
+                <!-- Настройки-Персонализация/Иконка -->
+                <div class="clan-setting__icon-container">
+                  <div class="personalization-download-img">
+                    <div class="download-img-wrap">
+                      <label for="toggle--download-img-btn" class="label-btn">
+                        <div class="download-img-box">
+                          <div class="download-img">
+                            <img src="img/avatar.png" alt="-">
+                          </div>
+                          <div class="download-img-btn">
+                            <img src="img/Плюсик.svg" alt="-" class="--inventory-add">
+                          </div>
+                        </div>
+                      </label>
+                      <span>Загрузить изображение</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Настройки-Персонализация/Рамки -->
+                <div class="clan-setting__frame-container">
+                  <label for="toggle--frames-box-1" class="label-btn">
+                    <div class="frames-box --frames-box-1">
+                      <div class="--frame-gray"></div>
+                    </div>
+                  </label>
+                  <label for="toggle--frames-box-2" class="label-btn">
+                    <div class="frames-box --frames-box-2">
+                      <img src="img/Рамка.png" alt="-">
+                    </div>
+                  </label>
+                  <label for="toggle--frames-box-3" class="label-btn">
+                    <div class="frames-box --frames-box-3">
+                      <div class="--frame-red"></div>
+                    </div>
+                  </label>
+                  <div class="frames-box">
+                    <div class="--frame-yellow"></div>
+                  </div>
+                  <div class="frames-box">
+                    <div class="--frame-yellow"></div>
+                  </div>
+                  <div class="frames-box">
+                    <div class="--frame-yellow"></div>
+                  </div>
+                  <div class="frames-box">
+                    <div class="--frame-yellow"></div>
+                  </div>
+                  <div class="frames-box">
+                    <div class="--frame-yellow"></div>
+                  </div>
+                  <div class="frames-box">
+                    <div class="--frame-yellow"></div>
+                  </div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                  <div class="frames-box"></div>
+                </div>
+                <!-- Настройки-Персонализация/Фон -->
+                <div class="clan-setting__bg-container"></div>
+                <!-- Настройки-Персонализация/Знамя -->
+                <div class="clan-setting__flag-container"></div>
+                <div class="personalization-nav">
+                  <label for="toggle--setting-icon-tab" class="label-btn">
+                    <div class="personalization-nav-btn --setting-icon">Иконка</div>
+                  </label>
+                  <label for="toggle--setting-frame-tab" class="label-btn">
+                    <div class="personalization-nav-btn --setting-frame">Рамки</div>
+                  </label>
+                  <label for="toggle--setting-bg-tab" class="label-btn">
+                    <div class="personalization-nav-btn --setting-bg">Фон</div>
+                  </label>
+                  <label for="toggle--setting-flag-tab" class="label-btn">
+                    <div class="personalization-nav-btn --setting-flag">Знамя</div>
+                  </label>
+                </div>
+              </div>
+              <!-- Настройки-Заявки -->
+              <div class="clan-setting__request-list">
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <img src="img/Плюс-статы.svg" alt="-">
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <img src="img/Плюс-статы.svg" alt="-">
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <img src="img/Плюс-статы.svg" alt="-">
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <img src="img/Плюс-статы.svg" alt="-">
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <img src="img/Плюс-статы.svg" alt="-">
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <img src="img/Плюс-статы.svg" alt="-">
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <img src="img/Плюс-статы.svg" alt="-">
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+              </div>
+              <!-- Настройки-Участники -->
+              <div class="clan-setting__player-list">
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+                <div class="clan-setting__list-item">
+                  <div class="list-item__player-box">
+                    <div class="rating-list__player-box">
+                      <div class="rating-avatar">
+                        <img src="img/avatar.png" alt="-">
+                      </div>
+                      <div class="rating-name">Lepistok</div>
+                    </div>
+                    <label for="--clan-setting-check" class="label-btn">
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <svg class="--icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Клуб-публичный -->
       <div class="modal-bg public-clan">
         <div class="modal-content">
@@ -6753,7 +9074,342 @@
           </div>
           <div class="light-bg-modal">
             <div class="clan-main-container">
-              
+              <div class="clan-main-switch-box">
+                <div class="clan-main-nav">
+                  <label for="toggle--clan-main-list" class="label-btn">
+                    <div class="clan-main-nav__btn --clan-main-list">Участники</div>
+                  </label>
+                  <label for="toggle--clan-main-about" class="label-btn">
+                    <div class="clan-main-nav__btn --clan-main-about">О клубе</div>
+                  </label>
+                  <label for="toggle--clan-main-awards" class="label-btn">
+                    <div class="clan-main-nav__btn --clan-main-awards">Награды</div>
+                  </label>
+                </div>
+                <!-- Участники-таб -->
+                <div class="clan-main-list">
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>1</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </div>
+                    <div class="rating-value">51354</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>2</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>3</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                      <svg class="--icon-administration">
+                        <use xlink:href="sprite.svg#administration"></use>
+                      </svg>
+                    </div>
+                    <div class="rating-value">51354</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>4</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">49424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>5</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">30724</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>6</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">23323</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>7</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">13424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>8</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">43324</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>9</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">24424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>10</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>11</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                  <div class="clan-main-list__item">
+                    <div class="rating-list-palayer-wrap">
+                      <div class="rating-list__num">
+                        <span>12</span>
+                      </div>
+                      <div class="rating-list__player-box">
+                        <div class="rating-avatar">
+                          <img src="img/avatar.png" alt="-">
+                        </div>
+                        <div class="rating-name">Lepistok</div>
+                      </div>
+                    </div>
+                    <div class="rating-value">33424</div>
+                  </div>
+                </div>
+                <!-- О клубе-таб -->
+                <div class="clan-main-about">
+                  <div class="clan-main-about-top">
+                    <div class="clan-main-about-top__box">
+                      <div class="clan-main-about-top__title">Уровень</div>
+                      <div class="clan-main-about-top__value">28</div>
+                    </div>
+                    <div class="clan-main-about-top__box">
+                      <div class="clan-main-about-top__title">Глава клуба</div>
+                      <div class="clan-main-about-top__value">Lepistok</div>
+                    </div>
+                    <div class="clan-main-about-top__box">
+                      <div class="clan-main-about-top__title">Участники</div>
+                      <div class="clan-main-about-top__value">20/50</div>
+                    </div>
+                  </div>
+                  <div class="clan-main-about-bonus">
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Учить.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Учить.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                    <div class="clan-main-about-bonus__item">
+                      <img src="img/Расходники.svg" alt="-">
+                      <span>1.5%</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Награды-таб -->
+                <div class="clan-main-awards">
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">День св валентина</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Духи цветения</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Праздник чая</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">8 Марта</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Новый год</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Эмпирейцы</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">День св валентина</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Духи цветения</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Праздник чая</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">8 Марта</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Новый год</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Эмпирейцы</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">День св валентина</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Духи цветения</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Праздник чая</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">8 Марта</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Новый год</div>
+                  </div>
+                  <div class="clan-main-awards__item">
+                    <img src="img/Награда.png" alt="-">
+                    <div class="clan-main-awards__name">Эмпирейцы</div>
+                  </div>
+                </div>
+              </div>
+              <div class="clan-emblem-wrap">
+                <div class="clan-emblem-flag">
+                  <svg class="--icon-flag">
+                    <use xlink:href="sprite.svg#flag" fill="url(#gradient-flag-2)"></use>
+                    <!-- градиент к флагу -->
+                    <defs>
+                      <linearGradient id="gradient-flag-2" x1="127.302" y1="4.49405" x2="32.4962" y2="181.826" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#2D3246"/>
+                      <stop offset="0.489548" stop-color="#463A60"/>
+                      <stop offset="1" stop-color="#5B6074"/>
+                      </linearGradient>
+                    </defs>
+                    <!-- ---------------- -->
+                  </svg>
+                </div>
+                <div class="clan-emblem-box">
+                  <div class="clan-emblem-overlay">
+                    <div class="clan-emblem-icon">
+                      <img src="img/Klan.png" alt="-">
+                    </div>
+                    <div class="clan-emblem-frame">
+                      <img src="img/Рамка.png" alt="-">
+                    </div>
+                    <div class="profile__avatar-name">VOID</div>
+                  </div>
+                </div>
+                <div class="public-clan__btn">Подать заявку</div>
+              </div>
             </div>
           </div>
         </div>
@@ -6773,8 +9429,9 @@
             <div class="personalization-container">
               <div class="personalization-result">
                 <div class="profile__skin-box">
+                  <img class="frame-img" src="img/Рамка.png" alt="-">
                   <div class="profile__avatar">
-                    <img class="frame-img" src="img/Рамка.png" alt="-">
+                    
                     <img src="img/avatar.png" alt="-">
                   </div>
                   <img src="img/Скин.png" alt="-">
@@ -6819,7 +9476,7 @@
                     </div>
                   </label>
                   <label for="toggle--frames-box-2" class="label-btn">
-                    <div class="frames-box">
+                    <div class="frames-box --frames-box-2">
                       <img src="img/Рамка.png" alt="-">
                     </div>
                   </label>
@@ -6922,8 +9579,12 @@
               <div class="setting-btn">Персонализация</div>
             </label>
             <div class="setting-btn">Покипедия</div>
-            <div class="setting-btn">Главнаяя</div>
-            <div class="setting-btn">Выход</div>
+            <label for="toggle--start-page" class="label-btn">
+              <div class="setting-btn">Главнаяя</div>
+            </label>
+            <label for="toggle--start-page" class="label-btn">
+              <div class="setting-btn">Выход</div>
+            </label>
           </div>
         </div>
       </div>
@@ -7050,24 +9711,233 @@
       <div class="modal-bg profile-wrap">
         <div class="modal-content">
           <div class="main-nav profile-menu">
-            <div class="main-nav__btn">
-              <img src="img/Профиль.svg" alt="-">
-            </div>
-            <div class="main-nav__btn">
-              <img src="img/награды.svg" alt="-">
-            </div>
-            <div class="main-nav__btn">
-              <img src="img/Достижения.svg" alt="-">
-            </div>
-            <div class="main-nav__btn">
-              <img src="img/Умения.svg" alt="-">
-            </div>
+            <label for="toggle--profile-tab" class="label-btn">
+              <div class="main-nav__btn --profile-tab">
+                <img src="img/Профиль.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--awards-tab" class="label-btn">
+              <div class="main-nav__btn --awards-tab">
+                <img src="img/награды.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--achievement-tab" class="label-btn">
+              <div class="main-nav__btn --achievement-tab">
+                <img src="img/Достижения.svg" alt="-">
+              </div>
+            </label>
+            <label for="toggle--perks-tab" class="label-btn">
+              <div class="main-nav__btn --perks-tab">
+                <img src="img/Умения.svg" alt="-">
+              </div>
+            </label>
             <label for="toggle--profile-btn" class="label-btn">
               <div class="main-nav__btn --close-btn ">
                 <img src="img/крестик.svg" alt="-">
               </div>
             </label>
           </div>
+          <!-- Перки-таб -->
+          <div class="perks">
+            <div class="main-title">Перки</div>
+            <div class="perks-container">
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+              <div class="perks-item">
+                <div class="perks-icon-box">
+                  <img src="img/Мышь.svg" alt="-">
+                </div>
+                <div class="perks-txt">
+                  <div class="perks-txt-title">Рыболов-любитель</div>
+                  <span>Мощность водных атак <br> водных монстров +3%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Достижения-таб -->
+          <div class="achievement">
+            <div class="main-title">Достижения</div>
+            <div class="achievement-wrap">
+              <div class="achievement-info">
+                <div class="achievement-info-item">
+                  <div class="achievement-info-title">В игре</div>
+                  <span>2 месяца 8 дней</span>
+                </div>
+                <div class="achievement-info-item">
+                  <div class="achievement-info-title">Покемонов</div>
+                  <span>238</span>
+                </div>
+                <div class="achievement-info-item">
+                  <div class="achievement-info-title">Шайни</div>
+                  <span>238</span>
+                </div>
+                <div class="achievement-info-item">
+                  <div class="achievement-info-title">Рейтинг</div>
+                  <span>38</span>
+                </div>
+              </div>
+              <div class="achievement-container">
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+                <div class="clan-main-awards__item">
+                  <img src="img/Награда.png" alt="-">
+                  <div class="clan-main-awards__name">Праздник чая</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Награды-таб -->
+          <div class="awards">
+            <div class="main-title">Награды</div>
+            <div class="awards-container">
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+              <div class="awards-item">
+                <img src="img/Награда.png" alt="-">
+              </div>
+            </div>
+          </div>
+          <!-- Профиль-таб -->
           <div class="profile">
             <!-- заголовок -->
             <div class="main-title">Профиль</div>
@@ -7081,12 +9951,14 @@
                       </div>
                       <div class="profile__avatar-name">Lepistok</div>
                     </div>
-                    <div class="profile__avatar-box">
-                      <div class="profile__avatar">
-                        <img src="img/Klan.png" alt="-">
+                    <label for="toggle--clan-btn" class="label-btn">
+                      <div class="profile__avatar-box">
+                        <div class="profile__avatar">
+                          <img src="img/Klan.png" alt="-">
+                        </div>
+                        <div class="profile__avatar-name">Чайхана</div>
                       </div>
-                      <div class="profile__avatar-name">Чайхана</div>
-                    </div>
+                    </label>
                   </div>
                   <div class="profile__skin-box">
                     <img src="img/Скин.png" alt="-">
@@ -7667,6 +10539,28 @@
       <div class="player-list__wrap">
         <!-- ==== Диалоги ==== -->
         <div class="dialogs-list">
+          <!-- Модалка-удалить деалог -->
+          <div class="--modal-inner-2">
+            <div class="request-modal-content">
+              <div class="request-modal-top">
+                <label for="toggle--request-remove" class="label-btn">
+                  <div class="modal-btn-close">
+                    <img src="img/Крестик-2.svg" alt="-">
+                  </div>
+                </label>
+              </div>
+              <div class="request-modal-middle">
+                <!-- блок-игрока -->
+                <div class="request-modal-text --request-remove">Вы уверенны что хотите удалить <br/> диалог с Lepistok?</div>
+              </div>
+              <div class="request-modal-bottom">
+                <div class="request-modal-btn">Да</div>
+                <label for="toggle--request-remove" class="label-btn">
+                  <div class="request-modal-btn">Нет</div>
+                </label>
+              </div>
+            </div>
+          </div>
           <div class="main-title">
             <div class="main-title-txt">Диалоги</div>
             <!-- кнопка закрытия диалогов -->
@@ -7689,26 +10583,30 @@
               <div class="list-box-wrap">
                 <div class="list-box__title">Новые - 4</div>
                 <div class="list-box">
-                  <label for="toggle--dialogs-chat-btn" class="label-btn">
+                  
                     <div class="dialogs-list__item --new-dialogs">
-                      <div class="dialogs-list__player">
-                        <div class="player-list__avatar">
-                          <div class="player-list__label"></div>
-                        </div>
-                        <div class="chat__message">
-                          <div class="message__name-time">
-                            <div class="message-nickname">Lepistok</div>
-                            <div class="message-time">17:17</div>
+                      <label for="toggle--dialogs-chat-btn" class="label-btn">
+                        <div class="dialogs-list__player">
+                          <div class="player-list__avatar">
+                            <div class="player-list__label"></div>
                           </div>
-                          <div class="dialogs__message-text">Текст сообщения текст...
+                          <div class="chat__message">
+                            <div class="message__name-time">
+                              <div class="message-nickname">Lepistok</div>
+                              <div class="message-time">17:17</div>
+                            </div>
+                            <div class="dialogs__message-text">Текст сообщения текст...
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <svg class="--icon-delete">
-                        <use xlink:href="sprite.svg#delete"></use>
-                      </svg>
+                      </label>
+                      <label for="toggle--request-remove" class="label-btn">
+                        <svg class="--icon-delete">
+                          <use xlink:href="sprite.svg#delete"></use>
+                        </svg>
+                    </label>
                     </div>
-                  </label>
+                
                   <label for="toggle--dialogs-chat-btn" class="label-btn">
                     <div class="dialogs-list__item --new-dialogs">
                       <div class="dialogs-list__player">
@@ -8538,4 +11436,5 @@
   })
 
 </script>
+
 </html>
