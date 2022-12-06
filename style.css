@@ -77,8 +77,255 @@ html {
   display: none;
 }
 
+/* Главная */
+.start-page {
+  
+  display: none;
+  margin: 0 auto;
+  max-width: 1200px;
+  background: #2D3246;
+  height: 100%;
+  z-index: 99;
+}
 
+.start-page__intro {
+  position: relative;
+  display: grid;
+  /* grid-template-rows: min-content 1fr; */
+  height: 100vh;
+  max-width: 1200px;
+}
+.start-page__header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #252638;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  height: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  padding: 0 30px;
+  z-index: 9999;
+  width: 100%;
+  max-width: inherit;
+}
+.start-page__intro-bg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.start-page__intro-bg > img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.start-page__form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #2D3246;
+  width: 370px;
+  height: 496px;
+  z-index: 999;
+  gap: 25px;
+}
+.start-page__form-wrap {
+  display: grid;
+  gap: 15px;
+}
+.start-page__input-box {
+  position: relative;
+  display: grid;
+  grid-auto-rows: min-content;
+  background: #252638;
+  border: 1px solid #F0E6D2;
+  border-radius: 1px;
+  width: 284px;
+  height: 48px;
+  cursor: pointer;
+  padding: 5px;
+  gap: 3px;
+}
+.start-page__input-title {
+  font-weight: 600;
+  font-size: 10px;
+}
+.start-page__input {
+  padding: 0;
+  font-weight: 600;
+  grid-row-start: 2;
+}
+.start-page__input:focus ~ .start-page__input-title:before {
+  box-sizing: content-box;
+  content: '';
+  position: absolute;
+  border: 1px solid #2C63E1;
+  height: 100%;
+  width: 100%;
+  top: -1px;
+  left: -1px;
+  z-index: 99999999;
+}
 
+.start-page__news-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #202539;
+  height: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+a:focus, a {
+  color: inherit;
+}
+
+.start-page__news-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 400px;
+  /* gap: 15px; */
+  column-gap: 15px;
+  row-gap: 20px;
+}
+.start-page__news-box {
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
+  background: #202539;
+  padding: 10px;
+  cursor: pointer;
+  transition: all .5s ease-out;  
+}
+.start-page__news-box:hover {
+  background: #151A2E;
+  transition: all .5s ease-out;
+}
+.news-box__date {
+  color: #888585;
+  font-size: 15px;
+}
+.news-box__title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.news-box__img {
+  margin-top: 10px;
+  position: relative;
+}
+.news-box__img > img {
+  position: absolute;
+  object-fit: cover;
+  /* height: 164px; */
+  height: 100%;
+  width: 100%;
+}
+.start-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  background: #2C63E1;
+  border-radius: 22px;
+  cursor: pointer;
+}
+.start-page__form-text {
+  display: grid;
+  gap: 6px;
+  color: #B5B0A8;
+  font-size: 12px;
+  font-weight: 600;
+  justify-items: center;
+}
+.start-page__form-link {
+  cursor: pointer;
+}
+.start-page__form-link:hover {
+  text-decoration: underline;
+}
+.form-box__title {
+  font-weight: 600;
+  font-size: 20px;
+}
+.start-page-policy {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.start-page__policy-txt {
+  font-size: 14px;
+}
+.start-page__policy-link {
+  transition: all .2s ease-out;
+  text-decoration: underline;
+}
+.start-page__policy-link:hover {
+  transition: all .2s ease-out;
+  color: #2C63E1;
+}
+.--reg,.--logined {
+  display: none;
+}
+
+.logined-avatar-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+.logined-avatar {
+  width: 160px;
+  height: 160px;
+}
+.logined-avatar > img {
+  height: 100%;
+  border-radius: 100%;
+}
+.start-page-btn-wrap {
+  display: flex;
+  gap: 25px;
+}
+.start-page__form-error {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-error-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: #7B3F4E;
+  border: 1px solid #CA4C57;
+  width: 284px;
+  height: 48px;
+  font-weight: 600;
+  padding: 5px;
+}
+.form-error-box-title {
+  font-size: 10px;
+}
+.form-error-box-msg {
+  font-size: 12px;
+  color: #CA4C57;
+}
+.form-error-box-msg::before {
+  content: url(img/error.svg);
+  margin-right: 5px;
+}
+
+/* ----------------------------------- */
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -130,6 +377,7 @@ html {
   height: 20px;
   width: 17px;
   transition: all .2s ease-out;
+  cursor: pointer;
 }
 
 .--icon-delete:hover {
@@ -1037,14 +1285,727 @@ html {
   width: 120px;
 }
 
+/*==============Клуб===============*/
+.clan {
+  display: none !important;
+}
+
+.clan-switch-box {
+  grid-template-rows: min-content 1fr;
+}
+
+.clan-nav {
+  display: flex;
+  height: 26px;
+}
+
+.clan-nav > label {
+  width: 100%;
+}
+
+.clan-nav > label:last-child {
+  max-width: 42px;
+}
+
+.clan-nav__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #252638;
+  color: #A3A6AA;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* .clan-nav__btn:last-child {
+  max-width: 42px;
+} */
+
+
+.--icon-setting {
+  height: 16px;
+  width: 16px;
+  fill: #A3A6AA;
+}
+
+.clan-nav__btn > img {
+  height: 16px;
+  width: 16px;
+}
+
+/* Развитие-таб */
+.clan-up {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 1fr; */
+  /* height: 100%; */
+  padding: 10px;
+  gap: 5px;
+}
+
+.clan-up__bonus {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 5px;
+}
+
+.clan-up__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  background: #4C5173;
+  font-size: 14px;
+}
+
+.clan-up__improve {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  gap: 5px;
+  /* height: 100%; */
+
+}
+
+.clan-up__improve-wrap {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 5px;
+  /* height: 100%; */
+}
+
+.clan-up__improve-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 5px;
+}
+
+.clan-up__improve-item {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 0.3fr;
+  justify-items: center;
+  align-content: center;
+  gap: 5px;
+  background: #3A3F61;
+  border: 1px solid #696F87;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  font-size: 11px;
+  /* height: 100%; */
+  padding: 5px;
+}
+
+.clan-up__improve-item:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+} 
+
+.clan-up__improve-item > img {
+  position: absolute;
+  height: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: end;
+}
+
+.clan-up__improve-item > span {
+  grid-column: 2 / -1;
+  grid-row: 2 / -1;
+}
+
+.clan-up__improve-box {
+  display: grid;
+  gap: 10px;
+}
+
+.clan-up__improve-active {
+  display: flex;
+  gap: 5px;
+}
+
+.clan-up__improve-active-value {
+  font-weight: 600;
+}
+
+.clan-up__improve-money {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  width: 225px;
+  background: #3A4361;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.15), inset 0px 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 0px 15px 0px 10px;
+}
+
+/* Настройки-Персонализация */
+.clan-setting__personalization {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: 1fr min-content;
+}
+.personalization-nav {
+  display: flex;
+  height: 26px;
+}
+.personalization-nav > label {
+  width: 100%;
+}
+
+/* Настройки-Персонализация/Иконка */
+.clan-setting__icon-container {
+  display: none;
+}
+/* Настройки-Персонализация/Рамки */
+.clan-setting__frame-container {
+  overflow: auto;
+  display: none;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 49%;
+  padding: 5px;
+  gap: 5px;
+}
+/* Настройки-Персонализация/Фон */
+.clan-setting__bg-container {
+  display: none;
+}
+/* Настройки-Персонализация/Знамя */
+.clan-setting__flag-container {
+  display: none;
+}
+
+
+.personalization-nav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #353444;
+  color: #A3A6AA;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Настройки-Заявки */
+.clan-setting__request-list {
+  overflow: auto;
+  display: none;
+  grid-auto-rows: min-content;
+  padding-top: 10px;
+  gap: 5px;
+}
+
+.list-item__player-box > img {
+  cursor: pointer;
+}
+
+/* Настройки-Участники */
+.clan-setting__player-list {
+  overflow: auto;
+  display: none;
+  grid-auto-rows: min-content;
+  padding-top: 10px;
+  gap: 5px;
+}
+
+.clan-setting__list-item {
+  display: flex;
+  padding: 0 30px;
+  background: #3A3F61;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clan-setting__list-item > svg {
+  fill: #FF5462;
+  cursor: pointer;
+}
+
+
+.list-item__player-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.list-item__player-box  svg {
+  cursor: pointer;
+}
+
+/* Настройки-таб */
+
+.clan-setting {
+  overflow: hidden;
+  display: none !important;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.clan-setting .--mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #FF5462;
+  border-radius: 100%;
+  font-size: 14px;
+  position: relative;
+  top: -10px;
+}
+
+.clan-setting span {
+  padding-left: 20px;
+}
+
+/* Задания-таб */
+.clan-quest {
+  position: relative;
+  overflow: hidden;
+  display: none;
+  padding: 10px;
+  grid-template-rows: 1fr min-content;
+  gap: 10px;
+}
+
+.clan-quest-list {
+  display: grid;
+  overflow: auto;
+  grid-auto-rows: min-content;
+  gap: 5px;
+}
+
+.clan-quest__item {
+  display: grid;
+  background: #3D4A76;
+  padding: 5px;
+  border-radius: 1px;
+  gap: 5px;
+  height: 87px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.clan-quest__item:hover {
+  border: 1px solid #D268E7;
+  transition: all .2s ease-out;
+}
+
+.clan-quest__item-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clan-quest__item-txt {
+  display: grid;
+  line-height: 130%;
+  gap: 5px;
+  grid-auto-rows: min-content;
+  font-size: 15px;
+}
+
+.clan-quest__item-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.clan-quest__item-icon {
+  background: #616894;
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+}
+
+.clan-quest__item-icon > img {
+  height: 100%;
+}
+
+
+.clan-quest-completed {
+  background: #3E6D61;
+}
+.clan-quest-completed .clan-quest__item-icon {
+  background: #52B380;
+}
+.clan-quest-completed .quest-line {
+  background: linear-gradient(180deg, #66F8A0 0%, #2EC76A 100%);
+}
+
+.clan-quest-disabled {
+  background: #323954;
+  color: #6B6D7A;
+}
+.clan-quest-disabled .clan-quest__item-icon {
+  background: #51577A;
+}
+.clan-quest-disabled img {
+  opacity: 0.5;
+}
+.clan-quest-disabled .quest-line {
+  width: 0;
+}
+
+.clan-quest .quest-checkbox-wrap {
+  justify-self: end;
+}
+
+
+.clan-quest-open {
+  overflow: hidden;
+  /* display: grid; */
+  display: none;
+  position: absolute;
+  background: #4D505C;
+  border: 2px solid #A6934D;
+  border-radius: 1px;
+  height: 100%;
+  width: 100%;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  z-index: 99999999999999999;
+  padding: 5px 10px;
+  gap: 5px;
+  cursor: pointer;
+  align-content: space-between;
+}
+
+.clan-quest-open__txt {
+  overflow: auto;
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: min-content;
+  line-height: 130%;
+  letter-spacing: -0.015em;
+}
+
+.clan-quest-open__discr {
+  display: grid;
+  gap: 25px;
+  grid-auto-rows: min-content;
+}
+
+.clan-quest-open__title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.clan-quest-open__bottom {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 10px;
+}
+
+.clan-quest-open .clan-quest__item-icon {
+  background: #6F7073;
+}
+
+.clan-quest-open .quest-line {
+  background: linear-gradient(180deg, #FFD63F 0.01%, #CCA720 100%);
+}
+
 /*==============Клуб-публичный===============*/
 .public-clan {
   display: none !important;
 }
 
 .clan-main-container {
+  overflow: hidden;
+  display: none;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 100%;
+  padding: 10px;
+  gap: 10px;
+  height: 100%;
+
+}
+
+.clan-emblem-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  background: radial-gradient(49.95% 32.85% at 50% 44.93%, #463A60 0%, #2D3246 100%);
+  gap: 10px;
+}
+
+.clan-main-nav {
+  display: flex;
+  gap: 5px;
+  height: 26px;
+}
+
+.clan-main-nav > label {
+  width: 100%;
+}
+
+.clan-main-nav__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #252638; 
+  color: #A3A6AA;
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.clan-main-switch-box {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 10px;
+  /* height: 100%; */
+}
+
+
+
+.clan-emblem-flag {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  /* border: 5px solid red; */
+}
+
+
+
+.--icon-flag {
+  width: 100%;
+  height: 100%;
+  stroke:#696F87;
+  stroke-width: 3;
+  fill:url(#gradient-flag-1);
+}
+
+.clan-emblem-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr ;
+  justify-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.clan-emblem-overlay {
+  display: grid;
+  height: 80%;
+  width: 100%;
+  /* border: 2px solid blue; */
+  grid-template-rows: 1fr min-content;
+}
+
+.clan-emblem-icon {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+  z-index: 1;
+  border-radius: 100%;
+}
+
+.clan-emblem-frame {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+}
+
+.clan-emblem-frame > img {
+  height: 90%;
+}
+.clan-emblem-icon > img {
+  height: 60%;
+}
+
+.clan-emblem-overlay img {
+  position: absolute;
+}
+
+.clan-emblem-overlay > div {
+  position: relative;
+  display: grid;
+  /* border: 3px solid yellow; */
+  justify-items: center;
+  align-items: center;
+}
+
+.public-clan__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2C63E1;
+  height: 33px;
+  cursor: pointer;
+  width: 80%;
+  justify-self: center;
+  transition: .5s ease;
+}
+
+.public-clan__btn:hover {
+  background: #4E85E5;
+}
+
+
+
+
+/* Участники-таб */
+.clan-main-list {
+  overflow: auto;
+  display: none;
+  grid-auto-rows: 40px;
+  gap: 5px;
+}
+
+.clan-main-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3A3F61;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  /* padding: 0 20px; */
+  padding-right: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.clan-main-list__item:hover {
+  border-left: 5px solid #4B538C;
+  transition: all .2s ease-out;
+}
+
+.rating-list-palayer-wrap {
+  display: grid;
+  grid-template-columns: 30px 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.rating-list__num {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.rating-list__player-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.--icon-administration {
+  fill: #A3A6AA;
+  height: 20px;
+  width: 25px;
+}
+
+.rating-list__avatar {
+  display: block;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+.rating-list__avatar > img {
+  height: 100%;
+  width: 100%;
+}
+
+/* О клубе-таб */
+.clan-main-about {
+  display: none;
+  grid-template-rows: min-content 1fr;
+  gap: 10px;
+}
+
+.clan-main-about-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.clan-main-about-top__box {
+  display: grid;
+  justify-items: center;
+  line-height: 130%;
+}
+
+.clan-main-about-top__value {
+  font-weight: 600;
+}
+
+.clan-main-about-top__box:nth-child(2) > .clan-main-about-top__value {
+  color: #45FF8F;
+}
+
+.clan-main-about-bonus {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.clan-main-about-bonus__item {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 10px;
+  background: #3A3F61;
+  border: 1px solid #696F87;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.clan-main-about-bonus__item:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+/* Награды-таб */
+.clan-main-awards {
+  overflow: auto;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 49%;
+  gap: 5px;
+}
+
+.clan-main-awards__item {
+  position: relative;
+  /* overflow: hidden; */
+  display: grid;
+  align-items: center;
+  grid-template-rows: 3fr 1fr;
+  background: #40446C;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.clan-main-awards__item:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.clan-main-awards__item > img {
+  position: absolute;
+  /* width: 100%; */
+  height: 100%;
+  grid-row: 1 / 2;
+  align-self: end;
+  justify-self: center;
+}
+
+.clan-main-awards__name {
+  font-size: 12px;
+  grid-row: 2 / 3;
+  justify-self: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /*==============Персонализация===============*/
@@ -1229,6 +2190,7 @@ html {
   padding: 10px;
   border: 1px solid transparent;
   transition: all .2s ease-out;
+  width: 100%;
 }
 
 .frames-box:hover {
@@ -1238,16 +2200,23 @@ html {
 
 .frames-box > div {
   width: 90%;
-  height: 90%;
   border-radius: 100%;
+  aspect-ratio: 1;
 }
 
 .frame-img {
   display: none;
   position: absolute;
-  height: 160%;
-  top: -15px;
-  left: -15px;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  align-self: start;
+  /* height: 160%; */
+  top: -12px;
+  /* left: -15px; */
+  height: 80px !important;
+  width: 80px !important;
+  z-index: 999999999;
+  aspect-ratio: 1;
 }
 
 .frames-box > img {
@@ -2287,19 +3256,21 @@ label[for="toggle--premium-store-modal-col2"] {
 }
 
 .rating-avatar {
-  display: flex;
-  border-radius: 100%;
-  height: 30px;
+  display: block;
+  overflow: hidden;
   width: 30px;
-  cursor: pointer;
+  height: 30px;
+  border-radius: 100%;
 }
 
 .rating-name {
   font-size: 16px;
+  font-weight: 600;
 }
 
 .rating-avatar > img {
-  border-radius: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 /* --- Рейтинг-клан --- */
@@ -2585,6 +3556,15 @@ label[for="toggle--premium-store-modal-col2"] {
   /* height: 100%; */
 }
 
+.inventory-container > label {
+  display: flex;
+  width: 100%;
+}
+
+.inventory-container > label > div {
+  width: 100%;
+}
+
 .inventory-container__item {
   position: relative;
   display: flex;
@@ -2686,20 +3666,14 @@ label[for="toggle--premium-store-modal-col2"] {
 /*==============Main===============*/
 
 .main {
-  /* overflow: hidden; */
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  /* display: none; */
 }
 
 .view-art {
-  /* overflow: hidden; */
+  position: relative;
   display: grid;
   grid-template-rows: 33px 1fr;
-  /* background-image: url(img/25d60b1a2d96fbb4de2580984cdf7fd9.jpg); */
-  /* background-size: cover; */
-
-  
 }
 
 .view-art__header {
@@ -3099,15 +4073,22 @@ input::placeholder {
 }
 
 .modal-player {
-  display: grid;
+  /* display: grid; */
   visibility: hidden;
-  grid-template-rows: min-content;
+  /* grid-template-rows: min-content; */
   position: absolute;
   height: 220px;
   width: 320px;
   background: #252638;
   z-index: 9999999;
+}
+
+.modal-player-container {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content;
   gap: 55px;
+  height: 100%;
 }
 
 .modal-player .profile__avatar-box {
@@ -3405,7 +4386,7 @@ input::placeholder {
 /*==============Диалоги===============*/
 
 .dialogs-list {
-  /* display: grid; */
+  position: relative;
   grid-auto-rows: min-content 1fr;
   overflow: hidden;
   background-color: #2D3246;
@@ -3450,6 +4431,11 @@ input::placeholder {
   display: flex;
   align-items: center;
   gap: 13px;
+}
+
+.dialogs-list__item > label {
+  /* width: 95%; */
+  cursor: pointer;
 }
 
 .dialogs-list__item:hover {
@@ -4087,6 +5073,7 @@ input::placeholder {
   justify-self: end;
   transition: all .2s ease-out;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .skill-btn:hover {
@@ -4380,6 +5367,221 @@ input::placeholder {
   font-size: 10px;
 }
 
+/* NPC */
+.npc-modal {
+  position: absolute;
+  display: none;
+  grid-template-rows: min-content 1fr;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+}
+.npc > label[for="toggle--npc-modal"] {
+  width: 100%;
+}
+.npc-modal > .sb-h40-title {
+  background: #252638;
+}
+.npc-modal-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: #21222E;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  gap: 10px;
+}
+.npc-art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.npc-art > img {
+  position: absolute;
+  height: 85%;
+}
+.npc-text-box {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: -0.015em;
+  gap: 10px;
+}
+.npc-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.npc-dialog__link {
+  padding-left: 5px;
+  border-left: 1px solid #888480;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+.npc-dialog__link:hover {
+  transition: all .2s ease-out;
+  color: #45FF8F;
+  border-left: 1px solid #33905E;
+}
+
+/* Боёвка-Навык-модал */
+.fight-skill-modal {
+  display: none;
+}
+
+.fight-skill-content {
+  display: grid;
+  grid-auto-rows: min-content 1fr;
+  width: 335px;
+}
+
+.fight-skill-container {
+  display: grid;
+  grid-auto-rows: min-content;
+  background: #252638;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  gap: 10px;
+}
+
+/* Боёвка-Команда */
+.fight-chat {
+  z-index: 999999;
+}
+.fight-chat .bottom-input-wrap {
+  background: #252638;
+}
+/* Боёвка-Команда */
+.fight-team {
+  z-index: 99999999;
+}
+.fight-fight-team__container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 1fr;
+  background: #252638;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  gap: 10px;
+}
+.fight-fight-team__item {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  padding: 5px;
+  background: #3A3F61;
+  gap: 5px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  border: 1px solid transparent;
+}
+.fight-fight-team__item:hover {
+  transition: all .2s ease-out;
+  border: 1px solid #F0E6D2;
+}
+.fight-fight-team__item-content {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+.fight-fight-team__item-left {
+  display: grid;
+  grid-auto-rows: min-content;
+  align-content: space-between;
+}
+.fight-fight-team__item-box {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  justify-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+/* Боёвка-Покеболы */
+.fight-pokeballs {
+  z-index: 9999999;
+}
+.fight-inventory--pokeballs {
+  display: grid;
+}
+/* Боёвка-Расходники */
+.fight-inventory {
+  z-index: 99999;
+}
+
+.--fight-box {
+  position: absolute;
+  display: none;
+  grid-template-rows: min-content 1fr;
+  grid-column: 2 / 3;
+  width: 100%;
+  height: 100%;
+}
+
+.fight-wrap .sb-h40-title {
+  background: #252638;
+}
+
+.fight-inventory-wrap {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+}
+
+.fight-inventory__nav {
+  display: grid;
+}
+
+.fight-inventory__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #353444;
+  cursor: pointer;
+}
+
+.fight-inventory-container {
+  overflow: auto;
+  grid-template-columns: repeat(5,1fr);
+  grid-auto-rows: min-content;
+  background: #252638;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  gap: 10px;
+}
+
+.fight-inventory--potion , .fight-inventory--skills {
+  display: none;
+}
+
+.fight-inventory-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #383B5C;
+  border-radius: 5px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.fight-inventory-item > img {
+  height: 80%;
+}
+
+.fight-inventory__skill {
+  border-radius: 5px;
+  height: 60px;
+  cursor: pointer;
+  border: 2px solid #5932A2;
+}
+
+.fight-inventory__skill > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 /* ====== Боёвка ====== */
 .fight-container {
   display: none;
@@ -4389,6 +5591,7 @@ input::placeholder {
 }
 
 .fight-wrap {
+  position: relative;
   display: grid;
   grid-template-columns: 0.8fr 1.4fr;
 }
@@ -4781,6 +5984,556 @@ input::placeholder {
   font-size: 14px;
 }
 
+/* Перки-таб */
+.perks {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+
+.perks-container {
+  overflow: auto;
+  display: grid;
+  background: #2D3246;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  gap: 10px;
+}
+
+.perks-item {
+  display: flex;
+  background: #3A3F61;
+  height: 84px;
+  padding: 10px;
+  gap: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.perks-item:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+.perks-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #696A75;
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+}
+
+.perks-txt {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 5px;
+  font-size: 15px;
+  line-height: 130%;
+}
+
+.perks-txt-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #FF8F3F;
+}
+
+/* Достижения-таб */
+.achievement {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+
+.achievement-wrap {
+  overflow: auto;
+  display: grid;
+  background: #2D3246;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  gap: 10px;
+}
+
+.achievement-info {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+.achievement-container {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-auto-rows: 44%;
+  gap: 10px;
+}
+
+.achievement-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #3A3F61;
+  border: 1px solid #696F87;
+  padding: 5px;
+}
+
+.achievement-info-item:nth-child(1) {
+  grid-column: 1 / -1;
+}
+
+.achievement-info-item > span {
+  font-weight: 600;
+}
+
+/* Награды-таб */
+.awards {
+  overflow: hidden;
+  display: none;
+  grid-template-rows: min-content 1fr;
+}
+
+.awards-container {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-auto-rows: 48%;
+  background: #2D3246;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  gap: 10px;
+}
+
+.awards-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3A3F61;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease-out;
+}
+
+.awards-item > img {
+  width: 75%;
+}
+
+.awards-item:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+
+/* -----Купить валюту----- */
+.--buy-currency > .modal-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+.--buy-currency .money {
+  gap: 5px;
+  font-weight: 600;
+}
+.buy-currency__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #287EB5;
+}
+
+.buy-currency-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #3D4A76;
+  padding: 10px;
+  gap: 5px;
+}
+.buy-currency-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3E75D7;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+.buy-currency-btn:hover {
+  transition: all .2s ease-out;
+  background: #4E85E5;
+}
+.buy-currency-img {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.buy-currency-img > img {
+  position: absolute;
+  height: 100%;
+}
+/* деньга */
+.buy-money {
+  display: none;
+}
+/* донат */
+.buy-donate {
+  display: none;
+}
+/*-- ---------Модалки------------ --*/
+.mini-modal-content {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  width: 320px;
+}
+.sb-h28-title {
+  height: 28px;
+  background: #252638;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px 0px 10px;
+}
+.sb-h28-title > .title-txt {
+  font-size: 15px;
+}
+.modal-box {
+  overflow: hidden;
+  background: #2D3246;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+}
+.mini-modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  background: #2C63E1;
+  cursor: pointer;
+  transition: .5s ease;
+}
+.mini-modal-btn:hover {
+  transition: all .2s ease-out;
+  background: #4E85E5;
+}
+
+/* Мини модалки / запросы */
+.--modal-inner {
+  position: absolute;
+  display: none;
+  grid-row: 1 / 3;
+  grid-column: 1 / -1;
+  justify-content: center;
+  align-items: center;
+  background: rgba(23, 23, 23, 0.8);
+  height: 100%;
+  width: 100%;
+  z-index: 99999;
+}
+.--modal-inner-2 {
+  position: absolute;
+  display: none;
+  grid-row: 1 / 4;
+  grid-column: 1 / -1;
+  justify-content: center;
+  align-items: center;
+  background: rgba(23, 23, 23, 0.8);
+  height: 100%;
+  width: 100%;
+  z-index: 99999;
+}
+.request-modal {
+  display: none;
+}
+.request-modal-content {
+  display: grid;
+  grid-template-rows: 1fr 74px 1fr;
+  background: #21222E;
+  border: 1px solid #353444;
+  height: 165px;
+  width: 300px;
+}
+.request-modal-top {
+  position: relative;
+  display: grid;
+  justify-items: end;
+  grid-template-columns: 1fr min-content;
+  padding: 5px;
+}
+.request-modal-top > .player-list__player {
+  display: flex;
+  position: absolute;
+  grid-column: 1 / -1;
+  align-self: center;
+  justify-self: center;
+}
+.request-modal-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2E2D3C;
+  font-size: 14px;
+  line-height: 130%;
+}
+.request-modal-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.request-modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #A3A6AA;
+  background: #2D3246;
+  width: 95px;
+  height: 26px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+.request-modal-btn:hover {
+  transition: all .2s ease-out;
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+.request-modal-text {
+  display: none;
+}
+
+/* Описание предмета */
+.descr-item {
+  display: none;
+}
+.descr-item-container {
+  display: flex;
+  flex-direction: column;
+  background: #21222E;
+  /* height: 140px; */
+  padding: 10px;
+  padding-bottom: 15px;
+  gap: 10px;
+}
+.descr-item .mini-modal-btn {
+  background: #1E2328;
+  border: 1px solid #F0E6D2;
+  padding: 3px 6px;
+  font-size: 14px;
+}
+.descr-item .mini-modal-btn:nth-child(1):hover {
+  border: 1px solid #FF5462;
+  color: #FF5462;
+}
+.descr-item .mini-modal-btn:nth-child(2):hover {
+  border: 1px solid #0E9BBB;;
+  color: #0E9BBB;;
+}
+.descr-item-img {
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #373A59;
+  padding: 5px 0px;
+  border-radius: 5px;
+}
+.descr-item-img > img {
+  height: 100%;
+}
+
+.descr-item-text {
+  font-size: 10px;
+  letter-spacing: -0.015em;
+  line-height: 130%;
+}
+
+/* дабавить стату */
+.add-stats {
+  display: none;
+}
+.add-stats-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #21222E;
+  height: 140px;
+  gap: 15px;
+}
+.add-stats-title {
+  font-size: 12px;
+}
+.add-stats-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 180px;
+  background: #3A3F61;
+  border-radius: 5px;
+  gap: 6px;
+}
+.add-stats-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-stats-panel .--icon-plus {
+  fill: #45FF8F;
+}
+.add-stats-panel .--icon-minus {
+  fill: #F0E6D2;;
+}
+.add-stats-panel .--icon-minus:hover {
+  fill: #FF5462;
+}
+
+.add-stats-btn-wrap {
+  display: flex;
+  gap: 10px;
+}
+.--red-btn-modal {
+  background: #CA4C57;
+}
+.--red-btn-modal:hover {
+  background: #FF5462;
+}
+
+/* добавить деньги */
+.add-money {
+  display: none;
+}
+.add-money .title-txt {
+  color: #ECC480;
+}
+.add-money .money-box {
+  width: 169px;
+}
+.add-money-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 16px;
+}
+.add-money-input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* добавить лут */
+.add-loot {
+  display: none;
+}
+.add-loot .sb-h28-title {
+  background: #2D3246;
+}
+.add-loot-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.add-loot-container > .premium-store-icon {
+  height: 70px;
+  width: 70px;
+}
+.input-range-container {
+  position: relative;
+  border: 1px solid #5E6D85;
+  border-radius: 4px;
+  background: #364967;
+  height: 8px;
+  width: 226px;
+}
+.input-range-bar {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  box-shadow: inset 0px 0px 0px 1px rgb(255 255 255 / 14%);
+  background: linear-gradient(180deg, #2C63E1 0%, #2C63E1 100%);
+  border-radius: 3px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.input-range {
+  -webkit-appearance: none;
+  vertical-align: middle;
+  outline: none;
+  border: none;
+  padding: 0;
+  background: none;
+  height: 100%;
+  width: 100%;
+}
+.input-range::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border: 1px solid #7AB6F0;
+  background: #59A4EC;
+  cursor: pointer;
+  z-index: 99;
+}
+.add-loot__input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-loot__input-value-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Инвентарь клуба */
+.club-inventory {
+  display: none;
+}
+.club-inventory .title-txt {
+  color: #ECC480;
+}
+.club-inventory-container > label {
+  display: flex;
+}
+.club-inventory-container {
+  overflow: auto;
+  display: grid;
+  grid-template-rows: repeat(2,60px);
+  grid-auto-rows: 60px;
+  grid-template-columns: repeat(5,1fr);
+  gap: 10px;
+  height: 150px;
+}
+.club-inventory__item {
+  display: flex;
+  padding: 5px 0;
+  background: #65666C;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all .2s ease-out;
+  cursor: pointer;
+}
+.club-inventory__item:hover {
+  border: 1px solid #F0E6D2;
+  transition: all .2s ease-out;
+}
+.club-inventory__item > img {
+  height: 100%;
+}
+/* -------------------------------- */
+
 /*======== Профиль ======== */
 
 .profile-wrap {
@@ -4793,7 +6546,7 @@ input::placeholder {
 
 .profile {
   overflow: hidden;
-  display: grid;
+  display: none;
   grid-template-rows: min-content 1fr;
 }
 
@@ -4818,6 +6571,10 @@ input::placeholder {
   padding: 15px 15px 15px 10px;
 }
 
+.profile__avatar-wrap label > .profile__avatar-box {
+  cursor: pointer;
+}
+
 .profile__avatar-box {
   display: grid;
   gap: 5px;
@@ -4828,6 +6585,7 @@ input::placeholder {
 
 .profile__avatar {
   position: relative;
+  overflow: hidden;
   box-sizing: content-box;
   display: flex;
   border-radius: 100%;
@@ -4837,7 +6595,8 @@ input::placeholder {
 }
 
 .profile__avatar > img{
-  border-radius: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .profile__skin-box {
@@ -4941,8 +6700,41 @@ textarea {
 
 @media (max-width: 1000px) {
 
- 
-  
+  .start-page__header {
+    padding: 0 10px;
+  }
+
+  .start-page__news-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px;
+  }
+  .start-page__form-box {
+    width: 100%;
+    height: 100%;
+  }
+  .start-page__intro-bg > img {
+    display: none;
+  }
+
+  .npc-modal-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .npc-text-box {
+    font-size: 12px;
+  }
+  .npc-art > img {
+    height: 70%;
+  }
+
+  .fight-skill-modal {
+    padding-top: 12% !important;
+    align-items: flex-start;
+  }
+
+  .--fight-box {
+    grid-column: 2 / -1;
+  }
+
   .modal-mobile {
     /* width: 50% !important; */
     height: 210px;
@@ -5217,6 +7009,97 @@ textarea {
 /* === портретная орентация === */
 @media (max-width: 1000px) and (orientation: portrait) {
 
+  .--buy-currency > .modal-box {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .start-page__news-container {
+    grid-template-columns: 1fr;
+    padding: 0 ;
+  }
+
+  .healing-container {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+  }
+
+  .healing-all-btn {
+    grid-column: 1 / -1;
+    grid-row: normal;
+  }
+
+  .fight-skill-modal {
+    padding-top: 50% !important;
+    align-items: flex-start;
+  }
+
+  .fight-fight-team__container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .--fight-box {
+    grid-row: 1 / 3;
+    grid-column-start: 1 ;
+  }
+
+  .fight-skill-wrap {
+    grid-row-start: 2 ;
+  }
+
+  .fight-inventory-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content;
+  }
+
+  .fight-inventory__nav {
+    grid-row-start: 2;
+    grid-template-columns: 1fr 1fr;
+    height: 40px;
+  }
+
+  .fight-inventory-container {
+    grid-template-columns: repeat(4,1fr);
+  }
+
+  .achievement-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 23%;
+  }
+
+  .awards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 20%;
+  }
+
+  .clan-setting__frame-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 20%;
+  }
+
+
+  .clan-up {
+    grid-template-columns: 1fr;
+  }
+
+  .clan-up__bonus {
+    grid-row-start: 1;
+  }
+
+  .clan-main-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 47%;
+    gap: 20px;
+  }
+
+  .clan-emblem-wrap {
+    grid-row-start: 1;
+  }
+
+  .public-clan__btn {
+    width: 70%;
+  }
+
   .personalization-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -5265,7 +7148,7 @@ textarea {
 
   .fight-wrap {
     grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 0.3fr 0.8fr;
+    grid-template-rows: 1.8fr 0.8fr 0.5fr;
     height: calc(100vh - 20px);
   }
 
@@ -5361,6 +7244,16 @@ textarea {
 }
 
 @media (max-width: 1000px) and (orientation: landscape) {
+
+  .--logined {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .--reg {
+    padding: 15px 0;
+  }
+
   /* в горезонтальной ареинтации перестовляет блоки лок и персов по краям */
   .main {
     display: grid;
@@ -5471,6 +7364,10 @@ textarea {
 /* для 5 айфонов и se и всяких мини мобил */
 @media (max-width: 320px) {
 
+  .clan-main-awards__name {
+    justify-self: normal;
+  }
+
   .personalization .tabs-btn {
     padding: 0;
   }
@@ -5541,6 +7438,11 @@ textarea {
 
 }
 @media (max-width: 568px) and (orientation: landscape) {
+
+  .clan-up__improve-item {
+    grid-template-rows: 1fr 0.3fr;
+  }
+
   .personalization-container {
     grid-template-columns: 1fr 1.5fr;
   }
@@ -5706,6 +7608,46 @@ textarea {
   color: #F0E6D2;
 }
 
+
+/* ==== NPC ====*/
+#toggle--npc-modal:checked~.action-container .npc-modal {
+  display: grid;
+}
+
+/* ==== Главная ====*/
+#toggle--start-page:checked~.start-page {
+  display: grid;
+}
+#toggle--start-page:checked~.container {
+  display: none;
+}
+
+/* Регистрация */
+#toggle--reg:checked~.start-page .--reg {
+  display: flex;
+}
+#toggle--reg:checked~.start-page .--login {
+  display: none;
+}
+#toggle--reg:checked~.start-page .start-page__news {
+  display: none;
+}
+/* Валидация формы */
+#toggle--form-error:checked~.start-page .start-page__form-error {
+  display: flex;
+}
+#toggle--form-error:checked~.start-page .--reg {
+  height: auto;
+  padding: 15px 0;
+}
+/* Вход выполнен */
+#toggle--logined:checked~.start-page .--logined {
+  display: flex;
+}
+#toggle--logined:checked~.start-page .--login {
+  display: none;
+}
+
 /* ==== Питомник ====*/
 #toggle--pokemon-storage-btn:checked~.action-container .pokemon-storage {
   display: grid;
@@ -5747,6 +7689,34 @@ textarea {
 /* ==== Профиль ====*/
 #toggle--profile-btn:checked~.action-container .profile-wrap {
   display: flex;
+}
+/* Профиль-таб */
+#toggle--profile-tab:checked~.action-container .profile {
+  display: grid;
+}
+#toggle--profile-tab:checked~.action-container .--profile-tab {
+  background: #2D3246;
+}
+/* Награды-таб */
+#toggle--awards-tab:checked~.action-container .awards {
+  display: grid;
+}
+#toggle--awards-tab:checked~.action-container .--awards-tab {
+  background: #2D3246;
+}
+/* Достижения-таб */
+#toggle--achievement-tab:checked~.action-container .achievement {
+  display: grid;
+}
+#toggle--achievement-tab:checked~.action-container .--achievement-tab {
+  background: #2D3246;
+}
+/* Перки-таб */
+#toggle--perks-tab:checked~.action-container .perks {
+  display: grid;
+}
+#toggle--perks-tab:checked~.action-container .--perks-tab {
+  background: #2D3246;
 }
 
 /* ==== Команда ====*/
@@ -5961,6 +7931,67 @@ textarea {
   display: none;
 }
 
+
+
+/* Боёвка-Расходники */
+/* ------------------------ */
+/* Зелья-таб */
+#toggle--fight-potion-tab:checked~.container .fight-inventory--potion {
+  display: grid;
+}
+#toggle--fight-potion-tab:checked~.container .--fight-potion {
+  background: #0E9BBB;
+}
+#toggle--fight-potion-tab:checked~.container .fight-inventory .title-txt::after {
+  content: "Зелья";
+}
+/* Навыки-таб */
+#toggle--fight-skills-tab:checked~.container .fight-inventory--skills {
+  display: grid;
+}
+#toggle--fight-skills-tab:checked~.container .--fight-skills {
+  background: #0E9BBB;
+}
+#toggle--fight-skills-tab:checked~.container .fight-inventory .title-txt::after {
+  content: "Навыки";
+}
+/* ------------------------ */
+
+/* Боёвка-Расходники */
+#toggle--fight-inventory-btn:checked~.container .fight-inventory {
+  display: grid;
+}
+#toggle--fight-inventory-btn:checked~.container .--fight-inventory {
+  border: 3px solid #97ADD4;
+}
+/* Боёвка-Чат */
+#toggle--fight-chat-btn:checked~.container .fight-chat {
+  display: grid;
+}
+#toggle--fight-chat-btn:checked~.container .--fight-chat {
+  border: 3px solid #97ADD4;
+}
+/* Боёвка-Покеболы */
+#toggle--fight-pokeballs-btn:checked~.container .fight-pokeballs {
+  display: grid;
+}
+#toggle--fight-pokeballs-btn:checked~.container .--fight-pokeballs {
+  border: 3px solid #97ADD4;
+}
+/* Боёвка-Команда */
+#toggle--fight-team-btn:checked~.container .fight-team {
+  display: grid;
+}
+#toggle--fight-team-btn:checked~.container .--fight-team {
+  border: 3px solid #97ADD4;
+}
+/* Боёвка-Навык-модал */
+#toggle--fight-skill-modal:checked~.container .fight-skill-modal {
+  display: flex;
+  justify-content: center;
+  z-index: 99999999999;
+}
+
 /* ==== Покебук ====*/
 #toggle--pokebook-btn:checked~.action-container .pokebook {
   display: grid !important;
@@ -5970,6 +8001,13 @@ textarea {
   display: none;
 }
 
+/* Чекбокс */
+#toggle--checkbox:checked~.start-page .checkbox-off {
+  display: none;
+}
+#toggle--checkbox:checked~.start-page .checkbox-on {
+  display: block;
+}
 
 /* Задания-чекбокс */
 #toggle--quest-checkbox:checked~.action-container .checkbox-off {
@@ -5982,6 +8020,20 @@ textarea {
   display: none;
 }
 #toggle--quest-checkbox:checked~.action-container .quest-completed {
+  display: none;
+}
+
+/* Клан-Задания-чекбокс */
+#toggle--clan-quest-checkbox:checked~.action-container .checkbox-off {
+  display: none;
+}
+#toggle--clan-quest-checkbox:checked~.action-container .checkbox-on {
+  display: block;
+}
+#toggle--clan-quest-checkbox:checked~.action-container .clan-quest-disabled {
+  display: none;
+}
+#toggle--clan-quest-checkbox:checked~.action-container .clan-quest-completed {
   display: none;
 }
 
@@ -6047,10 +8099,180 @@ textarea {
   padding: 10px;
 }
 
+/* Клуб */
+#toggle--clan-btn:checked~.action-container .clan {
+  display: flex !important;
+  z-index: 9999999;
+}
+
+#toggle--clan-btn:checked~.action-container .--setting-request-list,.--setting-personalization,.--setting-player-list {
+  display: none ;
+}
+#toggle--clan-btn:checked~.action-container .--setting-player-list {
+  display: none ;
+}
+
+/* Главная-таб */
+#toggle--clan-main-tab:checked~.action-container .clan-main-container {
+  display: grid;
+}
+#toggle--clan-main-tab:checked~.action-container .--clan-main-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* Задания-таб */
+#toggle--clan-quest-tab:checked~.action-container .clan-quest {
+  display: grid;
+}
+#toggle--clan-quest-tab:checked~.action-container .--clan-quest-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* Развитие-таб */
+#toggle--clan-up-tab:checked~.action-container .clan-up {
+  display: grid;
+}
+#toggle--clan-up-tab:checked~.action-container .--clan-up-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+/* Настройки-таб */
+#toggle--clan-setting-tab:checked~.action-container .clan-setting {
+  display: grid !important;
+}
+
+#toggle--clan-setting-tab:checked~.action-container .--clan-setting-tab {
+  background: #2C63E1;
+  color: #F0E6D2;
+}
+#toggle--clan-setting-tab:checked~.action-container .--icon-setting {
+  fill: #F0E6D2;
+}
+
+/* Клан-Задания-описание */
+#toggle--clan-quest-open:checked~.action-container .clan-quest-open {
+  display: grid;
+}
+
+/* ==== Кнопочка модера ==== */
+#--clan-setting-check:checked~.action-container .list-item__player-box  svg {
+  fill: #45D2FF;
+}
+
+/* Настройки-Персонализация/Иконка */
+#toggle--setting-icon-tab:checked~.action-container .clan-setting__icon-container {
+  display: grid;
+}
+#toggle--setting-icon-tab:checked~.action-container .--setting-icon {
+  color: #F0E6D2;
+  background: #0E9BBB;
+}
+/* Настройки-Персонализация/Рамки */
+#toggle--setting-frame-tab:checked~.action-container .clan-setting__frame-container {
+  display: grid;
+}
+#toggle--setting-frame-tab:checked~.action-container .--setting-frame {
+  color: #F0E6D2;
+  background: #0E9BBB;
+}
+/* Настройки-Персонализация/Фон */
+#toggle--setting-bg-tab:checked~.action-container .clan-setting__bg-container {
+  display: grid;
+}
+#toggle--setting-bg-tab:checked~.action-container .--setting-bg {
+  color: #F0E6D2;
+  background: #0E9BBB;
+}
+/* Настройки-Персонализация/Знамя */
+#toggle--setting-flag-tab:checked~.action-container .clan-setting__flag-container {
+  display: grid;
+}
+#toggle--setting-flag-tab:checked~.action-container .--setting-flag {
+  color: #F0E6D2;
+  background: #0E9BBB;
+}
+
+/* Настройки-Участники */
+#toggle--setting-player-list:checked~.action-container .clan-setting__player-list {
+  display: grid;
+}
+#toggle--setting-player-list:checked~.action-container  .--setting-player-list {
+  display: grid;
+}
+#toggle--setting-player-list:checked~.action-container .clan .title-txt::after {
+  content: '/Участники';
+}
+#toggle--setting-player-list:checked~.action-container .--btn-back-main {
+  display: none;
+}
+#toggle--setting-player-list:checked~.action-container .clan-setting > .setting-bg {
+  display: none;
+}
+/* Настройки-Заявки */
+#toggle--setting-request-list:checked~.action-container .clan-setting__request-list {
+  display: grid;
+}
+#toggle--setting-request-list:checked~.action-container  .--setting-request-list {
+  display: grid;
+}
+#toggle--setting-request-list:checked~.action-container .clan .title-txt::after {
+  content: '/Заявки';
+}
+#toggle--setting-request-list:checked~.action-container .--btn-back-main {
+  display: none;
+}
+#toggle--setting-request-list:checked~.action-container .clan-setting > .setting-bg {
+  display: none;
+}
+/* Настройки-Персонализация */
+#toggle--setting-personalization:checked~.action-container .clan-setting__personalization {
+  display: grid;
+}
+#toggle--setting-personalization:checked~.action-container  .--setting-personalization {
+  display: grid;
+}
+#toggle--setting-personalization:checked~.action-container .clan .title-txt::after {
+  content: '/Персонализация';
+}
+#toggle--setting-personalization:checked~.action-container .--btn-back-main {
+  display: none;
+}
+#toggle--setting-personalization:checked~.action-container .clan-setting > .setting-bg {
+  display: none;
+}
+
 /* Клуб-публичный */
 #toggle--public-clan-btn:checked~.action-container .public-clan {
   display: flex !important;
 }
+#toggle--public-clan-btn:checked~.action-container .clan-main-container {
+  display: grid;
+}
+/* Участники-таб */
+#toggle--clan-main-list:checked~.action-container .clan-main-list {
+  display: grid;
+}
+#toggle--clan-main-list:checked~.action-container .--clan-main-list {
+  background: #4C5173;
+  color: #F0E6D2;
+}
+/* О клубе-таб */
+#toggle--clan-main-about:checked~.action-container .clan-main-about {
+  display: grid;
+}
+#toggle--clan-main-about:checked~.action-container .--clan-main-about {
+  background: #4C5173;
+  color: #F0E6D2;
+}
+/* Награды-таб */
+#toggle--clan-main-awards:checked~.action-container .clan-main-awards {
+  display: grid;
+}
+#toggle--clan-main-awards:checked~.action-container .--clan-main-awards {
+  background: #4C5173;
+  color: #F0E6D2;
+}
+
 
 /* Настройки */
 #toggle--setting-btn:checked~.action-container .setting {
@@ -6500,5 +8722,101 @@ textarea {
 }
 
 /*=============================*/
-
+/* --=--=--=-Мини модалки-=--=--=-- */
+/* добавить лут */
+#toggle--add-loot:checked~.action-container .add-loot {
+  display: flex;
+  z-index: 999999999;
+  justify-content: center;
+}
+/* Инвентарь клуба */
+#toggle--club-inventory:checked~.action-container .club-inventory {
+  display: flex;
+  justify-content: center;
+  z-index: 99999999;
+}
+/* добавить деньги */
+#toggle--add-money:checked~.action-container .add-money {
+  display: flex;
+  justify-content: center;
+  z-index: 99999999;
+}
+/* дабавить стату */
+#toggle--add-stats:checked~.action-container .add-stats {
+  display: flex;
+  justify-content: center;
+  z-index: 99999999;
+}
+/* Описание предмета */
+#toggle--descr-item:checked~.action-container .descr-item {
+  display: flex;
+  justify-content: center;
+  z-index: 99999999;
+}
+/* Вызов на бой */
+#toggle--request-fight:checked~.action-container .request-modal {
+  display: flex;
+  justify-content: center;
+  z-index: 99999999;
+}
+#toggle--request-fight:checked~.action-container .--request-fight {
+  display: block;
+}
+/* преглос в клан */ 
+#toggle--request-clan:checked~.action-container .request-modal {
+  display: flex;
+  justify-content: center;
+  z-index: 99999999;
+}
+#toggle--request-clan:checked~.action-container .--request-clan {
+  display: block;
+}
+/* Удалить диалог */
+#toggle--request-remove:checked~.bottom-content .--modal-inner-2 {
+  display: flex;
+  z-index: 99999999;
+}
+#toggle--request-remove:checked~.bottom-content .--request-remove {
+  display: block;
+  text-align: center;
+}
+/* блок-игрока */
+#toggle--request-block:checked~.container .--modal-inner {
+  display: flex;
+  z-index: 99999999;
+}
+#toggle--request-block:checked~.container .--request-block {
+  display: block;
+}
 /*=============================*/
+
+/* Купить валюту */
+/* деньга */
+#toggle--buy-money:checked~.action-container .buy-money {
+  display: flex;
+}
+/* донат */
+#toggle--buy-donate:checked~.action-container .buy-donate {
+  display: flex;
+}
+
+/* переключалка кнопки друзья */
+label[for="toggle--swap-btn"] img:nth-child(2) {
+  display: none;
+}
+#toggle--swap-btn:checked~.container label[for="toggle--swap-btn"] img:nth-child(1) {
+  display: none;
+}
+#toggle--swap-btn:checked~.container label[for="toggle--swap-btn"] img:nth-child(2) {
+  display: block;
+}
+#toggle--swap-btn:checked~.container label[for="toggle--swap-btn"] > .modal-player__btn {
+  background: #F37E4F;
+}
+
+.modal-player .profile__avatar {
+  overflow: visible;
+}
+.modal-player .profile__avatar > img {
+  border-radius: 100%;
+}
